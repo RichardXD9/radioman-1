@@ -1,0 +1,89 @@
+
+.header {
+    width: 100%;
+    padding: 10px 2%;
+    background: rgb(113,4,14);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 200;
+}
+
+/* Alinha o logo e o menu hambúrguer à esquerda */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo padrão */
+.logo {
+    width: 150px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Se for mobile, logo fica ao lado do menu hambúrguer */
+.logo-mobile {
+    margin-left: 10px;
+}
+
+/* Navbar padrão */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Ícones responsivos */
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.iconcart, .iconuser {
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+/* Menu hambúrguer escondido por padrão em telas grandes */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background: rgb(113,4,14);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+}
