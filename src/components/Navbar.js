@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import '../styles/Navbar.css';
+
 import { UserIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/solid';
 
 function Navbar() {

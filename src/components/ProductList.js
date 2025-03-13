@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import '../styles/destaques.css';
+
 import {Bokor} from 'next/font/google';
 
 const bokorFont = Bokor({
