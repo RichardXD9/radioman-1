@@ -1,7 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
-
 import { UserIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/solid';
+import '../styles/Navbar.css';
+import {
+    ClerkProvider,
+    SignInButton,
+    SignUpButton,
+    SignedIn,
+    SignedOut,
+    UserButton,
+  } from '@clerk/nextjs'
 
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +19,7 @@ function Navbar() {
             setIsMobile(window.innerWidth <= 768);
         };
 
-        checkScreenSize(); // Verifica no carregamento
+        checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
@@ -33,15 +40,30 @@ function Navbar() {
                 <a href="/">Portfolio</a>
                 <a href="/">Services</a>
             </nav>
-            <div className="icons">
+            
+            <ClerkProvider>
+                
+                <header className="button-container">
+                <div className="icons flex items-center gap-4">
                 <a href="/pagina-destino" className="icon-link">
                     <ShoppingCartIcon className="iconcart text-blue-500" />
                 </a>
-                <a href="/pagina-destino" className="icon-link">
-                    <UserIcon className="iconuser text-blue-500" />
-                </a>
+
             </div>
+        
+            <SignedOut>
+              <SignInButton className="logincarai"/>
+              <SignUpButton className="registecarai"/>
+            </SignedOut>
+            <SignedIn>
+              <UserButton  />
+            </SignedIn>
+          </header>
+          </ClerkProvider>
+
         </header>
+
+        
     );
 }
 

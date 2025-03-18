@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './Card';
-
 import {Bokor} from 'next/font/google';
 
 const bokorFont = Bokor({
@@ -13,6 +12,7 @@ const ProductList = () => {
         alert(`Produto ${productName} adicionado ao carrinho!`);
       };
 
+      
   const products = [
     {
       id: 1,
@@ -31,6 +31,7 @@ const ProductList = () => {
       description: 'Adrenaline (Vinil)',
       price: '28.00 €',
     },
+    
     {
       id: 3,
       image: '/images/adrenaline.jpg',
@@ -41,6 +42,9 @@ const ProductList = () => {
     },
     // Adicione mais produtos aqui
   ];
+
+
+  
 
   return (
     <div className="product-list">

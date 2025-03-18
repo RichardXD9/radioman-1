@@ -1,4 +1,7 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Bokor&display=swap');
+
+
 .header {
     width: 100%;
     padding: 10px 2%;
@@ -44,12 +47,13 @@
 /* Ícones responsivos */
 .icons {
     display: flex;
-    gap: 15px;
+    gap: 5px;
 }
 
 .iconcart, .iconuser {
     width: 30px;
     height: 30px;
+
     color: white;
 }
 
@@ -83,7 +87,29 @@
         display: block;
     }
 
-    .logo {
-        margin-left: 10px;
-    }
 }
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust the gap as needed */
+}
+
+.logincarai, .registecarai {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: 2px solid rgb(252, 252, 252);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Bokor', sans-serif; /* Apply the Bokor font */
+}
+
+.logincarai:hover, .registecarai:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(113, 4, 14);
+}
+
+  
