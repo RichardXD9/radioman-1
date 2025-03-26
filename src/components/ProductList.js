@@ -1,67 +1,91 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import Card from './Card';
+import Filter from './Filter';
 import {Bokor} from 'next/font/google';
 
 const bokorFont = Bokor({
     subsets: ["latin"],
     weight:"400",
-  });
+});
   
 const ProductList = () => {
+    // Define products outside of the component function
+    const products = [
+        {
+            id: 1,
+            image: '/images/threedolla.jpg',
+            title: 'Limp Bizkit',
+            availability: 'Disponível',
+            description: "Three Dollar Bills, Y'all (CD)",
+            price: '34.00 €',
+            genre: 'Rock',
+            color: 'Black'
+        },
+        {
+            id: 2,
+            image: '/images/adrenaline.jpg',
+            title: 'Deftones',
+            availability: 'Disponível',
+            description: 'Adrenaline (Vinil)',
+            price: '28.00 €',
+            genre: 'Alternative',
+            color: 'White'
+        },
+        {
+            id: 3,
+            image: '/images/adrenaline.jpg',
+            title: 'Deftones Alternate',
+            availability: 'Esgotado',
+            description: 'Adrenaline (Vinil) Limited Edition',
+            price: '35.00 €',
+            genre: 'Alternative',
+            color: 'Red'
+        },
+    ];
+
+    // Use useMemo to memoize the initial filtered products
+    const [filteredProducts, setFilteredProducts] = useState(
+        useMemo(() => products, [products])
+    );
+
     const handleBuyClick = (productName) => {
         alert(`Produto ${productName} adicionado ao carrinho!`);
-      };
+    };
 
-      
-  const products = [
-    {
-      id: 1,
-      image: '/images/threedolla.jpg',
-      title: 'Limp Bizkit',
-      availability: 'Disponível',
-      description: "Three Dollar Bills, Y'all (CD)",
-      price: '34.00 €',
-    
-    },
-    {
-      id: 2,
-      image: '/images/adrenaline.jpg',
-      title: 'Deftones',
-      availability: 'Disponível',
-      description: 'Adrenaline (Vinil)',
-      price: '28.00 €',
-    },
-    
-    {
-      id: 3,
-      image: '/images/adrenaline.jpg',
-      title: 'Deftones',
-      availability: 'Disponível',
-      description: 'Adrenaline (Vinil)',
-      price: '28.00 €',
-    },
-    // Adicione mais produtos aqui
-  ];
+    const handleFilterChange = (filters) => {
+        const filtered = products.filter(product => {
+            const genreMatch = filters.genres.length === 0 || 
+                filters.genres.includes(product.genre);
+            const colorMatch = filters.colors.length === 0 || 
+                filters.colors.includes(product.color);
+            const availabilityMatch = filters.availability.length === 0 || 
+                filters.availability.includes(product.availability);
+            
+            return genreMatch && colorMatch && availabilityMatch;
+        });
 
+        setFilteredProducts(filtered);
+    };
 
-  
-
-  return (
-    <div className="product-list">
-      {products.map((product) => (
-        <Card
-          key={product.id}
-          image={product.image}
-          title={product.title}
-          availability={product.availability}
-          description={product.description}
-          price={product.price}
-          onBuyClick={() => handleBuyClick(product.title)} 
-          bokorFont={bokorFont}
-        />
-      ))}
-    </div>
-  );
+    return (
+        <div className="flex">
+            <Filter onFilterChange={handleFilterChange} />
+            <div className="product-list ml-64">
+                {filteredProducts.map((product) => (
+                    <Card
+                        key={product.id}
+                        image={product.image}
+                        title={product.title}
+                        availability={product.availability}
+                        description={product.description}
+                        price={product.price}
+                        onBuyClick={() => handleBuyClick(product.title)} 
+                        bokorFont={bokorFont}
+                    />
+                ))}
+            </div>
+        </div>
+    );
 };
 
 export default ProductList;
