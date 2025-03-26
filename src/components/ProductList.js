@@ -24,20 +24,20 @@ const ProductList = () => {
         },
         {
             id: 2,
-            image: '/images/adrenaline.jpg',
-            title: 'Deftones',
+            image: '/images/SOADtoxi.jpg',
+            title: 'System Of A Down - Toxicity',
             availability: 'Disponível',
-            description: 'Adrenaline (Vinil)',
+            description: 'Toxicity Vinil',
             price: '28.00 €',
             genre: 'Hardcore',
             color: 'White'
         },
         {
             id: 3,
-            image: '/images/adrenaline.jpg',
-            title: 'Deftones Alternate',
+            image: '/images/whitepony.jpg',
+            title: 'Deftones - White Pony',
             availability: 'Esgotado',
-            description: 'Adrenaline (Vinil) Limited Edition',
+            description: 'White Pony Vinil',
             price: '35.00 €',
             genre: 'Numetal',
             color: 'Red'

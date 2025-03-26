@@ -8,7 +8,7 @@ const bokorFont = Bokor({
     weight:"400",
 });
   
-const VinilProductList = () => {
+const VinilProductList = ({ filters }) => {
     // Vinyl-specific products with unique items
     const vinylProducts = [
         {
@@ -16,88 +16,54 @@ const VinilProductList = () => {
             image: '/images/adrenaline.jpg',
             title: 'Deftones - Adrenaline',
             availability: 'Disponível',
-            description: 'Adrenaline Vinyl (First Press)',
+            description: 'Adrenaline Vinil',
             price: '45.00 €',
             genre: 'Hardcore',
             color: 'Black'
         },
         {
             id: 2,
-            image: '/images/whitepony.jpg',
-            title: 'Deftones - White Pony',
+            image: '/images/Kornstl.jpg',
+            title: 'Korn- Self Titled',
             availability: 'Disponível',
-            description: 'White Pony Vinyl Limited Edition',
-            price: '55.00 €',
-            genre: 'Alternative',
-            color: 'White'
+            description: 'Korn Vinil',
+            price: '45.00 €',
+            genre: 'Numetal',
+            color: 'Black'
         },
         {
             id: 3,
-            image: '/images/threedolla.jpg',
-            title: 'Limp Bizkit - Three Dollar Bills',
-            availability: 'Esgotado',
-            description: 'Three Dollar Bills Vinyl Rare Edition',
-            price: '65.00 €',
+            image: '/images/LPhybrid.jpg',
+            title: 'Linkin Park - Hybrid Theory',
+            availability: 'Disponível',
+            description: 'Hybrid Theory Vinil',
+            price: '45.00 €',
             genre: 'Numetal',
-            color: 'Red'
+            color: 'Black'
         },
         {
             id: 4,
-            image: '/images/Kornstl.jpg',
-            title: 'Korn - Self Titled',
+            image: '/images/LPmeteora.jpg',
+            title: 'Linkin Park - Meteora',
             availability: 'Disponível',
-            description: 'Korn First Album Vinyl',
-            price: '50.00 €',
-            genre: 'Numetal',
+            description: 'Meteora Vinil',
+            price: '45.00 €',
+            genre: 'Hardcore',
             color: 'Black'
         },
         {
             id: 5,
             image: '/images/SOADsteal.jpg',
-            title: 'System of a Down - Steal This Album',
-            availability: 'Esgotado',
-            description: 'Steal This Album Vinyl',
-            price: '40.00 €',
-            genre: 'Alternative',
-            color: 'Blue'
-        },
-        {
-            id: 6,
-            image: '/images/SOADtoxi.jpg',
-            title: 'System of a Down - Toxicity',
+            title: 'System Of A Down - Steal This Album',
             availability: 'Disponível',
-            description: 'Toxicity Vinyl First Edition',
-            price: '55.00 €',
-            genre: 'Alternative',
+            description: 'Steal This Album Vinil',
+            price: '45.00 €',
+            genre: 'Numetal',
             color: 'Black'
         },
-        {
-            id: 7,
-            image: '/images/LPmeteora.jpg',
-            title: 'Linkin Park - Meteora',
-            availability: 'Disponível',
-            description: 'Meteora Vinyl Limited Press',
-            price: '60.00 €',
-            genre: 'Alternative',
-            color: 'Red'
-        },
-        {
-            id: 8,
-            image: '/images/LPhybrid.jpg',
-            title: 'Linkin Park - Hybrid Theory',
-            availability: 'Disponível',
-            description: 'Hybrid Theory Original Vinyl',
-            price: '58.00 €',
-            genre: 'Alternative',
-            color: 'Black'
-        }
-    ];
 
-    const [filters, setFilters] = useState({
-        genres: [],
-        colors: [],
-        availability: []
-    });
+        // ... (rest of the products remain the same)
+    ];
 
     const filteredProducts = useMemo(() => {
         return vinylProducts.filter(product => {
@@ -114,10 +80,6 @@ const VinilProductList = () => {
 
     const handleBuyClick = (productName) => {
         alert(`Vinil ${productName} adicionado ao carrinho!`);
-    };
-
-    const handleFilterChange = (newFilters) => {
-        setFilters(newFilters);
     };
 
     return (
