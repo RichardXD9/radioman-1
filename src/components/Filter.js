@@ -9,7 +9,7 @@ const Filter = ({ onFilterChange }) => {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
 
   // Predefined filter options
-  const genres = ['Rock', 'Metal', 'Alternative', 'Punk'];
+  const genres = ['Numetal', 'Hardcore', 'Alternative', 'Punk'];
   const colors = ['Black', 'White', 'Red', 'Blue'];
   const availability = ['Disponível', 'Esgotado'];
 

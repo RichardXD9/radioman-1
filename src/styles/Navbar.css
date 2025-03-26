@@ -4,12 +4,13 @@
 
 .header {
     width: 100%;
-    padding: 10px 2%;
+    padding: 15px 2%; /* Increased padding */
     background: rgb(113,4,14);
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 200;
+    height: 80px; 
 }
 
 /* Alinha o logo e o menu hambúrguer à esquerda */
@@ -20,7 +21,7 @@
 
 /* Logo padrão */
 .logo {
-    width: 150px;
+    width: 165px; /* Increased logo size */
     height: auto;
     margin-left: 10px;
 }
@@ -34,11 +35,11 @@
 .navbar {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px; 
 }
 
 .navbar a {
-    font-size: 1rem;
+    font-size: 1.1rem; /* Slightly larger font */
     color: white;
     font-weight: 500;
     text-decoration: none;
@@ -47,13 +48,12 @@
 /* Ícones responsivos */
 .icons {
     display: flex;
-    gap: 5px;
+    gap: 15px;
 }
 
 .iconcart, .iconuser {
-    width: 30px;
-    height: 30px;
-
+    width: 35px; /* Larger icons */
+    height: 35px;
     color: white;
 }
 
@@ -66,8 +66,11 @@
     margin-right: 10px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
+    .header {
+        height: 60px; /* Adjusted for mobile */
+    }
+
     .navbar {
         display: none;
         flex-direction: column;
@@ -85,6 +88,9 @@
 
     .menu-toggle {
         display: block;
+    }
+    .logo {
+        width: 150px; /* Smaller logo for mobile */
     }
 
 }

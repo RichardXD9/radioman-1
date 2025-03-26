@@ -19,7 +19,7 @@ const ProductList = () => {
             availability: 'Disponível',
             description: "Three Dollar Bills, Y'all (CD)",
             price: '34.00 €',
-            genre: 'Rock',
+            genre: 'Numetal',
             color: 'Black'
         },
         {
@@ -29,7 +29,7 @@ const ProductList = () => {
             availability: 'Disponível',
             description: 'Adrenaline (Vinil)',
             price: '28.00 €',
-            genre: 'Alternative',
+            genre: 'Hardcore',
             color: 'White'
         },
         {
@@ -39,7 +39,7 @@ const ProductList = () => {
             availability: 'Esgotado',
             description: 'Adrenaline (Vinil) Limited Edition',
             price: '35.00 €',
-            genre: 'Alternative',
+            genre: 'Numetal',
             color: 'Red'
         },
         {
@@ -49,7 +49,7 @@ const ProductList = () => {
             availability: 'Esgotado',
             description: 'Adrenaline (Vinil) Limited Edition',
             price: '35.00 €',
-            genre: 'Alternative',
+            genre: 'Numetal',
             color: 'Red'
         },
         {
@@ -59,7 +59,7 @@ const ProductList = () => {
           availability: 'Esgotado',
           description: 'Adrenaline (Vinil) Limited Edition',
           price: '35.00 €',
-          genre: 'Alternative',
+          genre: 'Numetal',
           color: 'Red'
       },
       {
@@ -69,9 +69,30 @@ const ProductList = () => {
         availability: 'Esgotado',
         description: 'Adrenaline (Vinil) Limited Edition',
         price: '35.00 €',
-        genre: 'Alternative',
+        genre: 'Numetal',
         color: 'Red'
     },
+    {
+      id: 6,
+      image: '/images/adrenaline.jpg',
+      title: 'Deftones Alternate',
+      availability: 'Esgotado',
+      description: 'Adrenaline (Vinil) Limited Edition',
+      price: '35.00 €',
+      genre: 'Numetal',
+      color: 'Red'
+  },
+  {
+    id: 7,
+    image: '/images/adrenaline.jpg',
+    title: 'Deftones Alternate',
+    availability: 'Esgotado',
+    description: 'Adrenaline (Vinil) Limited Edition',
+    price: '35.00 €',
+    genre: 'Hardcore',
+    color: 'Red'
+},
+
     ];
 
     // Use useMemo to memoize the initial filtered products
