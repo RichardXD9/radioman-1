@@ -9,90 +9,88 @@ const bokorFont = Bokor({
 });
   
 const VinilProductList = () => {
-    // Vinyl-specific products
+    // Vinyl-specific products with unique items
     const vinylProducts = [
-            {
-                id: 1,
-                image: '/images/adrenaline.jpg',
-                title: 'Deftones - Adrenaline',
-                availability: 'Disponível',
-                description: 'Adrenaline Vinyl (First Press)',
-                price: '45.00 €',
-                genre: 'Hardcore',
-                color: 'Black'
-            },
-            {
-                id: 2,
-                image: '/images/whitepony.png',
-                title: 'Deftones - White Pony',
-                availability: 'Disponível',
-                description: 'White Pony Vinyl Limited Edition',
-                price: '55.00 €',
-                genre: 'Alternative',
-                color: 'White'
-            },
-            {
-                id: 3,
-                image: '/images/threedolla.jpg',
-                title: 'Limp Bizkit - Three Dollar Bills',
-                availability: 'Esgotado',
-                description: 'Three Dollar Bills Vinyl Rare Edition',
-                price: '65.00 €',
-                genre: 'Numetal',
-                color: 'Red'
-            },
-            {
-                id: 4,
-                image: '/images/Kornstl.jpg',
-                title: 'Korn - Self Titled',
-                availability: 'Disponível',
-                description: 'Korn First Album Vinyl',
-                price: '50.00 €',
-                genre: 'Numetal',
-                color: 'Black'
-            },
-            {
-                id: 5,
-                image: '/images/SOADsteal.jpg',
-                title: 'System of a Down - Steal This Album',
-                availability: 'Esgotado',
-                description: 'Steal This Album Vinyl',
-                price: '40.00 €',
-                genre: 'Alternative',
-                color: 'Blue'
-            },
-            {
-                id: 6,
-                image: '/images/SOADsteal.jpg',
-                title: 'System of a Down - Steal This Album',
-                availability: 'Esgotado',
-                description: 'Steal This Album Vinyl',
-                price: '40.00 €',
-                genre: 'Alternative',
-                color: 'Blue'
-            },
-            {
-                id: 7,
-                image: '/images/SOADsteal.jpg',
-                title: 'System of a Down - Steal This Album',
-                availability: 'Esgotado',
-                description: 'Steal This Album Vinyl',
-                price: '40.00 €',
-                genre: 'Alternative',
-                color: 'Blue'
-            },
-            {
-                id: 8,
-                image: '/images/SOADsteal.jpg',
-                title: 'System of a Down - Steal This Album',
-                availability: 'Esgotado',
-                description: 'Steal This Album Vinyl',
-                price: '40.00 €',
-                genre: 'Alternative',
-                color: 'Blue'
-            },
-        
-       
+        {
+            id: 1,
+            image: '/images/adrenaline.jpg',
+            title: 'Deftones - Adrenaline',
+            availability: 'Disponível',
+            description: 'Adrenaline Vinyl (First Press)',
+            price: '45.00 €',
+            genre: 'Hardcore',
+            color: 'Black'
+        },
+        {
+            id: 2,
+            image: '/images/whitepony.jpg',
+            title: 'Deftones - White Pony',
+            availability: 'Disponível',
+            description: 'White Pony Vinyl Limited Edition',
+            price: '55.00 €',
+            genre: 'Alternative',
+            color: 'White'
+        },
+        {
+            id: 3,
+            image: '/images/threedolla.jpg',
+            title: 'Limp Bizkit - Three Dollar Bills',
+            availability: 'Esgotado',
+            description: 'Three Dollar Bills Vinyl Rare Edition',
+            price: '65.00 €',
+            genre: 'Numetal',
+            color: 'Red'
+        },
+        {
+            id: 4,
+            image: '/images/Kornstl.jpg',
+            title: 'Korn - Self Titled',
+            availability: 'Disponível',
+            description: 'Korn First Album Vinyl',
+            price: '50.00 €',
+            genre: 'Numetal',
+            color: 'Black'
+        },
+        {
+            id: 5,
+            image: '/images/SOADsteal.jpg',
+            title: 'System of a Down - Steal This Album',
+            availability: 'Esgotado',
+            description: 'Steal This Album Vinyl',
+            price: '40.00 €',
+            genre: 'Alternative',
+            color: 'Blue'
+        },
+        {
+            id: 6,
+            image: '/images/SOADtoxi.jpg',
+            title: 'System of a Down - Toxicity',
+            availability: 'Disponível',
+            description: 'Toxicity Vinyl First Edition',
+            price: '55.00 €',
+            genre: 'Alternative',
+            color: 'Black'
+        },
+        {
+            id: 7,
+            image: '/images/LPmeteora.jpg',
+            title: 'Linkin Park - Meteora',
+            availability: 'Disponível',
+            description: 'Meteora Vinyl Limited Press',
+            price: '60.00 €',
+            genre: 'Alternative',
+            color: 'Red'
+        },
+        {
+            id: 8,
+            image: '/images/LPhybrid.jpg',
+            title: 'Linkin Park - Hybrid Theory',
+            availability: 'Disponível',
+            description: 'Hybrid Theory Original Vinyl',
+            price: '58.00 €',
+            genre: 'Alternative',
+            color: 'Black'
+        }
     ];
 
     const [filters, setFilters] = useState({
