@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { UserIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 import '../styles/Navbar.css';
 import { Bokor } from 'next/font/google';
 const bokorFont = Bokor({
@@ -37,37 +38,34 @@ function Navbar() {
                         <Bars3Icon className="h-8 w-8 text-white" />
                     </div>
                 )}
-                <img src="images/logo.png" className={`logo ${isMobile ? 'logo-mobile' : ''}`} alt="Logo" />
+                <Link href="/">
+                    <img src="images/logo.png" className={`logo ${isMobile ? 'logo-mobile' : ''}`} alt="Logo" />
+                </Link>
             </div>
             <nav className={`navbar ${menuOpen ? 'active' : ''} ${isMobile ? 'mobile' : ''}`}>
-                <a className={bokorFont.className} href="/">Vinil</a>
-                <a className={bokorFont.className} href="/">CD</a>
-                <a className={bokorFont.className} href="/">Merch</a>
+                <Link href="/vinil" className={bokorFont.className}>Vinil</Link>
+                <Link href="/cd" className={bokorFont.className}>CD</Link>
+                <Link href="/merch" className={bokorFont.className}>Merch</Link>
             </nav>
             
             <ClerkProvider>
-                
                 <header className="button-container">
-                <div className="icons flex items-center gap-4">
-                <a href="/pagina-destino" className="icon-link">
-                    <ShoppingCartIcon className="iconcart text-blue-500" />
-                </a>
-
-            </div>
+                    <div className="icons flex items-center gap-4">
+                        <Link href="/pagina-destino" className="icon-link">
+                            <ShoppingCartIcon className="iconcart text-blue-500" />
+                        </Link>
+                    </div>
         
-            <SignedOut>
-              <SignInButton className="logincarai"/>
-              <SignUpButton className="registecarai"/>
-            </SignedOut>
-            <SignedIn>
-              <UserButton  />
-            </SignedIn>
-          </header>
-          </ClerkProvider>
-
+                    <SignedOut>
+                        <SignInButton className="logincarai"/>
+                        <SignUpButton className="registecarai"/>
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton  />
+                    </SignedIn>
+                </header>
+            </ClerkProvider>
         </header>
-
-        
     );
 }
 

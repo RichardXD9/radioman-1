@@ -82,6 +82,16 @@ const ProductList = () => {
           genre: 'Hardcore',
           color: 'Red'
         },
+        {
+          id: 8,
+          image: '/images/adrenaline.jpg',
+          title: 'Deftones Alternate',
+          availability: 'Esgotado',
+          description: 'Adrenaline (Vinil) Limited Edition',
+          price: '35.00 €',
+          genre: 'Hardcore',
+          color: 'Red'
+        },
     ];
 
     const [filters, setFilters] = useState({
