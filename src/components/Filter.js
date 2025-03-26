@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Bokor } from 'next/font/google';
 import '../styles/filter.css';
+
+const bokorFont = Bokor({
+    subsets: ["latin"],
+    weight:"400",
+});
 
 const Filter = ({ onFilterChange }) => {
   const [selectedGenres, setSelectedGenres] = useState([]);
@@ -75,11 +81,11 @@ const Filter = ({ onFilterChange }) => {
           ${isFilterVisible ? 'active' : ''} 
           md:translate-x-0`}
       >
-        <h2>Filtros</h2>
+        <h2 className={bokorFont.className}>Filtros</h2>
         
         {/* Genre Filter */}
         <div className="filter-section">
-          <h3>Gênero</h3>
+          <h3 className={bokorFont.className}>Gênero</h3>
           {genres.map(genre => (
             <div 
               key={genre} 
@@ -100,7 +106,7 @@ const Filter = ({ onFilterChange }) => {
 
         {/* Color Filter */}
         <div className="filter-section">
-          <h3>Cor</h3>
+          <h3 className={bokorFont.className}>Cor</h3>
           {colors.map(color => (
             <div 
               key={color} 
@@ -121,7 +127,7 @@ const Filter = ({ onFilterChange }) => {
 
         {/* Availability Filter */}
         <div className="filter-section">
-          <h3>Disponibilidade</h3>
+          <h3 className={bokorFont.className}>Disponibilidade</h3>
           {availability.map(status => (
             <div 
               key={status} 
@@ -149,4 +155,4 @@ Filter.propTypes = {
   onFilterChange: PropTypes.func.isRequired
 };
 
-export default Filter;
+export default Filter;  

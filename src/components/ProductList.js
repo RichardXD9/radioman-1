@@ -43,7 +43,7 @@ const ProductList = () => {
             color: 'Red'
         },
         {
-            id: 3,
+            id: 4,
             image: '/images/adrenaline.jpg',
             title: 'Deftones Alternate',
             availability: 'Esgotado',
@@ -53,7 +53,7 @@ const ProductList = () => {
             color: 'Red'
         },
         {
-          id: 4,
+          id: 5,
           image: '/images/adrenaline.jpg',
           title: 'Deftones Alternate',
           availability: 'Esgotado',
@@ -61,51 +61,37 @@ const ProductList = () => {
           price: '35.00 €',
           genre: 'Numetal',
           color: 'Red'
-      },
-      {
-        id: 5,
-        image: '/images/adrenaline.jpg',
-        title: 'Deftones Alternate',
-        availability: 'Esgotado',
-        description: 'Adrenaline (Vinil) Limited Edition',
-        price: '35.00 €',
-        genre: 'Numetal',
-        color: 'Red'
-    },
-    {
-      id: 6,
-      image: '/images/adrenaline.jpg',
-      title: 'Deftones Alternate',
-      availability: 'Esgotado',
-      description: 'Adrenaline (Vinil) Limited Edition',
-      price: '35.00 €',
-      genre: 'Numetal',
-      color: 'Red'
-  },
-  {
-    id: 7,
-    image: '/images/adrenaline.jpg',
-    title: 'Deftones Alternate',
-    availability: 'Esgotado',
-    description: 'Adrenaline (Vinil) Limited Edition',
-    price: '35.00 €',
-    genre: 'Hardcore',
-    color: 'Red'
-},
-
+        },
+        {
+          id: 6,
+          image: '/images/adrenaline.jpg',
+          title: 'Deftones Alternate',
+          availability: 'Esgotado',
+          description: 'Adrenaline (Vinil) Limited Edition',
+          price: '35.00 €',
+          genre: 'Numetal',
+          color: 'Red'
+        },
+        {
+          id: 7,
+          image: '/images/adrenaline.jpg',
+          title: 'Deftones Alternate',
+          availability: 'Esgotado',
+          description: 'Adrenaline (Vinil) Limited Edition',
+          price: '35.00 €',
+          genre: 'Hardcore',
+          color: 'Red'
+        },
     ];
 
-    // Use useMemo to memoize the initial filtered products
-    const [filteredProducts, setFilteredProducts] = useState(
-        useMemo(() => products, [products])
-    );
+    const [filters, setFilters] = useState({
+        genres: [],
+        colors: [],
+        availability: []
+    });
 
-    const handleBuyClick = (productName) => {
-        alert(`Produto ${productName} adicionado ao carrinho!`);
-    };
-
-    const handleFilterChange = (filters) => {
-        const filtered = products.filter(product => {
+    const filteredProducts = useMemo(() => {
+        return products.filter(product => {
             const genreMatch = filters.genres.length === 0 || 
                 filters.genres.includes(product.genre);
             const colorMatch = filters.colors.length === 0 || 
@@ -115,8 +101,14 @@ const ProductList = () => {
             
             return genreMatch && colorMatch && availabilityMatch;
         });
+    }, [products, filters]);
 
-        setFilteredProducts(filtered);
+    const handleBuyClick = (productName) => {
+        alert(`Produto ${productName} adicionado ao carrinho!`);
+    };
+
+    const handleFilterChange = (newFilters) => {
+        setFilters(newFilters);
     };
 
     return (

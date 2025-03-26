@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { UserIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/solid';
 import '../styles/Navbar.css';
+import { Bokor } from 'next/font/google';
+const bokorFont = Bokor({
+    subsets: ["latin"],
+    weight:"400",
+});
 import {
     ClerkProvider,
     SignInButton,
@@ -35,10 +40,9 @@ function Navbar() {
                 <img src="images/logo.png" className={`logo ${isMobile ? 'logo-mobile' : ''}`} alt="Logo" />
             </div>
             <nav className={`navbar ${menuOpen ? 'active' : ''} ${isMobile ? 'mobile' : ''}`}>
-                <a href="/">Home</a>
-                <a href="/">About</a>
-                <a href="/">Portfolio</a>
-                <a href="/">Services</a>
+                <a className={bokorFont.className} href="/">Vinil</a>
+                <a className={bokorFont.className} href="/">CD</a>
+                <a className={bokorFont.className} href="/">Merch</a>
             </nav>
             
             <ClerkProvider>
