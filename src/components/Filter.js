@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/filter.css';
 
 const Filter = ({ onFilterChange }) => {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedAvailability, setSelectedAvailability] = useState([]);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
 
   // Predefined filter options
   const genres = ['Rock', 'Metal', 'Alternative', 'Punk'];
@@ -53,61 +55,92 @@ const Filter = ({ onFilterChange }) => {
     });
   };
 
+  // Toggle mobile filter visibility
+  const toggleFilterVisibility = () => {
+    setIsFilterVisible(!isFilterVisible);
+  };
+
   return (
-    <div className="filter-sidebar bg-gray-100 p-4 w-64 fixed left-0 top-16 bottom-0 overflow-y-auto">
-      <h2 className="text-xl font-bold mb-4">Filtros</h2>
-      
-      {/* Genre Filter */}
-      <div className="mb-4">
-        <h3 className="font-semibold mb-2">Gênero</h3>
-        {genres.map(genre => (
-          <div key={genre} className="flex items-center mb-1">
-            <input
-              type="checkbox"
-              id={`genre-${genre}`}
-              checked={selectedGenres.includes(genre)}
-              onChange={() => handleGenreChange(genre)}
-              className="mr-2"
-            />
-            <label htmlFor={`genre-${genre}`}>{genre}</label>
-          </div>
-        ))}
-      </div>
+    <>
+      {/* Mobile Filter Toggle Button */}
+      <button 
+        className="md:hidden fixed top-16 left-4 z-20 bg-red-600 text-white p-2 rounded"
+        onClick={toggleFilterVisibility}
+      >
+        {isFilterVisible ? 'Fechar Filtros' : 'Abrir Filtros'}
+      </button>
 
-      {/* Color Filter */}
-      <div className="mb-4">
-        <h3 className="font-semibold mb-2">Cor</h3>
-        {colors.map(color => (
-          <div key={color} className="flex items-center mb-1">
-            <input
-              type="checkbox"
-              id={`color-${color}`}
-              checked={selectedColors.includes(color)}
-              onChange={() => handleColorChange(color)}
-              className="mr-2"
-            />
-            <label htmlFor={`color-${color}`}>{color}</label>
-          </div>
-        ))}
-      </div>
+      <div 
+        className={`filter-sidebar 
+          ${isFilterVisible ? 'active' : ''} 
+          md:translate-x-0`}
+      >
+        <h2>Filtros</h2>
+        
+        {/* Genre Filter */}
+        <div className="filter-section">
+          <h3>Gênero</h3>
+          {genres.map(genre => (
+            <div 
+              key={genre} 
+              className="filter-checkbox"
+              onClick={() => handleGenreChange(genre)}
+            >
+              <input
+                type="checkbox"
+                id={`genre-${genre}`}
+                checked={selectedGenres.includes(genre)}
+                onChange={() => {}} // Empty onChange to suppress React warning
+                className="cursor-pointer"
+              />
+              <label htmlFor={`genre-${genre}`}>{genre}</label>
+            </div>
+          ))}
+        </div>
 
-      {/* Availability Filter */}
-      <div>
-        <h3 className="font-semibold mb-2">Disponibilidade</h3>
-        {availability.map(status => (
-          <div key={status} className="flex items-center mb-1">
-            <input
-              type="checkbox"
-              id={`availability-${status}`}
-              checked={selectedAvailability.includes(status)}
-              onChange={() => handleAvailabilityChange(status)}
-              className="mr-2"
-            />
-            <label htmlFor={`availability-${status}`}>{status}</label>
-          </div>
-        ))}
+        {/* Color Filter */}
+        <div className="filter-section">
+          <h3>Cor</h3>
+          {colors.map(color => (
+            <div 
+              key={color} 
+              className="filter-checkbox"
+              onClick={() => handleColorChange(color)}
+            >
+              <input
+                type="checkbox"
+                id={`color-${color}`}
+                checked={selectedColors.includes(color)}
+                onChange={() => {}} // Empty onChange to suppress React warning
+                className="cursor-pointer"
+              />
+              <label htmlFor={`color-${color}`}>{color}</label>
+            </div>
+          ))}
+        </div>
+
+        {/* Availability Filter */}
+        <div className="filter-section">
+          <h3>Disponibilidade</h3>
+          {availability.map(status => (
+            <div 
+              key={status} 
+              className="filter-checkbox"
+              onClick={() => handleAvailabilityChange(status)}
+            >
+              <input
+                type="checkbox"
+                id={`availability-${status}`}
+                checked={selectedAvailability.includes(status)}
+                onChange={() => {}} // Empty onChange to suppress React warning
+                className="cursor-pointer"
+              />
+              <label htmlFor={`availability-${status}`}>{status}</label>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

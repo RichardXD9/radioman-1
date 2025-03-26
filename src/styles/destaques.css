@@ -29,3 +29,16 @@
         margin-left: 0;
     }
 }
+
+p{
+    color:black;
+}
+
+h2{
+    color:black;
+    font-weight: bold;
+}
+
+.card-buy{
+    color:black;
+}

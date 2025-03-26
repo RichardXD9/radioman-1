@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import Card from './Card';
 import Filter from './Filter';
 import {Bokor} from 'next/font/google';
+import '../styles/filter.css';
 
 const bokorFont = Bokor({
     subsets: ["latin"],
@@ -41,6 +42,36 @@ const ProductList = () => {
             genre: 'Alternative',
             color: 'Red'
         },
+        {
+            id: 3,
+            image: '/images/adrenaline.jpg',
+            title: 'Deftones Alternate',
+            availability: 'Esgotado',
+            description: 'Adrenaline (Vinil) Limited Edition',
+            price: '35.00 €',
+            genre: 'Alternative',
+            color: 'Red'
+        },
+        {
+          id: 4,
+          image: '/images/adrenaline.jpg',
+          title: 'Deftones Alternate',
+          availability: 'Esgotado',
+          description: 'Adrenaline (Vinil) Limited Edition',
+          price: '35.00 €',
+          genre: 'Alternative',
+          color: 'Red'
+      },
+      {
+        id: 5,
+        image: '/images/adrenaline.jpg',
+        title: 'Deftones Alternate',
+        availability: 'Esgotado',
+        description: 'Adrenaline (Vinil) Limited Edition',
+        price: '35.00 €',
+        genre: 'Alternative',
+        color: 'Red'
+    },
     ];
 
     // Use useMemo to memoize the initial filtered products
