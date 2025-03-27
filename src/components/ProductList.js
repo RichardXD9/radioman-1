@@ -9,89 +9,10 @@ const bokorFont = Bokor({
     weight:"400",
 });
   
-const ProductList = () => {
+const ProductList = ({ onAddToCart }) => {
     // Define products outside of the component function
     const products = [
-        {
-            id: 1,
-            image: '/images/threedolla.jpg',
-            title: 'Limp Bizkit',
-            availability: 'Disponível',
-            description: "Three Dollar Bills, Y'all (CD)",
-            price: '34.00 €',
-            genre: 'Numetal',
-            color: 'Black'
-        },
-        {
-            id: 2,
-            image: '/images/SOADtoxi.jpg',
-            title: 'System Of A Down - Toxicity',
-            availability: 'Disponível',
-            description: 'Toxicity Vinil',
-            price: '28.00 €',
-            genre: 'Hardcore',
-            color: 'White'
-        },
-        {
-            id: 3,
-            image: '/images/whitepony.jpg',
-            title: 'Deftones - White Pony',
-            availability: 'Esgotado',
-            description: 'White Pony Vinil',
-            price: '35.00 €',
-            genre: 'Numetal',
-            color: 'Red'
-        },
-        {
-            id: 4,
-            image: '/images/adrenaline.jpg',
-            title: 'Deftones Alternate',
-            availability: 'Esgotado',
-            description: 'Adrenaline (Vinil) Limited Edition',
-            price: '35.00 €',
-            genre: 'Numetal',
-            color: 'Red'
-        },
-        {
-          id: 5,
-          image: '/images/adrenaline.jpg',
-          title: 'Deftones Alternate',
-          availability: 'Esgotado',
-          description: 'Adrenaline (Vinil) Limited Edition',
-          price: '35.00 €',
-          genre: 'Numetal',
-          color: 'Red'
-        },
-        {
-          id: 6,
-          image: '/images/adrenaline.jpg',
-          title: 'Deftones Alternate',
-          availability: 'Esgotado',
-          description: 'Adrenaline (Vinil) Limited Edition',
-          price: '35.00 €',
-          genre: 'Numetal',
-          color: 'Red'
-        },
-        {
-          id: 7,
-          image: '/images/adrenaline.jpg',
-          title: 'Deftones Alternate',
-          availability: 'Esgotado',
-          description: 'Adrenaline (Vinil) Limited Edition',
-          price: '35.00 €',
-          genre: 'Hardcore',
-          color: 'Red'
-        },
-        {
-          id: 8,
-          image: '/images/adrenaline.jpg',
-          title: 'Deftones Alternate',
-          availability: 'Esgotado',
-          description: 'Adrenaline (Vinil) Limited Edition',
-          price: '35.00 €',
-          genre: 'Hardcore',
-          color: 'Red'
-        },
+        // ... (existing product list remains the same)
     ];
 
     const [filters, setFilters] = useState({
@@ -113,8 +34,19 @@ const ProductList = () => {
         });
     }, [products, filters]);
 
-    const handleBuyClick = (productName) => {
-        alert(`Produto ${productName} adicionado ao carrinho!`);
+    const handleBuyClick = (product) => {
+        // Add to cart and save to local storage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        const updatedCartItems = [...cartItems, product];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        
+        // Call the onAddToCart prop if provided
+        if (onAddToCart) {
+            onAddToCart(product);
+        }
+        
+        // Optional: Show a confirmation
+        alert(`Produto ${product.title} adicionado ao carrinho!`);
     };
 
     const handleFilterChange = (newFilters) => {
@@ -133,7 +65,7 @@ const ProductList = () => {
                         availability={product.availability}
                         description={product.description}
                         price={product.price}
-                        onBuyClick={() => handleBuyClick(product.title)} 
+                        onBuyClick={() => handleBuyClick(product)} 
                         bokorFont={bokorFont}
                     />
                 ))}

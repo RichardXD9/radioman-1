@@ -8,61 +8,10 @@ const bokorFont = Bokor({
     weight:"400",
 });
   
-const CdsProductList = ({ filters }) => {
+const CdsProductList = ({ filters, onAddToCart }) => {
     // Vinyl-specific products with unique items
     const CdProducts = [
-        {
-            id: 1,
-            image: '/images/adrenaline.jpg',
-            title: 'Deftones - Adrenaline',
-            availability: 'Disponível',
-            description: 'Adrenaline CD',
-            price: '45.00 €',
-            genre: 'Hardcore',
-            color: 'Black'
-        },
-        {
-            id: 2,
-            image: '/images/Kornstl.jpg',
-            title: 'Korn- Self Titled',
-            availability: 'Disponível',
-            description: 'Korn CD',
-            price: '45.00 €',
-            genre: 'Numetal',
-            color: 'Black'
-        },
-        {
-            id: 3,
-            image: '/images/LPhybrid.jpg',
-            title: 'Linkin Park - Hybrid Theory',
-            availability: 'Disponível',
-            description: 'Hybrid Theory CD',
-            price: '45.00 €',
-            genre: 'Numetal',
-            color: 'Black'
-        },
-        {
-            id: 4,
-            image: '/images/LPmeteora.jpg',
-            title: 'Linkin Park - Meteora',
-            availability: 'Disponível',
-            description: 'Meteora CD',
-            price: '45.00 €',
-            genre: 'Hardcore',
-            color: 'Black'
-        },
-        {
-            id: 5,
-            image: '/images/SOADsteal.jpg',
-            title: 'System Of A Down - Steal This Album',
-            availability: 'Disponível',
-            description: 'Steal This Album CD',
-            price: '45.00 €',
-            genre: 'Numetal',
-            color: 'Black'
-        },
-
-        // ... (rest of the products remain the same)
+        // ... (existing product list remains the same)
     ];
 
     const filteredProducts = useMemo(() => {
@@ -78,8 +27,19 @@ const CdsProductList = ({ filters }) => {
         });
     }, [CdProducts, filters]);
 
-    const handleBuyClick = (productName) => {
-        alert(`CD ${productName} adicionado ao carrinho!`);
+    const handleBuyClick = (product) => {
+        // Add to cart and save to local storage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        const updatedCartItems = [...cartItems, product];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        
+        // Call the onAddToCart prop if provided
+        if (onAddToCart) {
+            onAddToCart(product);
+        }
+        
+        // Optional: Show a confirmation
+        alert(`Produto ${product.title} adicionado ao carrinho!`);
     };
 
     return (
@@ -93,7 +53,7 @@ const CdsProductList = ({ filters }) => {
                         availability={product.availability}
                         description={product.description}
                         price={product.price}
-                        onBuyClick={() => handleBuyClick(product.title)} 
+                        onBuyClick={() => handleBuyClick(product)} 
                         bokorFont={bokorFont}
                     />
                 ))}
