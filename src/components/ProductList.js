@@ -10,9 +10,39 @@ const bokorFont = Bokor({
 });
   
 const ProductList = ({ onAddToCart }) => {
-    // Define products outside of the component function
+    // Restore the complete product list
     const products = [
-        // ... (existing product list remains the same)
+        {
+            id: 1,
+            image: '/images/adrenaline.jpg',
+            title: 'Deftones - Adrenaline',
+            availability: 'Disponível',
+            description: 'Adrenaline Vinil',
+            price: '45.00 €',
+            genre: 'Hardcore',
+            color: 'Preto'
+        },
+        {
+            id: 2,
+            image: '/images/Kornstl.jpg',
+            title: 'Korn - Self Titled',
+            availability: 'Disponível',
+            description: 'Korn Vinil',
+            price: '45.00 €',
+            genre: 'Numetal',
+            color: 'Branco'
+        },
+        {
+            id: 3,
+            image: '/images/LPhybrid.jpg',
+            title: 'Linkin Park - Hybrid Theory',
+            availability: 'Disponível',
+            description: 'Hybrid Theory Vinil',
+            price: '45.00 €',
+            genre: 'Alternative',
+            color: 'Vermelho'
+        },
+        // Add more products here
     ];
 
     const [filters, setFilters] = useState({

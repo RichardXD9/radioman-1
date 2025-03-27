@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import Card from './Card';
 import {Bokor} from 'next/font/google';
 import '../styles/filter.css';
@@ -8,10 +8,40 @@ const bokorFont = Bokor({
     weight:"400",
 });
   
-const CdsProductList = ({ filters, onAddToCart }) => {
-    // Vinyl-specific products with unique items
+const CdsProductList = ({ filters = { genres: [], colors: [], availability: [] }, onAddToCart }) => {
+    // CD-specific products with unique items
     const CdProducts = [
-        // ... (existing product list remains the same)
+        {
+            id: 1,
+            image: '/images/adrenaline.jpg',
+            title: 'Deftones - Adrenaline CD',
+            availability: 'Disponível',
+            description: 'Adrenaline CD',
+            price: '25.00 €',
+            genre: 'Hardcore',
+            color: 'Preto'
+        },
+        {
+            id: 2,
+            image: '/images/Kornstl.jpg',
+            title: 'Korn - Self Titled CD',
+            availability: 'Disponível',
+            description: 'Korn CD',
+            price: '25.00 €',
+            genre: 'Numetal',
+            color: 'Branco'
+        },
+        {
+            id: 3,
+            image: '/images/LPhybrid.jpg',
+            title: 'Linkin Park - Hybrid Theory CD',
+            availability: 'Disponível',
+            description: 'Hybrid Theory CD',
+            price: '25.00 €',
+            genre: 'Alternative',
+            color: 'Vermelho'
+        },
+        // Add more CD products here
     ];
 
     const filteredProducts = useMemo(() => {
@@ -43,21 +73,19 @@ const CdsProductList = ({ filters, onAddToCart }) => {
     };
 
     return (
-        <div className="flex">
-            <div className="product-list ml-64">
-                {filteredProducts.map((product) => (
-                    <Card
-                        key={product.id}
-                        image={product.image}
-                        title={product.title}
-                        availability={product.availability}
-                        description={product.description}
-                        price={product.price}
-                        onBuyClick={() => handleBuyClick(product)} 
-                        bokorFont={bokorFont}
-                    />
-                ))}
-            </div>
+        <div className="product-list ml-64">
+            {filteredProducts.map((product) => (
+                <Card
+                    key={product.id}
+                    image={product.image}
+                    title={product.title}
+                    availability={product.availability}
+                    description={product.description}
+                    price={product.price}
+                    onBuyClick={() => handleBuyClick(product)}
+                    bokorFont={bokorFont}
+                />
+            ))}
         </div>
     );
 };

@@ -34,7 +34,7 @@ const ShoppingCart = ({ cartItems, onRemoveItem }) => {
             </div>
             <div className="cart-total">
                 <span className="total-label">Total:</span>
-                <span className="total-amount">{calculateTotal()} €</span>
+                <span className="total-amount">{calculateTotal()}€</span>
             </div>
         </div>
     );

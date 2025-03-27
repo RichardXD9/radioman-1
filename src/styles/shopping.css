@@ -1,13 +1,17 @@
 .shopping-cart-container {
-    margin-top: 80px; /* Adjust based on your navbar height */
+    margin-top: 5px; /* Adjust based on your navbar height */
     padding: 20px;
+    margin-left:-300px;
+    
 }
 
-.shopping-cart-title {
+.shopping-cart-header {
     font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
+    color: #000000;
     text-align: center;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-top: 25px;
 }
 
 .empty-cart-message {
@@ -48,20 +52,22 @@
 }
 
 .cart-item-details {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    margin-right: -300px;
+    
 }
 
 .cart-item-title {
+
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
 }
 
 .cart-item-price {
-    color: #666;
-    margin: 5px 0;
+    color: #000000;
+    margin-top: 5px;
 }
 
 .remove-item-btn {
