@@ -1,8 +1,8 @@
 .shopping-cart-container {
     margin-top: 5px; /* Adjust based on your navbar height */
     padding: 20px;
-    margin-left:-300px;
-    
+    margin-left:-450px;
+    position: relative
 }
 
 .shopping-cart-header {
@@ -11,7 +11,7 @@
     text-align: center;
     font-weight: bold;
     margin-left: 25px;
-    margin-top: 25px;
+    margin-top: 100px;
 }
 
 .empty-cart-message {
@@ -22,7 +22,7 @@
 }
 
 .shopping-cart {
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     background-color: #f9f9f9;
     border-radius: 10px;
@@ -54,20 +54,26 @@
 .cart-item-details {
     display: flex;
     flex-direction: column;
-    margin-right: -300px;
+    margin-right: -5px;
+    width: 100%; /* Add this to ensure full width */
+    justify-content: space-between; /* This will push items to opposite sides */
+    align-items: flex-end;
     
 }
 
 .cart-item-title {
-
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
+    align-self: flex-start;
 }
 
 .cart-item-price {
     color: #000000;
     margin-top: 5px;
+    /* Add this to ensure price is on the right */
+    align-self: flex-end;
+    font-size: 1.5em;
 }
 
 .remove-item-btn {
@@ -86,15 +92,16 @@
 }
 
 .cart-total {
-    margin-top: 20px;
-    text-align: right;
+    margin-top: -200px;
+    position: absolute; /* Position absolutely relative to the container */
+    right: 300px; /* Adjust this value to move further right */
     font-size: 1.5rem;
 }
 
 .total-label {
     margin-right: 10px;
     font-weight: bold;
-    color: #333;
+    color: #000000;
 }
 
 .total-amount {
@@ -102,10 +109,17 @@
     font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
     .cart-item {
         flex-direction: column;
         text-align: center;
+    }
+    .shopping-cart-container {
+        margin-left: 0;
+    }
+    .cart-total {
+        position: static; /* Reset positioning for smaller screens */
+        text-align: right;
     }
 
     .cart-item-image {
