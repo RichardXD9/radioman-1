@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from "../components/Navbar";
 import Filter from '../components/Filter';
 import VinilProductList from '../components/VinilProductList';
@@ -12,12 +12,20 @@ const Vinil = () => {
 
     const [cartItems, setCartItems] = useState([]);
 
+    useEffect(() => {
+        // Retrieve cart items from local storage when component mounts
+        const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        setCartItems(storedCartItems);
+    }, []);
+
     const handleFilterChange = (newFilters) => {
         setFilters(newFilters);
     };
 
     const handleAddToCart = (product) => {
-        setCartItems([...cartItems, product]);
+        const updatedCartItems = [...cartItems, product];
+        setCartItems(updatedCartItems);
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     };
 
     return (
@@ -25,12 +33,13 @@ const Vinil = () => {
             <Navbar />
             <div className="flex">
                 <Filter onFilterChange={handleFilterChange} />
-                <VinilProductList filters={filters} onAddToCart={handleAddToCart} />
+                <VinilProductList 
+                    filters={filters} 
+                    onAddToCart={handleAddToCart} 
+                />
             </div>
         </div>
     );
 };
 
 export default Vinil;
-
-

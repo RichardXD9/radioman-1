@@ -1,8 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import Card from './Card';
 import {Bokor} from 'next/font/google';
 import '../styles/filter.css';
-
 
 const bokorFont = Bokor({
     subsets: ["latin"],
@@ -25,11 +24,11 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
         {
             id: 2,
             image: '/images/Kornstl.jpg',
-            title: 'Korn- Self Titled',
+            title: 'Korn - Self Titled',
             availability: 'Disponível',
             description: 'Korn Vinil',
             price: '45.00 €',
-            genre: 'Numetal',
+            genre: 'Hardcore',
             color: 'Black'
         },
         {
@@ -39,30 +38,9 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             availability: 'Disponível',
             description: 'Hybrid Theory Vinil',
             price: '45.00 €',
-            genre: 'Numetal',
-            color: 'Black'
-        },
-        {
-            id: 4,
-            image: '/images/LPmeteora.jpg',
-            title: 'Linkin Park - Meteora',
-            availability: 'Disponível',
-            description: 'Meteora Vinil',
-            price: '45.00 €',
             genre: 'Hardcore',
             color: 'Black'
         },
-        {
-            id: 5,
-            image: '/images/SOADsteal.jpg',
-            title: 'System Of A Down - Steal This Album',
-            availability: 'Disponível',
-            description: 'Steal This Album Vinil',
-            price: '45.00 €',
-            genre: 'Numetal',
-            color: 'Black'
-        },
-
         // ... (rest of the products remain the same)
     ];
 
@@ -79,9 +57,21 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
         });
     }, [vinylProducts, filters]);
 
-    const handleBuyClick = (productName) => {
-        alert(`Produto ${productName} adicionado ao carrinho!`);
+    const handleBuyClick = (product) => {
+        // Add to cart and save to local storage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        const updatedCartItems = [...cartItems, product];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        
+        // Call the onAddToCart prop if provided
+        if (onAddToCart) {
+            onAddToCart(product);
+        }
+        
+        // Optional: Show a confirmation
+        alert(`Produto ${product.title} adicionado ao carrinho!`);
     };
+
     return (
         <div className="product-list ml-64">
             {filteredProducts.map((product) => (
@@ -92,17 +82,12 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
                     availability={product.availability}
                     description={product.description}
                     price={product.price}
-
-                    onBuyClick={() => {
-                    handleBuyClick(product.title);
-                    onAddToCart(product);
-                    }} // Use onAddToCart prop
+                    onBuyClick={() => handleBuyClick(product)}
                     bokorFont={bokorFont}
-                
                 />
-            
             ))}
         </div>
     );
 };
+
 export default VinilProductList;
