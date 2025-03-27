@@ -51,7 +51,7 @@ function Navbar() {
             <ClerkProvider>
                 <header className="button-container">
                     <div className="icons flex items-center gap-4">
-                        <Link href="/pagina-destino" className="icon-link">
+                        <Link href="/shoppingcart" className="icon-link">
                             <ShoppingCartIcon className="iconcart text-blue-500" />
                         </Link>
                     </div>

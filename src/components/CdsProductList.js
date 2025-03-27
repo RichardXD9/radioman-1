@@ -3,21 +3,20 @@ import Card from './Card';
 import {Bokor} from 'next/font/google';
 import '../styles/filter.css';
 
-
 const bokorFont = Bokor({
     subsets: ["latin"],
     weight:"400",
 });
   
-const VinilProductList = ({ filters = { genres: [], colors: [], availability: [] }, onAddToCart }) => {
+const CdsProductList = ({ filters }) => {
     // Vinyl-specific products with unique items
-    const vinylProducts = [
+    const CdProducts = [
         {
             id: 1,
             image: '/images/adrenaline.jpg',
             title: 'Deftones - Adrenaline',
             availability: 'Disponível',
-            description: 'Adrenaline Vinil',
+            description: 'Adrenaline CD',
             price: '45.00 €',
             genre: 'Hardcore',
             color: 'Black'
@@ -27,7 +26,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             image: '/images/Kornstl.jpg',
             title: 'Korn- Self Titled',
             availability: 'Disponível',
-            description: 'Korn Vinil',
+            description: 'Korn CD',
             price: '45.00 €',
             genre: 'Numetal',
             color: 'Black'
@@ -37,7 +36,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             image: '/images/LPhybrid.jpg',
             title: 'Linkin Park - Hybrid Theory',
             availability: 'Disponível',
-            description: 'Hybrid Theory Vinil',
+            description: 'Hybrid Theory CD',
             price: '45.00 €',
             genre: 'Numetal',
             color: 'Black'
@@ -47,7 +46,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             image: '/images/LPmeteora.jpg',
             title: 'Linkin Park - Meteora',
             availability: 'Disponível',
-            description: 'Meteora Vinil',
+            description: 'Meteora CD',
             price: '45.00 €',
             genre: 'Hardcore',
             color: 'Black'
@@ -57,7 +56,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             image: '/images/SOADsteal.jpg',
             title: 'System Of A Down - Steal This Album',
             availability: 'Disponível',
-            description: 'Steal This Album Vinil',
+            description: 'Steal This Album CD',
             price: '45.00 €',
             genre: 'Numetal',
             color: 'Black'
@@ -67,7 +66,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
     ];
 
     const filteredProducts = useMemo(() => {
-        return vinylProducts.filter(product => {
+        return CdProducts.filter(product => {
             const genreMatch = filters.genres.length === 0 || 
                 filters.genres.includes(product.genre);
             const colorMatch = filters.colors.length === 0 || 
@@ -77,32 +76,30 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             
             return genreMatch && colorMatch && availabilityMatch;
         });
-    }, [vinylProducts, filters]);
+    }, [CdProducts, filters]);
 
     const handleBuyClick = (productName) => {
-        alert(`Produto ${productName} adicionado ao carrinho!`);
+        alert(`CD ${productName} adicionado ao carrinho!`);
     };
-    return (
-        <div className="product-list ml-64">
-            {filteredProducts.map((product) => (
-                <Card
-                    key={product.id}
-                    image={product.image}
-                    title={product.title}
-                    availability={product.availability}
-                    description={product.description}
-                    price={product.price}
 
-                    onBuyClick={() => {
-                    handleBuyClick(product.title);
-                    onAddToCart(product);
-                    }} // Use onAddToCart prop
-                    bokorFont={bokorFont}
-                
-                />
-            
-            ))}
+    return (
+        <div className="flex">
+            <div className="product-list ml-64">
+                {filteredProducts.map((product) => (
+                    <Card
+                        key={product.id}
+                        image={product.image}
+                        title={product.title}
+                        availability={product.availability}
+                        description={product.description}
+                        price={product.price}
+                        onBuyClick={() => handleBuyClick(product.title)} 
+                        bokorFont={bokorFont}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
-export default VinilProductList;
+
+export default CdsProductList;

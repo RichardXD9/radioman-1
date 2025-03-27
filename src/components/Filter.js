@@ -16,7 +16,7 @@ const Filter = ({ onFilterChange }) => {
 
   // Predefined filter options
   const genres = ['Numetal', 'Hardcore', 'Alternative', 'Punk'];
-  const colors = ['Black', 'White', 'Red', 'Blue'];
+  const colors = ['Preto', 'Branco', 'Vermelho'];
   const availability = ['Disponível', 'Esgotado'];
 
   // Handle genre selection
@@ -99,9 +99,20 @@ const Filter = ({ onFilterChange }) => {
                 onChange={() => {}} // Empty onChange to suppress React warning
                 className="cursor-pointer"
               />
-              <label htmlFor={`genre-${genre}`}>{genre}</label>
+             <label 
+                htmlFor={`genre-${genre}`} 
+                style={{
+
+                  color: genre === 'Numetal' ? 'black' : 
+                         genre === 'Hardcore' ? 'black' : 
+                         genre === 'Alternative' ? 'black' : 
+                         genre === 'Punk' ? 'black' :'inherit'
+                }}
+              >
+                {genre}
+              </label>
             </div>
-          ))}
+          ))} 
         </div>
 
         {/* Color Filter */}
@@ -120,7 +131,17 @@ const Filter = ({ onFilterChange }) => {
                 onChange={() => {}} // Empty onChange to suppress React warning
                 className="cursor-pointer"
               />
-              <label htmlFor={`color-${color}`}>{color}</label>
+              <label 
+                htmlFor={`color-${color}`} 
+                style={{
+
+                  color: color === 'Preto' ? 'black' : 
+                         color === 'Branco' ? 'black' : 
+                         color === 'Vermelho' ? 'black' : 'inherit'
+                }}
+              >
+                {color}
+              </label>
             </div>
           ))}
         </div>
@@ -141,7 +162,17 @@ const Filter = ({ onFilterChange }) => {
                 onChange={() => {}} // Empty onChange to suppress React warning
                 className="cursor-pointer"
               />
-              <label htmlFor={`availability-${status}`}>{status}</label>
+               <label 
+                htmlFor={`status-${status}`} 
+                style={{
+
+                  color: status === 'Disponível' ? 'black' : 
+                  status === 'Esgotado' ? 'black' : 'inherit'
+  
+                }}
+              >
+                {status}
+              </label>
             </div>
           ))}
         </div>
@@ -155,4 +186,4 @@ Filter.propTypes = {
   onFilterChange: PropTypes.func.isRequired
 };
 
-export default Filter;  
+export default Filter;

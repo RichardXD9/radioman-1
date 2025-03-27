@@ -1,0 +1,19 @@
+.shopping-cart {
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.shopping-cart h2 {
+    margin-bottom: 10px;
+}
+
+.shopping-cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shopping-cart li {
+    margin-bottom: 5px;
+}

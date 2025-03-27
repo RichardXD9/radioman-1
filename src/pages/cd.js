@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
 import Navbar from "../components/Navbar";
 import Filter from '../components/Filter';
-import VinilProductList from '../components/VinilProductList';
+import CdsProductList from '../components/CdsProductList';
 
-const Vinil = () => {
+const Cd = () => {
     const [filters, setFilters] = useState({
         genres: [],
         colors: [],
         availability: []
     });
 
-    const [cartItems, setCartItems] = useState([]);
-
     const handleFilterChange = (newFilters) => {
         setFilters(newFilters);
-    };
-
-    const handleAddToCart = (product) => {
-        setCartItems([...cartItems, product]);
     };
 
     return (
@@ -25,12 +19,10 @@ const Vinil = () => {
             <Navbar />
             <div className="flex">
                 <Filter onFilterChange={handleFilterChange} />
-                <VinilProductList filters={filters} onAddToCart={handleAddToCart} />
+                <CdsProductList filters={filters} />
             </div>
         </div>
     );
 };
 
-export default Vinil;
-
-
+export default Cd;
