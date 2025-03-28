@@ -2,6 +2,7 @@
   "name": "papyo2",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -12,23 +13,31 @@
   "dependencies": {
     "@clerk/nextjs": "^6.12.9",
     "@heroicons/react": "^2.2.0",
+    "crypto-js": "^4.2.0",
+    "css-loader": "^7.1.2",
     "globals": "^16.0.0",
+    "jsonwebtoken": "^9.0.2",
     "next": "^15.2.4",
     "prop-types": "^15.8.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^8.57.1",
+    "@tailwindcss/postcss": "^4.0.17",
     "@types/node": "^20.17.28",
     "@types/react": "^18.3.20",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
-    "eslint": "^8.57.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.0",
     "eslint-config-next": "^15.2.4",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "typescript": "^5.4.5",
-     "@microsoft/rush-stack-compiler": "^5.151.0"
+    "lightningcss": "^1.29.3",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "tailwindcss": "^4.0.17",
+    "typescript": "^5.4.5"
   }
 }

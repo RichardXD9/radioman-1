@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import ShoppingCart from '../components/ShoppingCart';
-import '../styles/shopping.css'; // Make sure to import the CSS
 import { Bokor } from 'next/font/google';
 
 const bokorFont = Bokor({
