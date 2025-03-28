@@ -1,0 +1,78 @@
+'Log files:
+C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-03-28T11_50_32_977Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: @typescript-eslint/eslint-plugin@7.18.0
+Found: eslint@9.3.0
+node_modules/eslint
+  peer eslint@"^6.0.0 || ^7.0.0 || >=8.0.0" from @eslint-community/eslint-utils@4.5.1
+  node_modules/@eslint-community/eslint-utils
+    @eslint-community/eslint-utils@"^4.4.0" from @typescript-eslint/utils@7.18.0
+    node_modules/@typescript-eslint/utils
+      @typescript-eslint/utils@"7.18.0" from @typescript-eslint/eslint-plugin@7.18.0
+      node_modules/@typescript-eslint/eslint-plugin
+        dev @typescript-eslint/eslint-plugin@"^7.8.0" from the root project
+        @typescript-eslint/eslint-plugin@"^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0" from eslint-config-next@15.2.4
+        node_modules/eslint-config-next
+          dev eslint-config-next@"15.2.4" from the root project
+      @typescript-eslint/utils@"7.18.0" from @typescript-eslint/type-utils@7.18.0
+      node_modules/@typescript-eslint/type-utils
+        @typescript-eslint/type-utils@"7.18.0" from @typescript-eslint/eslint-plugin@7.18.0
+        node_modules/@typescript-eslint/eslint-plugin
+          dev @typescript-eslint/eslint-plugin@"^7.8.0" from the root project
+          @typescript-eslint/eslint-plugin@"^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0" from eslint-config-next@15.2.4
+          node_modules/eslint-config-next
+            dev eslint-config-next@"15.2.4" from the root project
+    @eslint-community/eslint-utils@"^4.2.0" from eslint@9.3.0
+  peer eslint@"*" from eslint-import-resolver-typescript@3.10.0
+  node_modules/eslint-import-resolver-typescript
+    eslint-import-resolver-typescript@"^3.5.2" from eslint-config-next@15.2.4
+    node_modules/eslint-config-next
+      dev eslint-config-next@"15.2.4" from the root project
+  peer eslint@"^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8 || ^9" from eslint-plugin-import@2.31.0
+  node_modules/eslint-plugin-import
+    peerOptional eslint-plugin-import@"*" from eslint-import-resolver-typescript@3.10.0
+    node_modules/eslint-import-resolver-typescript
+      eslint-import-resolver-typescript@"^3.5.2" from eslint-config-next@15.2.4
+      node_modules/eslint-config-next
+        dev eslint-config-next@"15.2.4" from the root project
+    eslint-plugin-import@"^2.31.0" from eslint-config-next@15.2.4
+    node_modules/eslint-config-next
+      dev eslint-config-next@"15.2.4" from the root project
+  peer eslint@"^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9" from eslint-plugin-jsx-a11y@6.10.2
+  node_modules/eslint-plugin-jsx-a11y
+    eslint-plugin-jsx-a11y@"^6.10.0" from eslint-config-next@15.2.4
+    node_modules/eslint-config-next
+      dev eslint-config-next@"15.2.4" from the root project
+  peer eslint@"^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0" from eslint-plugin-react-hooks@5.2.0
+  node_modules/eslint-plugin-react-hooks
+    dev eslint-plugin-react-hooks@"^5.2.0" from the root project
+    eslint-plugin-react-hooks@"^5.0.0" from eslint-config-next@15.2.4
+    node_modules/eslint-config-next
+      dev eslint-config-next@"15.2.4" from the root project
+  dev eslint@"^9.3.0" from the root project
+  peer eslint@"^7.23.0 || ^8.0.0 || ^9.0.0" from eslint-config-next@15.2.4
+  node_modules/eslint-config-next
+    dev eslint-config-next@"15.2.4" from the root project
+
+Could not resolve dependency:
+peer eslint@"^8.56.0" from @typescript-eslint/eslint-plugin@7.18.0
+node_modules/@typescript-eslint/eslint-plugin
+  dev @typescript-eslint/eslint-plugin@"^7.8.0" from the root project
+  @typescript-eslint/eslint-plugin@"^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0" from eslint-config-next@15.2.4
+  node_modules/eslint-config-next
+    dev eslint-config-next@"15.2.4" from the root project
+
+Conflicting peer dependency: eslint@8.57.1
+node_modules/eslint
+  peer eslint@"^8.56.0" from @typescript-eslint/eslint-plugin@7.18.0
+  node_modules/@typescript-eslint/eslint-plugin
+    dev @typescript-eslint/eslint-plugin@"^7.8.0" from the root project
+    @typescript-eslint/eslint-plugin@"^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0" from eslint-config-next@15.2.4
+    node_modules/eslint-config-next
+      dev eslint-config-next@"15.2.4" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.
