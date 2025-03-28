@@ -32,7 +32,7 @@
     margin-bottom: 1.5rem;
     font-weight:bold;
     text-align: center;
-    font-size:2rem;
+    font-size:2.2rem;
   }
   
   .filter-section {
@@ -40,7 +40,7 @@
   }
   
   .filter-section h3 {
-    color: #b41f1f;
+    color: #000000;
     margin-bottom: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -49,20 +49,25 @@
     font-size: 2rem;
   }
   
-  .filter-checkbox {
+  .filter-checkbox  {
     display: flex;
+    justify-content: space-between;  /* Distribui o espaço entre o texto e a checkbox */
     align-items: center;
     margin-bottom: 0.75rem;
     cursor: pointer;
     transition: background-color 0.2s ease;
     padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem; 
-     
+    border-radius: 0.375rem;
+    
   }
   
+  
   .filter-checkbox:hover {
-    background-color: #f3f4f6;
+    background-color: #989ca3;
   }
+  
+  
+
   
   .filter-checkbox input[type="checkbox"] {
     appearance: none;
@@ -80,8 +85,8 @@
   
   .filter-checkbox label {
     flex-grow: 1;
-    color: #4b5563;
-    font-size: 0.9rem;
+    color: #000000;
+    font-size: 1rem;
   }
   .filter-checkbox input[type="checkbox"]:checked {
     background-color: #000000;

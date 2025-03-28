@@ -45,7 +45,7 @@ h2{
 .card-buy{
     margin-top:5px;
     color:black;
-    border: 2px solid rgb(56, 200, 28); 
+  background-color: rgb(56, 200, 28);; 
     padding: 5px 10px;
     border-radius: 10px;
     font-size:1.2em;

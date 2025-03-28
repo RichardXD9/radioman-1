@@ -123,6 +123,7 @@ const Filter = ({ onFilterChange }) => {
               key={color} 
               className="filter-checkbox"
               onClick={() => handleColorChange(color)}
+              
             >
               <input
                 type="checkbox"
