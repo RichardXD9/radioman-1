@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { UserIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import '../styles/Navbar.css';
 import { Bokor } from 'next/font/google';
 const bokorFont = Bokor({
     subsets: ["latin"],

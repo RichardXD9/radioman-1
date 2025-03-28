@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Bokor } from 'next/font/google';
-import '../styles/filter.css';
+
 
 const bokorFont = Bokor({
     subsets: ["latin"],

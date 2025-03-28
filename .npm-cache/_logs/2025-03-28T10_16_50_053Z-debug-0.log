@@ -1,0 +1,37 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.2.0
+2 info using node@v22.14.0
+3 silly config load:file:C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\richard.goltara\testeyau\radioman-1\.npmrc
+5 silly config load:file:C:\Users\richard.goltara\.npmrc
+6 silly config load:file:C:\Users\richard.goltara\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install @typescript-eslint
+8 verbose argv "install" "--save-dev" "@typescript-eslint"
+9 verbose logfile logs-max:10 dir:C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-03-28T10_16_50_053Z-
+10 verbose logfile C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-03-28T10_16_50_053Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly logfile done cleaning log files
+14 verbose stack Error: Invalid tag name "@typescript-eslint" of package "@typescript-eslint": Tags may not have any characters that encodeURIComponent encodes.
+14 verbose stack     at invalidTagName (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:143:15)
+14 verbose stack     at fromRegistry (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:471:13)
+14 verbose stack     at resolve (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:114:12)
+14 verbose stack     at npa (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\npm-package-arg\lib\npa.js:56:10)
+14 verbose stack     at C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:507:18
+14 verbose stack     at Array.map (<anonymous>)
+14 verbose stack     at #add (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:504:27)
+14 verbose stack     at #applyUserRequestsToNode (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:473:22)
+14 verbose stack     at #applyUserRequests (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:408:42)
+14 verbose stack     at Arborist.buildIdealTree (C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:180:36)
+15 error code EINVALIDTAGNAME
+16 error Invalid tag name "@typescript-eslint" of package "@typescript-eslint": Tags may not have any characters that encodeURIComponent encodes.
+17 silly unfinished npm timer reify 1743157010674
+18 silly unfinished npm timer reify:loadTrees 1743157010674
+19 silly unfinished npm timer idealTree:userRequests 1743157010886
+20 verbose cwd C:\Users\richard.goltara\testeyau\radioman-1
+21 verbose os Windows_NT 10.0.19045
+22 verbose node v22.14.0
+23 verbose npm  v11.2.0
+24 verbose exit 1
+25 verbose code 1
+26 error A complete log of this run can be found in: C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-03-28T10_16_50_053Z-debug-0.log

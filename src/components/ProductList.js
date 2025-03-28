@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import Card from './Card';
 import Filter from './Filter';
 import {Bokor} from 'next/font/google';
-import '../styles/filter.css';
+
 
 const bokorFont = Bokor({
     subsets: ["latin"],
