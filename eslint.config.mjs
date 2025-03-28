@@ -1,20 +1,30 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import eslint from '@eslint/js';
+import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import reactHooks from 'eslint-plugin-react-hooks';
+import next from 'eslint-config-next';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-export default [
-  ...compat.extends("next/core-web-vitals"),
-  {
-    languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module'
+export default {
+  extends: [
+    eslint.configs.recommended,
+    next,  // Extending Next.js ESLint configuration
+    reactRecommended,
+    reactHooks.recommended, // Use reactHooks.recommended instead of reactHooks directly
+  ],
+  languageOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    globals: {
+      // Add any global variables here
+    },
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true
+      }
     }
+  },
+  rules: {
+    // Customize rules as needed
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'warn'
   }
-];
+};
