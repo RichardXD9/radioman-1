@@ -50,3 +50,6 @@ h2{
     border-radius: 10px;
     font-size:1.2em;
 }
+.card-buy:hover{
+    cursor:pointer;
+}   

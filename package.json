@@ -2,7 +2,7 @@
   "name": "papyo2",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
+  
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.57.1",
-    "@tailwindcss/postcss": "^4.0.17",
     "@types/node": "^20.17.28",
     "@types/react": "^18.3.20",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
