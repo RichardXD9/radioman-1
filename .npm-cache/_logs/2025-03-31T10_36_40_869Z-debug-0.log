@@ -1,0 +1,1602 @@
+0 verbose cli C:\Program Files\Nodejs\node.exe C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.2.0
+2 info using node@v20.19.0
+3 silly config load:file:C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\richard.goltara\testeyau\radioman-1\.npmrc
+5 silly config load:file:C:\Users\richard.goltara\.npmrc
+6 silly config load:file:C:\Users\richard.goltara\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm uninstall eslint @eslint/js eslint-config-next eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/eslint-plugin @typescript-eslint/parser
+8 verbose argv "uninstall" "eslint" "@eslint/js" "eslint-config-next" "eslint-plugin-react" "eslint-plugin-react-hooks" "@typescript-eslint/eslint-plugin" "@typescript-eslint/parser"
+9 verbose logfile logs-max:10 dir:C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-03-31T10_36_40_869Z-
+10 verbose logfile C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-03-31T10_36_40_869Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly logfile done cleaning log files
+14 silly idealTree buildDeps
+15 silly reify mark retired [
+15 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint-community\\eslint-utils'
+15 silly reify ]
+16 silly reify mark retired [
+16 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint-community\\regexpp'
+16 silly reify ]
+17 silly reify mark retired [
+17 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\config-array'
+17 silly reify ]
+18 silly reify mark retired [
+18 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\config-helpers'
+18 silly reify ]
+19 silly reify mark retired [
+19 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\core'
+19 silly reify ]
+20 silly reify mark retired [
+20 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\eslintrc'
+20 silly reify ]
+21 silly reify mark retired [
+21 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\js'
+21 silly reify ]
+22 silly reify mark retired [
+22 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\object-schema'
+22 silly reify ]
+23 silly reify mark retired [
+23 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\plugin-kit'
+23 silly reify ]
+24 silly reify mark retired [
+24 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanfs\\core'
+24 silly reify ]
+25 silly reify mark retired [
+25 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanfs\\node'
+25 silly reify ]
+26 silly reify mark retired [
+26 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanwhocodes\\module-importer'
+26 silly reify ]
+27 silly reify mark retired [
+27 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanwhocodes\\retry'
+27 silly reify ]
+28 silly reify mark retired [
+28 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\eslint-plugin-next'
+28 silly reify ]
+29 silly reify mark retired [
+29 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\fs.scandir'
+29 silly reify ]
+30 silly reify mark retired [
+30 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\fs.stat'
+30 silly reify ]
+31 silly reify mark retired [
+31 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\fs.walk'
+31 silly reify ]
+32 silly reify mark retired [
+32 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nolyfill\\is-core-module'
+32 silly reify ]
+33 silly reify mark retired [
+33 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@rtsao\\scc'
+33 silly reify ]
+34 silly reify mark retired [
+34 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@rushstack\\eslint-patch'
+34 silly reify ]
+35 silly reify mark retired [
+35 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\estree'
+35 silly reify ]
+36 silly reify mark retired [
+36 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\json-schema'
+36 silly reify ]
+37 silly reify mark retired [
+37 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\json5'
+37 silly reify ]
+38 silly reify mark retired [
+38 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\eslint-plugin'
+38 silly reify ]
+39 silly reify mark retired [
+39 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\parser'
+39 silly reify ]
+40 silly reify mark retired [
+40 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\scope-manager'
+40 silly reify ]
+41 silly reify mark retired [
+41 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\type-utils'
+41 silly reify ]
+42 silly reify mark retired [
+42 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\types'
+42 silly reify ]
+43 silly reify mark retired [
+43 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\typescript-estree'
+43 silly reify ]
+44 silly reify mark retired [
+44 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\utils'
+44 silly reify ]
+45 silly reify mark retired [
+45 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\visitor-keys'
+45 silly reify ]
+46 silly reify mark retired [
+46 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@unrs\\resolver-binding-win32-x64-msvc'
+46 silly reify ]
+47 silly reify mark retired [
+47 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\acorn',
+47 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\acorn',
+47 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\acorn.cmd',
+47 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\acorn.ps1'
+47 silly reify ]
+48 silly reify mark retired [
+48 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\acorn-jsx'
+48 silly reify ]
+49 silly reify mark retired [
+49 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ajv'
+49 silly reify ]
+50 silly reify mark retired [
+50 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ansi-styles'
+50 silly reify ]
+51 silly reify mark retired [
+51 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\aria-query'
+51 silly reify ]
+52 silly reify mark retired [
+52 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array-buffer-byte-length'
+52 silly reify ]
+53 silly reify mark retired [
+53 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array-includes'
+53 silly reify ]
+54 silly reify mark retired [
+54 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.findlast'
+54 silly reify ]
+55 silly reify mark retired [
+55 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.findlastindex'
+55 silly reify ]
+56 silly reify mark retired [
+56 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.flat'
+56 silly reify ]
+57 silly reify mark retired [
+57 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.flatmap'
+57 silly reify ]
+58 silly reify mark retired [
+58 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.tosorted'
+58 silly reify ]
+59 silly reify mark retired [
+59 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\arraybuffer.prototype.slice'
+59 silly reify ]
+60 silly reify mark retired [
+60 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ast-types-flow'
+60 silly reify ]
+61 silly reify mark retired [
+61 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\async-function'
+61 silly reify ]
+62 silly reify mark retired [
+62 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\available-typed-arrays'
+62 silly reify ]
+63 silly reify mark retired [
+63 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\axe-core'
+63 silly reify ]
+64 silly reify mark retired [
+64 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\axobject-query'
+64 silly reify ]
+65 silly reify mark retired [
+65 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\balanced-match'
+65 silly reify ]
+66 silly reify mark retired [
+66 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\brace-expansion'
+66 silly reify ]
+67 silly reify mark retired [
+67 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\braces'
+67 silly reify ]
+68 silly reify mark retired [
+68 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\call-bind'
+68 silly reify ]
+69 silly reify mark retired [
+69 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\call-bind-apply-helpers'
+69 silly reify ]
+70 silly reify mark retired [
+70 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\call-bound'
+70 silly reify ]
+71 silly reify mark retired [
+71 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\chalk'
+71 silly reify ]
+72 silly reify mark retired [
+72 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\concat-map'
+72 silly reify ]
+73 silly reify mark retired [
+73 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\cross-spawn'
+73 silly reify ]
+74 silly reify mark retired [
+74 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\damerau-levenshtein'
+74 silly reify ]
+75 silly reify mark retired [
+75 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\data-view-buffer'
+75 silly reify ]
+76 silly reify mark retired [
+76 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\data-view-byte-length'
+76 silly reify ]
+77 silly reify mark retired [
+77 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\data-view-byte-offset'
+77 silly reify ]
+78 silly reify mark retired [
+78 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\debug'
+78 silly reify ]
+79 silly reify mark retired [
+79 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\deep-is'
+79 silly reify ]
+80 silly reify mark retired [
+80 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\define-data-property'
+80 silly reify ]
+81 silly reify mark retired [
+81 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\define-properties'
+81 silly reify ]
+82 silly reify mark retired [
+82 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\doctrine'
+82 silly reify ]
+83 silly reify mark retired [
+83 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\dunder-proto'
+83 silly reify ]
+84 silly reify mark retired [
+84 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\emoji-regex'
+84 silly reify ]
+85 silly reify mark retired [
+85 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-abstract'
+85 silly reify ]
+86 silly reify mark retired [
+86 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-define-property'
+86 silly reify ]
+87 silly reify mark retired [
+87 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-errors'
+87 silly reify ]
+88 silly reify mark retired [
+88 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-iterator-helpers'
+88 silly reify ]
+89 silly reify mark retired [
+89 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-object-atoms'
+89 silly reify ]
+90 silly reify mark retired [
+90 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-set-tostringtag'
+90 silly reify ]
+91 silly reify mark retired [
+91 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-shim-unscopables'
+91 silly reify ]
+92 silly reify mark retired [
+92 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-to-primitive'
+92 silly reify ]
+93 silly reify mark retired [
+93 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\escape-string-regexp'
+93 silly reify ]
+94 silly reify mark retired [
+94 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint',
+94 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\eslint',
+94 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\eslint.cmd',
+94 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\eslint.ps1'
+94 silly reify ]
+95 silly reify mark retired [
+95 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-config-next'
+95 silly reify ]
+96 silly reify mark retired [
+96 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-import-resolver-node'
+96 silly reify ]
+97 silly reify mark retired [
+97 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-import-resolver-typescript'
+97 silly reify ]
+98 silly reify mark retired [
+98 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-module-utils'
+98 silly reify ]
+99 silly reify mark retired [
+99 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-import'
+99 silly reify ]
+100 silly reify mark retired [
+100 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-jsx-a11y'
+100 silly reify ]
+101 silly reify mark retired [
+101 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-react'
+101 silly reify ]
+102 silly reify mark retired [
+102 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-react-hooks'
+102 silly reify ]
+103 silly reify mark retired [
+103 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-scope'
+103 silly reify ]
+104 silly reify mark retired [
+104 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-visitor-keys'
+104 silly reify ]
+105 silly reify mark retired [
+105 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\espree'
+105 silly reify ]
+106 silly reify mark retired [
+106 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\esquery'
+106 silly reify ]
+107 silly reify mark retired [
+107 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\esrecurse'
+107 silly reify ]
+108 silly reify mark retired [
+108 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\estraverse'
+108 silly reify ]
+109 silly reify mark retired [
+109 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\esutils'
+109 silly reify ]
+110 silly reify mark retired [
+110 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-deep-equal'
+110 silly reify ]
+111 silly reify mark retired [
+111 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-glob'
+111 silly reify ]
+112 silly reify mark retired [
+112 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-json-stable-stringify'
+112 silly reify ]
+113 silly reify mark retired [
+113 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-levenshtein'
+113 silly reify ]
+114 silly reify mark retired [
+114 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fastq'
+114 silly reify ]
+115 silly reify mark retired [
+115 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\file-entry-cache'
+115 silly reify ]
+116 silly reify mark retired [
+116 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fill-range'
+116 silly reify ]
+117 silly reify mark retired [
+117 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\find-up'
+117 silly reify ]
+118 silly reify mark retired [
+118 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\flat-cache'
+118 silly reify ]
+119 silly reify mark retired [
+119 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\flatted'
+119 silly reify ]
+120 silly reify mark retired [
+120 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\for-each'
+120 silly reify ]
+121 silly reify mark retired [
+121 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\function-bind'
+121 silly reify ]
+122 silly reify mark retired [
+122 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\function.prototype.name'
+122 silly reify ]
+123 silly reify mark retired [
+123 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\functions-have-names'
+123 silly reify ]
+124 silly reify mark retired [
+124 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-intrinsic'
+124 silly reify ]
+125 silly reify mark retired [
+125 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-proto'
+125 silly reify ]
+126 silly reify mark retired [
+126 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-symbol-description'
+126 silly reify ]
+127 silly reify mark retired [
+127 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-tsconfig'
+127 silly reify ]
+128 silly reify mark retired [
+128 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\glob-parent'
+128 silly reify ]
+129 silly reify mark retired [
+129 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\globalthis'
+129 silly reify ]
+130 silly reify mark retired [
+130 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\gopd'
+130 silly reify ]
+131 silly reify mark retired [
+131 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\graphemer'
+131 silly reify ]
+132 silly reify mark retired [
+132 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-bigints'
+132 silly reify ]
+133 silly reify mark retired [
+133 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-flag'
+133 silly reify ]
+134 silly reify mark retired [
+134 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-property-descriptors'
+134 silly reify ]
+135 silly reify mark retired [
+135 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-proto'
+135 silly reify ]
+136 silly reify mark retired [
+136 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-symbols'
+136 silly reify ]
+137 silly reify mark retired [
+137 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-tostringtag'
+137 silly reify ]
+138 silly reify mark retired [
+138 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\hasown'
+138 silly reify ]
+139 silly reify mark retired [
+139 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ignore'
+139 silly reify ]
+140 silly reify mark retired [
+140 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\imurmurhash'
+140 silly reify ]
+141 silly reify mark retired [
+141 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\internal-slot'
+141 silly reify ]
+142 silly reify mark retired [
+142 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-array-buffer'
+142 silly reify ]
+143 silly reify mark retired [
+143 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-async-function'
+143 silly reify ]
+144 silly reify mark retired [
+144 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-bigint'
+144 silly reify ]
+145 silly reify mark retired [
+145 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-boolean-object'
+145 silly reify ]
+146 silly reify mark retired [
+146 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-bun-module'
+146 silly reify ]
+147 silly reify mark retired [
+147 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-callable'
+147 silly reify ]
+148 silly reify mark retired [
+148 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-core-module'
+148 silly reify ]
+149 silly reify mark retired [
+149 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-data-view'
+149 silly reify ]
+150 silly reify mark retired [
+150 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-date-object'
+150 silly reify ]
+151 silly reify mark retired [
+151 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-extglob'
+151 silly reify ]
+152 silly reify mark retired [
+152 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-finalizationregistry'
+152 silly reify ]
+153 silly reify mark retired [
+153 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-generator-function'
+153 silly reify ]
+154 silly reify mark retired [
+154 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-glob'
+154 silly reify ]
+155 silly reify mark retired [
+155 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-map'
+155 silly reify ]
+156 silly reify mark retired [
+156 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-number'
+156 silly reify ]
+157 silly reify mark retired [
+157 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-number-object'
+157 silly reify ]
+158 silly reify mark retired [
+158 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-regex'
+158 silly reify ]
+159 silly reify mark retired [
+159 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-set'
+159 silly reify ]
+160 silly reify mark retired [
+160 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-shared-array-buffer'
+160 silly reify ]
+161 silly reify mark retired [
+161 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-string'
+161 silly reify ]
+162 silly reify mark retired [
+162 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-symbol'
+162 silly reify ]
+163 silly reify mark retired [
+163 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-typed-array'
+163 silly reify ]
+164 silly reify mark retired [
+164 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-weakmap'
+164 silly reify ]
+165 silly reify mark retired [
+165 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-weakref'
+165 silly reify ]
+166 silly reify mark retired [
+166 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-weakset'
+166 silly reify ]
+167 silly reify mark retired [
+167 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\isarray'
+167 silly reify ]
+168 silly reify mark retired [
+168 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\isexe'
+168 silly reify ]
+169 silly reify mark retired [
+169 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\iterator.prototype'
+169 silly reify ]
+170 silly reify mark retired [
+170 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json-buffer'
+170 silly reify ]
+171 silly reify mark retired [
+171 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json-schema-traverse'
+171 silly reify ]
+172 silly reify mark retired [
+172 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json-stable-stringify-without-jsonify'
+172 silly reify ]
+173 silly reify mark retired [
+173 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json5',
+173 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\json5',
+173 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\json5.cmd',
+173 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\json5.ps1'
+173 silly reify ]
+174 silly reify mark retired [
+174 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\jsx-ast-utils'
+174 silly reify ]
+175 silly reify mark retired [
+175 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\keyv'
+175 silly reify ]
+176 silly reify mark retired [
+176 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\language-subtag-registry'
+176 silly reify ]
+177 silly reify mark retired [
+177 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\language-tags'
+177 silly reify ]
+178 silly reify mark retired [
+178 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\levn'
+178 silly reify ]
+179 silly reify mark retired [
+179 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\locate-path'
+179 silly reify ]
+180 silly reify mark retired [
+180 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lodash.merge'
+180 silly reify ]
+181 silly reify mark retired [
+181 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\math-intrinsics'
+181 silly reify ]
+182 silly reify mark retired [
+182 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\merge2'
+182 silly reify ]
+183 silly reify mark retired [
+183 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\micromatch'
+183 silly reify ]
+184 silly reify mark retired [
+184 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\minimatch'
+184 silly reify ]
+185 silly reify mark retired [
+185 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\minimist'
+185 silly reify ]
+186 silly reify mark retired [
+186 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\natural-compare'
+186 silly reify ]
+187 silly reify mark retired [
+187 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object-inspect'
+187 silly reify ]
+188 silly reify mark retired [
+188 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object-keys'
+188 silly reify ]
+189 silly reify mark retired [
+189 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.assign'
+189 silly reify ]
+190 silly reify mark retired [
+190 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.entries'
+190 silly reify ]
+191 silly reify mark retired [
+191 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.fromentries'
+191 silly reify ]
+192 silly reify mark retired [
+192 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.groupby'
+192 silly reify ]
+193 silly reify mark retired [
+193 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.values'
+193 silly reify ]
+194 silly reify mark retired [
+194 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\optionator'
+194 silly reify ]
+195 silly reify mark retired [
+195 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\own-keys'
+195 silly reify ]
+196 silly reify mark retired [
+196 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\p-limit'
+196 silly reify ]
+197 silly reify mark retired [
+197 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\p-locate'
+197 silly reify ]
+198 silly reify mark retired [
+198 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\path-exists'
+198 silly reify ]
+199 silly reify mark retired [
+199 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\path-key'
+199 silly reify ]
+200 silly reify mark retired [
+200 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\path-parse'
+200 silly reify ]
+201 silly reify mark retired [
+201 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\picomatch'
+201 silly reify ]
+202 silly reify mark retired [
+202 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\possible-typed-array-names'
+202 silly reify ]
+203 silly reify mark retired [
+203 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\prelude-ls'
+203 silly reify ]
+204 silly reify mark retired [
+204 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\punycode'
+204 silly reify ]
+205 silly reify mark retired [
+205 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\queue-microtask'
+205 silly reify ]
+206 silly reify mark retired [
+206 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\reflect.getprototypeof'
+206 silly reify ]
+207 silly reify mark retired [
+207 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\regexp.prototype.flags'
+207 silly reify ]
+208 silly reify mark retired [
+208 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\resolve',
+208 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\resolve',
+208 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\resolve.cmd',
+208 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\resolve.ps1'
+208 silly reify ]
+209 silly reify mark retired [
+209 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\resolve-pkg-maps'
+209 silly reify ]
+210 silly reify mark retired [
+210 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\reusify'
+210 silly reify ]
+211 silly reify mark retired [
+211 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\run-parallel'
+211 silly reify ]
+212 silly reify mark retired [
+212 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\safe-array-concat'
+212 silly reify ]
+213 silly reify mark retired [
+213 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\safe-push-apply'
+213 silly reify ]
+214 silly reify mark retired [
+214 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\safe-regex-test'
+214 silly reify ]
+215 silly reify mark retired [
+215 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\set-function-length'
+215 silly reify ]
+216 silly reify mark retired [
+216 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\set-function-name'
+216 silly reify ]
+217 silly reify mark retired [
+217 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\set-proto'
+217 silly reify ]
+218 silly reify mark retired [
+218 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\shebang-command'
+218 silly reify ]
+219 silly reify mark retired [
+219 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\shebang-regex'
+219 silly reify ]
+220 silly reify mark retired [
+220 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel'
+220 silly reify ]
+221 silly reify mark retired [
+221 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel-list'
+221 silly reify ]
+222 silly reify mark retired [
+222 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel-map'
+222 silly reify ]
+223 silly reify mark retired [
+223 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel-weakmap'
+223 silly reify ]
+224 silly reify mark retired [
+224 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\stable-hash'
+224 silly reify ]
+225 silly reify mark retired [
+225 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.includes'
+225 silly reify ]
+226 silly reify mark retired [
+226 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.matchall'
+226 silly reify ]
+227 silly reify mark retired [
+227 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.repeat'
+227 silly reify ]
+228 silly reify mark retired [
+228 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.trim'
+228 silly reify ]
+229 silly reify mark retired [
+229 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.trimend'
+229 silly reify ]
+230 silly reify mark retired [
+230 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.trimstart'
+230 silly reify ]
+231 silly reify mark retired [
+231 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\strip-bom'
+231 silly reify ]
+232 silly reify mark retired [
+232 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\strip-json-comments'
+232 silly reify ]
+233 silly reify mark retired [
+233 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\supports-color'
+233 silly reify ]
+234 silly reify mark retired [
+234 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\supports-preserve-symlinks-flag'
+234 silly reify ]
+235 silly reify mark retired [
+235 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\tinyglobby'
+235 silly reify ]
+236 silly reify mark retired [
+236 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\to-regex-range'
+236 silly reify ]
+237 silly reify mark retired [
+237 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ts-api-utils'
+237 silly reify ]
+238 silly reify mark retired [
+238 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\tsconfig-paths'
+238 silly reify ]
+239 silly reify mark retired [
+239 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\type-check'
+239 silly reify ]
+240 silly reify mark retired [
+240 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-buffer'
+240 silly reify ]
+241 silly reify mark retired [
+241 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-byte-length'
+241 silly reify ]
+242 silly reify mark retired [
+242 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-byte-offset'
+242 silly reify ]
+243 silly reify mark retired [
+243 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-length'
+243 silly reify ]
+244 silly reify mark retired [
+244 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\unbox-primitive'
+244 silly reify ]
+245 silly reify mark retired [
+245 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\unrs-resolver'
+245 silly reify ]
+246 silly reify mark retired [
+246 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\uri-js'
+246 silly reify ]
+247 silly reify mark retired [
+247 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which',
+247 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\node-which',
+247 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\node-which.cmd',
+247 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\node-which.ps1'
+247 silly reify ]
+248 silly reify mark retired [
+248 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-boxed-primitive'
+248 silly reify ]
+249 silly reify mark retired [
+249 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-builtin-type'
+249 silly reify ]
+250 silly reify mark retired [
+250 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-collection'
+250 silly reify ]
+251 silly reify mark retired [
+251 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-typed-array'
+251 silly reify ]
+252 silly reify mark retired [
+252 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\word-wrap'
+252 silly reify ]
+253 silly reify mark retired [
+253 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\yocto-queue'
+253 silly reify ]
+254 silly reify moves {
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint-community\\eslint-utils': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint-community\\.eslint-utils-K6MSCmQq',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint-community\\regexpp': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint-community\\.regexpp-Rd3VV7cP',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\config-array': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\.config-array-0bi0y4zS',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\config-helpers': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\.config-helpers-lV5gmxBy',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\core': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\.core-EWpWPwIP',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\eslintrc': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\.eslintrc-YhHEkfLO',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\js': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\.js-rKeBIzIP',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\object-schema': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\.object-schema-vDvnV4yn',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\plugin-kit': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@eslint\\.plugin-kit-WT9S999u',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanfs\\core': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanfs\\.core-YxopZdDZ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanfs\\node': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanfs\\.node-DvWxtpSR',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanwhocodes\\module-importer': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanwhocodes\\.module-importer-PaaxKJQY',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanwhocodes\\retry': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@humanwhocodes\\.retry-q63R15dY',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\eslint-plugin-next': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\.eslint-plugin-next-LVzvA5iv',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\fs.scandir': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\.fs.scandir-ztGgc8XO',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\fs.stat': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\.fs.stat-1nOdr7li',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\fs.walk': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nodelib\\.fs.walk-u4wsIVFo',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nolyfill\\is-core-module': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@nolyfill\\.is-core-module-I7Lbv3FM',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@rtsao\\scc': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@rtsao\\.scc-eJvTJLJl',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@rushstack\\eslint-patch': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@rushstack\\.eslint-patch-87Jj8uc7',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\estree': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\.estree-DU5AH5g1',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\json-schema': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\.json-schema-2EeloF8n',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\json5': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@types\\.json5-iLJ700wX',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\eslint-plugin': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.eslint-plugin-fmLbjOoa',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\parser': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.parser-YpqkduZv',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\scope-manager': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.scope-manager-dkP6WmKF',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\type-utils': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.type-utils-cWHIkh0i',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\types': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.types-BzxLZyrw',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\typescript-estree': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.typescript-estree-uqnO71K8',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\utils': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.utils-194YK6rA',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\visitor-keys': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@typescript-eslint\\.visitor-keys-PTXViSUE',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@unrs\\resolver-binding-win32-x64-msvc': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@unrs\\.resolver-binding-win32-x64-msvc-uaesFrYG',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\acorn': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.acorn-8L5YINjQ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\acorn': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.acorn-aFXKheGn',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\acorn.cmd': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.acorn.cmd-IaK90BTc',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\acorn.ps1': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.acorn.ps1-quUmAOuI',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\acorn-jsx': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.acorn-jsx-L3JKOLZ8',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ajv': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.ajv-vAwOKKmr',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ansi-styles': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.ansi-styles-axeo9HEo',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\aria-query': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.aria-query-jrmokAcl',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array-buffer-byte-length': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.array-buffer-byte-length-ciQ5QVNG',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array-includes': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.array-includes-Yp3DKGIS',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.findlast': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.array.prototype.findlast-WAqnZwWl',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.findlastindex': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.array.prototype.findlastindex-TSJSKkzl',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.flat': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.array.prototype.flat-n4SMBPks',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.flatmap': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.array.prototype.flatmap-NCRwD8nu',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\array.prototype.tosorted': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.array.prototype.tosorted-QGFliZwI',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\arraybuffer.prototype.slice': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.arraybuffer.prototype.slice-0fR57UGi',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ast-types-flow': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.ast-types-flow-quwM5vN8',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\async-function': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.async-function-HtNfnOcO',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\available-typed-arrays': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.available-typed-arrays-cHXkG4Pg',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\axe-core': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.axe-core-PyXow9uU',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\axobject-query': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.axobject-query-71eQVoTj',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\balanced-match': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.balanced-match-NIBzcxOG',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\brace-expansion': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.brace-expansion-g1bOM6ut',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\braces': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.braces-ua1IAT5b',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\call-bind': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.call-bind-lnXVK0uU',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\call-bind-apply-helpers': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.call-bind-apply-helpers-0iitFoO3',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\call-bound': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.call-bound-oWkRV8Bv',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\chalk': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.chalk-S9BsLZbG',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\concat-map': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.concat-map-ox2SdCa2',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\cross-spawn': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.cross-spawn-d3FmBiyH',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\damerau-levenshtein': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.damerau-levenshtein-LZ79Ovk2',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\data-view-buffer': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.data-view-buffer-UHmSwaJT',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\data-view-byte-length': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.data-view-byte-length-hZvPXlDc',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\data-view-byte-offset': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.data-view-byte-offset-warORaUP',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\debug': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.debug-c8v9JAvr',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\deep-is': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.deep-is-T4dH7MsI',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\define-data-property': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.define-data-property-sRPyQDJ2',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\define-properties': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.define-properties-P9UO2eor',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\doctrine': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.doctrine-WpG0HUa3',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\dunder-proto': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.dunder-proto-AkkC9lec',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\emoji-regex': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.emoji-regex-IS1jBFgJ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-abstract': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-abstract-QLBsJGNI',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-define-property': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-define-property-ZHP6GiZu',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-errors': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-errors-DvZmt3GK',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-iterator-helpers': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-iterator-helpers-m1IvLnnZ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-object-atoms': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-object-atoms-tAp97TeY',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-set-tostringtag': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-set-tostringtag-Q2GfWRJS',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-shim-unscopables': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-shim-unscopables-AEXbvQ9v',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\es-to-primitive': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.es-to-primitive-q2ImLw12',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\escape-string-regexp': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.escape-string-regexp-qpuiQ5R2',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-3sRGamZs',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\eslint': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.eslint-FByE691N',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\eslint.cmd': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.eslint.cmd-bq3reBfX',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\eslint.ps1': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.eslint.ps1-ATtiC9UR',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-config-next': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-config-next-qug5yxgk',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-import-resolver-node': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-import-resolver-node-NPtjLUUn',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-import-resolver-typescript': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-import-resolver-typescript-tZ8k8AYo',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-module-utils': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-module-utils-lLe7Za41',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-import': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-plugin-import-afYbBepj',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-jsx-a11y': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-plugin-jsx-a11y-cQ0LKJCZ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-react': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-plugin-react-yNw9YQj7',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-plugin-react-hooks': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-plugin-react-hooks-nDMhdLuY',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-scope': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-scope-RQQkmsQN',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\eslint-visitor-keys': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.eslint-visitor-keys-Pzmjx760',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\espree': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.espree-gexnUCH5',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\esquery': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.esquery-xVNBqhjJ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\esrecurse': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.esrecurse-Xq1ggpPz',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\estraverse': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.estraverse-WAJJ90YI',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\esutils': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.esutils-J8dSjR7A',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-deep-equal': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.fast-deep-equal-vjXXvMTX',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-glob': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.fast-glob-wK0QAODV',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-json-stable-stringify': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.fast-json-stable-stringify-k8jAKr5k',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fast-levenshtein': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.fast-levenshtein-AUwpcdlD',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fastq': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.fastq-PQ5hZebN',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\file-entry-cache': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.file-entry-cache-2azTk5Rz',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\fill-range': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.fill-range-DVG9IsN3',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\find-up': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.find-up-zGtjL2Cl',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\flat-cache': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.flat-cache-9gIZI9oL',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\flatted': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.flatted-3VAlaWFT',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\for-each': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.for-each-uUaNnz4s',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\function-bind': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.function-bind-q4yOaiZs',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\function.prototype.name': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.function.prototype.name-bv0dq5AD',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\functions-have-names': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.functions-have-names-qGwvaPge',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-intrinsic': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.get-intrinsic-Zg3wsz8A',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-proto': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.get-proto-GTVtNJNO',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-symbol-description': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.get-symbol-description-UPCoR013',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\get-tsconfig': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.get-tsconfig-EeKNzLNF',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\glob-parent': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.glob-parent-sjWBMrz6',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\globalthis': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.globalthis-LzKLzVmQ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\gopd': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.gopd-hL8TvliK',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\graphemer': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.graphemer-KQCmFJED',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-bigints': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.has-bigints-YMhlGxe5',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-flag': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.has-flag-i8ppGU9r',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-property-descriptors': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.has-property-descriptors-KpFfn6XO',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-proto': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.has-proto-w1lP6u6U',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-symbols': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.has-symbols-DqAqkjfC',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\has-tostringtag': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.has-tostringtag-UPw5qYXt',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\hasown': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.hasown-J33hg1eB',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ignore': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.ignore-avdXH0vB',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\imurmurhash': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.imurmurhash-QcLrxkr5',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\internal-slot': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.internal-slot-hEPO7M8P',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-array-buffer': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-array-buffer-qtXEzskW',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-async-function': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-async-function-PWJzUUF7',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-bigint': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-bigint-HdSc5I73',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-boolean-object': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-boolean-object-ipk2segp',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-bun-module': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-bun-module-vd7xc8ei',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-callable': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-callable-eUaEmKNM',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-core-module': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-core-module-HEMQFVUw',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-data-view': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-data-view-moqgc1uh',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-date-object': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-date-object-TKGsnmna',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-extglob': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-extglob-tbRX22RE',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-finalizationregistry': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-finalizationregistry-yMGQx5O2',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-generator-function': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-generator-function-iTjP5rUa',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-glob': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-glob-BD6Lc3rp',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-map': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-map-cTs1abby',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-number': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-number-HgGRM2iz',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-number-object': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-number-object-ToWGrTiv',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-regex': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-regex-its46SqS',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-set': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-set-vXGGfwK8',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-shared-array-buffer': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-shared-array-buffer-n1snBlCZ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-string': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-string-F8m12cTG',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-symbol': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-symbol-YdugncHe',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-typed-array': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-typed-array-ln1KDdCI',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-weakmap': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-weakmap-yIcKhIXF',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-weakref': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-weakref-Y2sZCnxp',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\is-weakset': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.is-weakset-neFGoiz8',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\isarray': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.isarray-52anvjNI',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\isexe': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.isexe-8gAm24Yf',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\iterator.prototype': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.iterator.prototype-cvIF09pB',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json-buffer': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.json-buffer-2gPIwsQL',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json-schema-traverse': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.json-schema-traverse-T3w5fM8U',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json-stable-stringify-without-jsonify': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.json-stable-stringify-without-jsonify-gHGPVnzr',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\json5': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.json5-rgDhESqq',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\json5': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.json5-aKoRKGxl',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\json5.cmd': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.json5.cmd-vcboP6ko',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\json5.ps1': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.json5.ps1-3WbFzc7j',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\jsx-ast-utils': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.jsx-ast-utils-nR4K9h6t',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\keyv': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.keyv-BWqYVTfM',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\language-subtag-registry': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.language-subtag-registry-3p7IGMHy',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\language-tags': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.language-tags-26J0bUkq',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\levn': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.levn-TZ03jWJY',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\locate-path': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.locate-path-mRWtSA7c',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lodash.merge': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.lodash.merge-1ymAJ5qp',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\math-intrinsics': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.math-intrinsics-79vF3w5p',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\merge2': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.merge2-ktDcpvjf',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\micromatch': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.micromatch-d9kl4wyG',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\minimatch': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.minimatch-K2VCS2MC',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\minimist': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.minimist-Z1Zk0U9l',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\natural-compare': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.natural-compare-d6DuCy4S',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object-inspect': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.object-inspect-bMZj4kdz',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object-keys': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.object-keys-dIPNPFNO',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.assign': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.object.assign-lk6FtzUC',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.entries': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.object.entries-iOxH1zHt',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.fromentries': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.object.fromentries-w4t9lkl4',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.groupby': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.object.groupby-1SNcrEim',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\object.values': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.object.values-do7ZyLPk',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\optionator': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.optionator-CwEEk6rs',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\own-keys': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.own-keys-MZQNnqSv',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\p-limit': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.p-limit-QnmcEA3V',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\p-locate': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.p-locate-2ocJHImc',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\path-exists': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.path-exists-zl84J0gJ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\path-key': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.path-key-Uu4e5aFn',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\path-parse': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.path-parse-TgxoS2Br',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\picomatch': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.picomatch-oEZ1orx4',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\possible-typed-array-names': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.possible-typed-array-names-9V9ix7Cp',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\prelude-ls': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.prelude-ls-uqGwS9Po',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\punycode': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.punycode-hIqPNNwY',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\queue-microtask': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.queue-microtask-TlhcHOo6',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\reflect.getprototypeof': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.reflect.getprototypeof-gCaW8y9D',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\regexp.prototype.flags': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.regexp.prototype.flags-H0GL3G5W',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\resolve': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.resolve-pbmDxXBb',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\resolve': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.resolve-dssFoX6s',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\resolve.cmd': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.resolve.cmd-LtaeOIr3',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\resolve.ps1': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.resolve.ps1-T9PszOIF',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\resolve-pkg-maps': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.resolve-pkg-maps-bSSPWxcS',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\reusify': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.reusify-3Kl3qnud',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\run-parallel': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.run-parallel-8D11tK9L',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\safe-array-concat': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.safe-array-concat-4w4y6vC7',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\safe-push-apply': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.safe-push-apply-qcBtahtP',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\safe-regex-test': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.safe-regex-test-THALDwZD',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\set-function-length': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.set-function-length-lFAqBYux',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\set-function-name': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.set-function-name-VhP5homV',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\set-proto': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.set-proto-AX0cK7Ya',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\shebang-command': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.shebang-command-qYlOLfUx',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\shebang-regex': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.shebang-regex-LOH5yttA',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.side-channel-D39qtGc8',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel-list': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.side-channel-list-TnCbstNu',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel-map': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.side-channel-map-iEIFG99q',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\side-channel-weakmap': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.side-channel-weakmap-40BIMEZN',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\stable-hash': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.stable-hash-ogXIr1Pi',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.includes': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.string.prototype.includes-YLjIvpd9',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.matchall': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.string.prototype.matchall-G68Flv0N',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.repeat': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.string.prototype.repeat-LXiKSj7s',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.trim': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.string.prototype.trim-VKc16CT4',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.trimend': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.string.prototype.trimend-qtM7gEzp',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\string.prototype.trimstart': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.string.prototype.trimstart-PSXsTitA',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\strip-bom': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.strip-bom-IGGW2OOO',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\strip-json-comments': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.strip-json-comments-K1CAqvsY',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\supports-color': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.supports-color-glGL9nNy',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\supports-preserve-symlinks-flag': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.supports-preserve-symlinks-flag-VE9OPCqJ',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\tinyglobby': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.tinyglobby-dk6Ex0Wb',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\to-regex-range': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.to-regex-range-08ZFFyA0',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\ts-api-utils': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.ts-api-utils-4SVp6y0T',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\tsconfig-paths': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.tsconfig-paths-fPcUM6h0',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\type-check': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.type-check-c1wr9ICX',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-buffer': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.typed-array-buffer-b8xtBVtp',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-byte-length': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.typed-array-byte-length-scmo5KjN',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-byte-offset': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.typed-array-byte-offset-6VI6XjZn',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\typed-array-length': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.typed-array-length-nCmYytEy',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\unbox-primitive': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.unbox-primitive-6aEc0iFW',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\unrs-resolver': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.unrs-resolver-4nDqd9iW',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\uri-js': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.uri-js-OqtSrr2U',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.which-JpOf2oa4',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\node-which': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.node-which-PyIAqObf',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\node-which.cmd': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.node-which.cmd-oN5Bcw2y',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\node-which.ps1': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.bin\\.node-which.ps1-gyaDcdSt',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-boxed-primitive': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.which-boxed-primitive-fLtuD3Q9',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-builtin-type': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.which-builtin-type-nPq54bgh',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-collection': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.which-collection-9Lwin3f5',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\which-typed-array': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.which-typed-array-xqRQyZhr',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\word-wrap': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.word-wrap-OMW68QW9',
+254 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\yocto-queue': 'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\.yocto-queue-2lqaqAqx'
+254 silly reify }
+255 silly audit bulk request {
+255 silly audit   '@babel/code-frame': [ '7.26.2' ],
+255 silly audit   '@babel/helper-validator-identifier': [ '7.25.9' ],
+255 silly audit   '@clerk/backend': [ '1.25.8' ],
+255 silly audit   '@clerk/clerk-react': [ '5.25.5' ],
+255 silly audit   '@clerk/nextjs': [ '6.12.12' ],
+255 silly audit   '@clerk/shared': [ '3.2.3' ],
+255 silly audit   '@clerk/types': [ '4.50.1' ],
+255 silly audit   '@emnapi/runtime': [ '1.4.0' ],
+255 silly audit   globals: [ '16.0.0' ],
+255 silly audit   '@heroicons/react': [ '2.2.0' ],
+255 silly audit   '@img/sharp-darwin-arm64': [ '0.33.5' ],
+255 silly audit   '@img/sharp-darwin-x64': [ '0.33.5' ],
+255 silly audit   '@img/sharp-libvips-darwin-arm64': [ '1.0.4' ],
+255 silly audit   '@img/sharp-libvips-darwin-x64': [ '1.0.4' ],
+255 silly audit   '@img/sharp-libvips-linux-arm': [ '1.0.5' ],
+255 silly audit   '@img/sharp-libvips-linux-arm64': [ '1.0.4' ],
+255 silly audit   '@img/sharp-libvips-linux-s390x': [ '1.0.4' ],
+255 silly audit   '@img/sharp-libvips-linux-x64': [ '1.0.4' ],
+255 silly audit   '@img/sharp-libvips-linuxmusl-arm64': [ '1.0.4' ],
+255 silly audit   '@img/sharp-libvips-linuxmusl-x64': [ '1.0.4' ],
+255 silly audit   '@img/sharp-linux-arm': [ '0.33.5' ],
+255 silly audit   '@img/sharp-linux-arm64': [ '0.33.5' ],
+255 silly audit   '@img/sharp-linux-s390x': [ '0.33.5' ],
+255 silly audit   '@img/sharp-linux-x64': [ '0.33.5' ],
+255 silly audit   '@img/sharp-linuxmusl-arm64': [ '0.33.5' ],
+255 silly audit   '@img/sharp-linuxmusl-x64': [ '0.33.5' ],
+255 silly audit   '@img/sharp-wasm32': [ '0.33.5' ],
+255 silly audit   '@img/sharp-win32-ia32': [ '0.33.5' ],
+255 silly audit   '@img/sharp-win32-x64': [ '0.33.5' ],
+255 silly audit   '@next/env': [ '15.2.4' ],
+255 silly audit   '@next/swc-darwin-arm64': [ '15.2.4' ],
+255 silly audit   '@next/swc-darwin-x64': [ '15.2.4' ],
+255 silly audit   '@next/swc-linux-arm64-gnu': [ '15.2.4' ],
+255 silly audit   '@next/swc-linux-arm64-musl': [ '15.2.4' ],
+255 silly audit   '@next/swc-linux-x64-gnu': [ '15.2.4' ],
+255 silly audit   '@next/swc-linux-x64-musl': [ '15.2.4' ],
+255 silly audit   '@next/swc-win32-arm64-msvc': [ '15.2.4' ],
+255 silly audit   '@next/swc-win32-x64-msvc': [ '15.2.4' ],
+255 silly audit   '@swc/counter': [ '0.1.3' ],
+255 silly audit   '@swc/helpers': [ '0.5.15' ],
+255 silly audit   '@types/node': [ '20.17.28' ],
+255 silly audit   '@types/prop-types': [ '15.7.14' ],
+255 silly audit   '@types/react': [ '18.3.20' ],
+255 silly audit   argparse: [ '2.0.1' ],
+255 silly audit   autoprefixer: [ '10.4.21' ],
+255 silly audit   browserslist: [ '4.24.4' ],
+255 silly audit   'buffer-equal-constant-time': [ '1.0.1' ],
+255 silly audit   busboy: [ '1.6.0' ],
+255 silly audit   callsites: [ '3.1.0' ],
+255 silly audit   'caniuse-lite': [ '1.0.30001707' ],
+255 silly audit   'client-only': [ '0.0.1' ],
+255 silly audit   color: [ '4.2.3' ],
+255 silly audit   'color-convert': [ '2.0.1' ],
+255 silly audit   'color-name': [ '1.1.4' ],
+255 silly audit   'color-string': [ '1.9.1' ],
+255 silly audit   cookie: [ '1.0.2' ],
+255 silly audit   cosmiconfig: [ '9.0.0' ],
+255 silly audit   'crypto-js': [ '4.2.0' ],
+255 silly audit   'css-loader': [ '7.1.2' ],
+255 silly audit   cssesc: [ '3.0.0' ],
+255 silly audit   csstype: [ '3.1.3' ],
+255 silly audit   dequal: [ '2.0.3' ],
+255 silly audit   'detect-libc': [ '2.0.3' ],
+255 silly audit   'dot-case': [ '3.0.4' ],
+255 silly audit   'ecdsa-sig-formatter': [ '1.0.11' ],
+255 silly audit   'electron-to-chromium': [ '1.5.128' ],
+255 silly audit   'env-paths': [ '2.2.1' ],
+255 silly audit   'error-ex': [ '1.3.2' ],
+255 silly audit   escalade: [ '3.2.0' ],
+255 silly audit   semver: [ '7.7.1' ],
+255 silly audit   'fraction.js': [ '4.3.7' ],
+255 silly audit   'glob-to-regexp': [ '0.4.1' ],
+255 silly audit   'icss-utils': [ '5.1.0' ],
+255 silly audit   'import-fresh': [ '3.3.1' ],
+255 silly audit   'is-arrayish': [ '0.2.1', '0.3.2' ],
+255 silly audit   'js-cookie': [ '3.0.5' ],
+255 silly audit   'js-tokens': [ '4.0.0' ],
+255 silly audit   'js-yaml': [ '4.1.0' ],
+255 silly audit   'json-parse-even-better-errors': [ '2.3.1' ],
+255 silly audit   jsonwebtoken: [ '9.0.2' ],
+255 silly audit   jwa: [ '1.4.1' ],
+255 silly audit   jws: [ '3.2.2' ],
+255 silly audit   lightningcss: [ '1.29.3' ],
+255 silly audit   'lightningcss-darwin-arm64': [ '1.29.3' ],
+255 silly audit   'lightningcss-darwin-x64': [ '1.29.3' ],
+255 silly audit   'lightningcss-freebsd-x64': [ '1.29.3' ],
+255 silly audit   'lightningcss-linux-arm-gnueabihf': [ '1.29.3' ],
+255 silly audit   'lightningcss-linux-arm64-gnu': [ '1.29.3' ],
+255 silly audit   'lightningcss-linux-arm64-musl': [ '1.29.3' ],
+255 silly audit   'lightningcss-linux-x64-gnu': [ '1.29.3' ],
+255 silly audit   'lightningcss-linux-x64-musl': [ '1.29.3' ],
+255 silly audit   'lightningcss-win32-arm64-msvc': [ '1.29.3' ],
+255 silly audit   'lightningcss-win32-x64-msvc': [ '1.29.3' ],
+255 silly audit   'lines-and-columns': [ '1.2.4' ],
+255 silly audit   'lodash.includes': [ '4.3.0' ],
+255 silly audit   'lodash.isboolean': [ '3.0.3' ],
+255 silly audit   'lodash.isinteger': [ '4.0.4' ],
+255 silly audit   'lodash.isnumber': [ '3.0.3' ],
+255 silly audit   'lodash.isplainobject': [ '4.0.6' ],
+255 silly audit   'lodash.isstring': [ '4.0.1' ],
+255 silly audit   'lodash.once': [ '4.1.1' ],
+255 silly audit   'loose-envify': [ '1.4.0' ],
+255 silly audit   'lower-case': [ '2.0.2' ],
+255 silly audit   'map-obj': [ '4.3.0' ],
+255 silly audit   ms: [ '2.1.3' ],
+255 silly audit   nanoid: [ '3.3.11' ],
+255 silly audit   next: [ '15.2.4' ],
+255 silly audit   postcss: [ '8.4.31', '8.5.3' ],
+255 silly audit   'no-case': [ '3.0.4' ],
+255 silly audit   'node-releases': [ '2.0.19' ],
+255 silly audit   'normalize-range': [ '0.1.2' ],
+255 silly audit   'object-assign': [ '4.1.1' ],
+255 silly audit   'parent-module': [ '1.0.1' ],
+255 silly audit   'parse-json': [ '5.2.0' ],
+255 silly audit   picocolors: [ '1.1.1' ],
+255 silly audit   'postcss-loader': [ '8.1.1' ],
+255 silly audit   jiti: [ '1.21.7' ],
+255 silly audit   'postcss-modules-extract-imports': [ '3.1.0' ],
+255 silly audit   'postcss-modules-local-by-default': [ '4.2.0' ],
+255 silly audit   'postcss-modules-scope': [ '3.2.1' ],
+255 silly audit   'postcss-modules-values': [ '4.0.0' ],
+255 silly audit   'postcss-selector-parser': [ '7.1.0' ],
+255 silly audit   'postcss-value-parser': [ '4.2.0' ],
+255 silly audit   'prop-types': [ '15.8.1' ],
+255 silly audit   react: [ '18.3.1' ],
+255 silly audit   'react-dom': [ '18.3.1' ],
+255 silly audit   'react-is': [ '16.13.1' ],
+255 silly audit   'resolve-from': [ '4.0.0' ],
+255 silly audit   'safe-buffer': [ '5.2.1' ],
+255 silly audit   scheduler: [ '0.23.2' ],
+255 silly audit   'server-only': [ '0.0.1' ],
+255 silly audit   sharp: [ '0.33.5' ],
+255 silly audit   'simple-swizzle': [ '0.2.2' ],
+255 silly audit   'snake-case': [ '3.0.4' ],
+255 silly audit   'snakecase-keys': [ '8.0.1' ],
+255 silly audit   'source-map-js': [ '1.2.1' ],
+255 silly audit   'std-env': [ '3.8.1' ],
+255 silly audit   streamsearch: [ '1.1.0' ],
+255 silly audit   'styled-jsx': [ '5.1.6' ],
+255 silly audit   swr: [ '2.3.3' ],
+255 silly audit   tailwindcss: [ '4.0.17' ],
+255 silly audit   tslib: [ '2.8.1' ],
+255 silly audit   'type-fest': [ '4.38.0' ],
+255 silly audit   typescript: [ '5.8.2' ],
+255 silly audit   'undici-types': [ '6.19.8' ],
+255 silly audit   'update-browserslist-db': [ '1.1.3' ],
+255 silly audit   'use-sync-external-store': [ '1.4.0' ],
+255 silly audit   'util-deprecate': [ '1.0.2' ]
+255 silly audit }
+256 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-win32-arm64-msvc
+257 silly reify mark deleted [
+257 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-win32-arm64-msvc'
+257 silly reify ]
+258 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-linux-x64-musl
+259 silly reify mark deleted [
+259 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-linux-x64-musl'
+259 silly reify ]
+260 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-linux-x64-gnu
+261 silly reify mark deleted [
+261 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-linux-x64-gnu'
+261 silly reify ]
+262 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-linux-arm64-musl
+263 silly reify mark deleted [
+263 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-linux-arm64-musl'
+263 silly reify ]
+264 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-linux-arm64-gnu
+265 silly reify mark deleted [
+265 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-linux-arm64-gnu'
+265 silly reify ]
+266 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-linux-arm-gnueabihf
+267 silly reify mark deleted [
+267 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-linux-arm-gnueabihf'
+267 silly reify ]
+268 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-freebsd-x64
+269 silly reify mark deleted [
+269 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-freebsd-x64'
+269 silly reify ]
+270 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-darwin-x64
+271 silly reify mark deleted [
+271 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-darwin-x64'
+271 silly reify ]
+272 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\lightningcss-darwin-arm64
+273 silly reify mark deleted [
+273 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\lightningcss-darwin-arm64'
+273 silly reify ]
+274 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@next\swc-win32-arm64-msvc
+275 silly reify mark deleted [
+275 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\swc-win32-arm64-msvc'
+275 silly reify ]
+276 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@next\swc-linux-x64-musl
+277 silly reify mark deleted [
+277 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\swc-linux-x64-musl'
+277 silly reify ]
+278 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@next\swc-linux-x64-gnu
+279 silly reify mark deleted [
+279 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\swc-linux-x64-gnu'
+279 silly reify ]
+280 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@next\swc-linux-arm64-musl
+281 silly reify mark deleted [
+281 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\swc-linux-arm64-musl'
+281 silly reify ]
+282 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@next\swc-linux-arm64-gnu
+283 silly reify mark deleted [
+283 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\swc-linux-arm64-gnu'
+283 silly reify ]
+284 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@next\swc-darwin-x64
+285 silly reify mark deleted [
+285 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\swc-darwin-x64'
+285 silly reify ]
+286 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@next\swc-darwin-arm64
+287 silly reify mark deleted [
+287 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@next\\swc-darwin-arm64'
+287 silly reify ]
+288 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-win32-ia32
+289 silly reify mark deleted [
+289 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-win32-ia32'
+289 silly reify ]
+290 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-wasm32
+291 silly reify mark deleted [
+291 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-wasm32'
+291 silly reify ]
+292 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@emnapi\runtime
+293 silly reify mark deleted [
+293 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@emnapi\\runtime'
+293 silly reify ]
+294 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-linuxmusl-x64
+295 silly reify mark deleted [
+295 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-linuxmusl-x64'
+295 silly reify ]
+296 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-linuxmusl-arm64
+297 silly reify mark deleted [
+297 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-linuxmusl-arm64'
+297 silly reify ]
+298 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-linux-x64
+299 silly reify mark deleted [
+299 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-linux-x64'
+299 silly reify ]
+300 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-linux-s390x
+301 silly reify mark deleted [
+301 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-linux-s390x'
+301 silly reify ]
+302 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-linux-arm64
+303 silly reify mark deleted [
+303 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-linux-arm64'
+303 silly reify ]
+304 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-linux-arm
+305 silly reify mark deleted [
+305 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-linux-arm'
+305 silly reify ]
+306 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-linuxmusl-x64
+307 silly reify mark deleted [
+307 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-linuxmusl-x64'
+307 silly reify ]
+308 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-linuxmusl-arm64
+309 silly reify mark deleted [
+309 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-linuxmusl-arm64'
+309 silly reify ]
+310 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-linux-x64
+311 silly reify mark deleted [
+311 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-linux-x64'
+311 silly reify ]
+312 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-linux-s390x
+313 silly reify mark deleted [
+313 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-linux-s390x'
+313 silly reify ]
+314 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-linux-arm64
+315 silly reify mark deleted [
+315 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-linux-arm64'
+315 silly reify ]
+316 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-linux-arm
+317 silly reify mark deleted [
+317 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-linux-arm'
+317 silly reify ]
+318 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-darwin-x64
+319 silly reify mark deleted [
+319 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-darwin-x64'
+319 silly reify ]
+320 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-libvips-darwin-arm64
+321 silly reify mark deleted [
+321 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-libvips-darwin-arm64'
+321 silly reify ]
+322 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-darwin-x64
+323 silly reify mark deleted [
+323 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-darwin-x64'
+323 silly reify ]
+324 verbose reify failed optional dependency C:\Users\richard.goltara\testeyau\radioman-1\node_modules\@img\sharp-darwin-arm64
+325 silly reify mark deleted [
+325 silly reify   'C:\\Users\\richard.goltara\\testeyau\\radioman-1\\node_modules\\@img\\sharp-darwin-arm64'
+325 silly reify ]
+326 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 994ms
+327 silly audit report {}
+328 silly ADD
+329 silly ADD
+330 silly ADD
+331 silly ADD
+332 silly ADD
+333 silly ADD
+334 silly ADD
+335 silly ADD
+336 silly ADD
+337 silly ADD
+338 silly ADD
+339 silly ADD
+340 silly ADD
+341 silly ADD
+342 silly ADD
+343 silly ADD
+344 silly ADD
+345 silly ADD
+346 silly ADD
+347 silly ADD
+348 silly ADD
+349 silly ADD
+350 silly ADD
+351 silly ADD
+352 silly ADD
+353 silly ADD
+354 silly ADD
+355 silly ADD
+356 silly ADD
+357 silly ADD
+358 silly ADD
+359 silly ADD
+360 silly ADD
+361 silly ADD
+362 silly REMOVE node_modules/yocto-queue
+363 silly REMOVE node_modules/word-wrap
+364 silly REMOVE node_modules/which-typed-array
+365 silly REMOVE node_modules/which-collection
+366 silly REMOVE node_modules/which-builtin-type
+367 silly REMOVE node_modules/which-boxed-primitive
+368 silly REMOVE node_modules/which
+369 silly REMOVE node_modules/uri-js
+370 silly REMOVE node_modules/unrs-resolver
+371 silly REMOVE node_modules/unbox-primitive
+372 silly REMOVE node_modules/typed-array-length
+373 silly REMOVE node_modules/typed-array-byte-offset
+374 silly REMOVE node_modules/typed-array-byte-length
+375 silly REMOVE node_modules/typed-array-buffer
+376 silly REMOVE node_modules/type-check
+377 silly REMOVE node_modules/tsconfig-paths
+378 silly REMOVE node_modules/ts-api-utils
+379 silly REMOVE node_modules/to-regex-range
+380 silly REMOVE node_modules/tinyglobby
+381 silly REMOVE node_modules/tinyglobby/node_modules/picomatch
+382 silly REMOVE node_modules/tinyglobby/node_modules/fdir
+383 silly REMOVE node_modules/supports-preserve-symlinks-flag
+384 silly REMOVE node_modules/supports-color
+385 silly REMOVE node_modules/strip-json-comments
+386 silly REMOVE node_modules/strip-bom
+387 silly REMOVE node_modules/string.prototype.trimstart
+388 silly REMOVE node_modules/string.prototype.trimend
+389 silly REMOVE node_modules/string.prototype.trim
+390 silly REMOVE node_modules/string.prototype.repeat
+391 silly REMOVE node_modules/string.prototype.matchall
+392 silly REMOVE node_modules/string.prototype.includes
+393 silly REMOVE node_modules/stable-hash
+394 silly REMOVE node_modules/side-channel-weakmap
+395 silly REMOVE node_modules/side-channel-map
+396 silly REMOVE node_modules/side-channel-list
+397 silly REMOVE node_modules/side-channel
+398 silly REMOVE node_modules/shebang-regex
+399 silly REMOVE node_modules/shebang-command
+400 silly REMOVE node_modules/set-proto
+401 silly REMOVE node_modules/set-function-name
+402 silly REMOVE node_modules/set-function-length
+403 silly REMOVE node_modules/safe-regex-test
+404 silly REMOVE node_modules/safe-push-apply
+405 silly REMOVE node_modules/safe-array-concat
+406 silly REMOVE node_modules/run-parallel
+407 silly REMOVE node_modules/reusify
+408 silly REMOVE node_modules/resolve-pkg-maps
+409 silly REMOVE node_modules/resolve
+410 silly REMOVE node_modules/regexp.prototype.flags
+411 silly REMOVE node_modules/reflect.getprototypeof
+412 silly REMOVE node_modules/queue-microtask
+413 silly REMOVE node_modules/punycode
+414 silly REMOVE node_modules/prelude-ls
+415 silly REMOVE node_modules/possible-typed-array-names
+416 silly REMOVE node_modules/picomatch
+417 silly REMOVE node_modules/path-parse
+418 silly REMOVE node_modules/path-key
+419 silly REMOVE node_modules/path-exists
+420 silly REMOVE node_modules/p-locate
+421 silly REMOVE node_modules/p-limit
+422 silly REMOVE node_modules/own-keys
+423 silly REMOVE node_modules/optionator
+424 silly REMOVE node_modules/object.values
+425 silly REMOVE node_modules/object.groupby
+426 silly REMOVE node_modules/object.fromentries
+427 silly REMOVE node_modules/object.entries
+428 silly REMOVE node_modules/object.assign
+429 silly REMOVE node_modules/object-keys
+430 silly REMOVE node_modules/object-inspect
+431 silly REMOVE node_modules/natural-compare
+432 silly REMOVE node_modules/minimist
+433 silly REMOVE node_modules/minimatch
+434 silly REMOVE node_modules/micromatch
+435 silly REMOVE node_modules/merge2
+436 silly REMOVE node_modules/math-intrinsics
+437 silly REMOVE node_modules/lodash.merge
+438 silly REMOVE node_modules/locate-path
+439 silly REMOVE node_modules/levn
+440 silly REMOVE node_modules/language-tags
+441 silly REMOVE node_modules/language-subtag-registry
+442 silly REMOVE node_modules/keyv
+443 silly REMOVE node_modules/jsx-ast-utils
+444 silly REMOVE node_modules/json5
+445 silly REMOVE node_modules/json-stable-stringify-without-jsonify
+446 silly REMOVE node_modules/json-schema-traverse
+447 silly REMOVE node_modules/json-buffer
+448 silly REMOVE node_modules/iterator.prototype
+449 silly REMOVE node_modules/isexe
+450 silly REMOVE node_modules/isarray
+451 silly REMOVE node_modules/is-weakset
+452 silly REMOVE node_modules/is-weakref
+453 silly REMOVE node_modules/is-weakmap
+454 silly REMOVE node_modules/is-typed-array
+455 silly REMOVE node_modules/is-symbol
+456 silly REMOVE node_modules/is-string
+457 silly REMOVE node_modules/is-shared-array-buffer
+458 silly REMOVE node_modules/is-set
+459 silly REMOVE node_modules/is-regex
+460 silly REMOVE node_modules/is-number-object
+461 silly REMOVE node_modules/is-number
+462 silly REMOVE node_modules/is-map
+463 silly REMOVE node_modules/is-glob
+464 silly REMOVE node_modules/is-generator-function
+465 silly REMOVE node_modules/is-finalizationregistry
+466 silly REMOVE node_modules/is-extglob
+467 silly REMOVE node_modules/is-date-object
+468 silly REMOVE node_modules/is-data-view
+469 silly REMOVE node_modules/is-core-module
+470 silly REMOVE node_modules/is-callable
+471 silly REMOVE node_modules/is-bun-module
+472 silly REMOVE node_modules/is-boolean-object
+473 silly REMOVE node_modules/is-bigint
+474 silly REMOVE node_modules/is-async-function
+475 silly REMOVE node_modules/is-array-buffer
+476 silly REMOVE node_modules/internal-slot
+477 silly REMOVE node_modules/imurmurhash
+478 silly REMOVE node_modules/ignore
+479 silly REMOVE node_modules/hasown
+480 silly REMOVE node_modules/has-tostringtag
+481 silly REMOVE node_modules/has-symbols
+482 silly REMOVE node_modules/has-proto
+483 silly REMOVE node_modules/has-property-descriptors
+484 silly REMOVE node_modules/has-flag
+485 silly REMOVE node_modules/has-bigints
+486 silly REMOVE node_modules/graphemer
+487 silly REMOVE node_modules/gopd
+488 silly REMOVE node_modules/globalthis
+489 silly REMOVE node_modules/glob-parent
+490 silly REMOVE node_modules/get-tsconfig
+491 silly REMOVE node_modules/get-symbol-description
+492 silly REMOVE node_modules/get-proto
+493 silly REMOVE node_modules/get-intrinsic
+494 silly REMOVE node_modules/functions-have-names
+495 silly REMOVE node_modules/function.prototype.name
+496 silly REMOVE node_modules/function-bind
+497 silly REMOVE node_modules/for-each
+498 silly REMOVE node_modules/flatted
+499 silly REMOVE node_modules/flat-cache
+500 silly REMOVE node_modules/find-up
+501 silly REMOVE node_modules/fill-range
+502 silly REMOVE node_modules/file-entry-cache
+503 silly REMOVE node_modules/fastq
+504 silly REMOVE node_modules/fast-levenshtein
+505 silly REMOVE node_modules/fast-json-stable-stringify
+506 silly REMOVE node_modules/fast-glob
+507 silly REMOVE node_modules/fast-glob/node_modules/glob-parent
+508 silly REMOVE node_modules/fast-deep-equal
+509 silly REMOVE node_modules/esutils
+510 silly REMOVE node_modules/estraverse
+511 silly REMOVE node_modules/esrecurse
+512 silly REMOVE node_modules/esquery
+513 silly REMOVE node_modules/espree
+514 silly REMOVE node_modules/espree/node_modules/eslint-visitor-keys
+515 silly REMOVE node_modules/eslint-visitor-keys
+516 silly REMOVE node_modules/eslint-scope
+517 silly REMOVE node_modules/eslint-plugin-react-hooks
+518 silly REMOVE node_modules/eslint-plugin-react
+519 silly REMOVE node_modules/eslint-plugin-react/node_modules/semver
+520 silly REMOVE node_modules/eslint-plugin-react/node_modules/resolve
+521 silly REMOVE node_modules/eslint-plugin-react/node_modules/minimatch
+522 silly REMOVE node_modules/eslint-plugin-react/node_modules/brace-expansion
+523 silly REMOVE node_modules/eslint-plugin-jsx-a11y
+524 silly REMOVE node_modules/eslint-plugin-jsx-a11y/node_modules/minimatch
+525 silly REMOVE node_modules/eslint-plugin-jsx-a11y/node_modules/brace-expansion
+526 silly REMOVE node_modules/eslint-plugin-import
+527 silly REMOVE node_modules/eslint-plugin-import/node_modules/semver
+528 silly REMOVE node_modules/eslint-plugin-import/node_modules/minimatch
+529 silly REMOVE node_modules/eslint-plugin-import/node_modules/debug
+530 silly REMOVE node_modules/eslint-plugin-import/node_modules/brace-expansion
+531 silly REMOVE node_modules/eslint-module-utils
+532 silly REMOVE node_modules/eslint-module-utils/node_modules/debug
+533 silly REMOVE node_modules/eslint-import-resolver-typescript
+534 silly REMOVE node_modules/eslint-import-resolver-node
+535 silly REMOVE node_modules/eslint-import-resolver-node/node_modules/debug
+536 silly REMOVE node_modules/eslint-config-next
+537 silly REMOVE node_modules/eslint
+538 silly REMOVE node_modules/eslint/node_modules/minimatch
+539 silly REMOVE node_modules/eslint/node_modules/eslint-visitor-keys
+540 silly REMOVE node_modules/eslint/node_modules/brace-expansion
+541 silly REMOVE node_modules/escape-string-regexp
+542 silly REMOVE node_modules/es-to-primitive
+543 silly REMOVE node_modules/es-shim-unscopables
+544 silly REMOVE node_modules/es-set-tostringtag
+545 silly REMOVE node_modules/es-object-atoms
+546 silly REMOVE node_modules/es-iterator-helpers
+547 silly REMOVE node_modules/es-errors
+548 silly REMOVE node_modules/es-define-property
+549 silly REMOVE node_modules/es-abstract
+550 silly REMOVE node_modules/emoji-regex
+551 silly REMOVE node_modules/dunder-proto
+552 silly REMOVE node_modules/doctrine
+553 silly REMOVE node_modules/define-properties
+554 silly REMOVE node_modules/define-data-property
+555 silly REMOVE node_modules/deep-is
+556 silly REMOVE node_modules/debug
+557 silly REMOVE node_modules/data-view-byte-offset
+558 silly REMOVE node_modules/data-view-byte-length
+559 silly REMOVE node_modules/data-view-buffer
+560 silly REMOVE node_modules/damerau-levenshtein
+561 silly REMOVE node_modules/cross-spawn
+562 silly REMOVE node_modules/concat-map
+563 silly REMOVE node_modules/chalk
+564 silly REMOVE node_modules/call-bound
+565 silly REMOVE node_modules/call-bind-apply-helpers
+566 silly REMOVE node_modules/call-bind
+567 silly REMOVE node_modules/braces
+568 silly REMOVE node_modules/brace-expansion
+569 silly REMOVE node_modules/balanced-match
+570 silly REMOVE node_modules/axobject-query
+571 silly REMOVE node_modules/axe-core
+572 silly REMOVE node_modules/available-typed-arrays
+573 silly REMOVE node_modules/async-function
+574 silly REMOVE node_modules/ast-types-flow
+575 silly REMOVE node_modules/arraybuffer.prototype.slice
+576 silly REMOVE node_modules/array.prototype.tosorted
+577 silly REMOVE node_modules/array.prototype.flatmap
+578 silly REMOVE node_modules/array.prototype.flat
+579 silly REMOVE node_modules/array.prototype.findlastindex
+580 silly REMOVE node_modules/array.prototype.findlast
+581 silly REMOVE node_modules/array-includes
+582 silly REMOVE node_modules/array-buffer-byte-length
+583 silly REMOVE node_modules/aria-query
+584 silly REMOVE node_modules/ansi-styles
+585 silly REMOVE node_modules/ajv
+586 silly REMOVE node_modules/acorn-jsx
+587 silly REMOVE node_modules/acorn
+588 silly REMOVE node_modules/@unrs/resolver-binding-win32-x64-msvc
+589 silly REMOVE node_modules/@typescript-eslint/visitor-keys
+590 silly REMOVE node_modules/@typescript-eslint/visitor-keys/node_modules/eslint-visitor-keys
+591 silly REMOVE node_modules/@typescript-eslint/utils
+592 silly REMOVE node_modules/@typescript-eslint/typescript-estree
+593 silly REMOVE node_modules/@typescript-eslint/types
+594 silly REMOVE node_modules/@typescript-eslint/type-utils
+595 silly REMOVE node_modules/@typescript-eslint/scope-manager
+596 silly REMOVE node_modules/@typescript-eslint/parser
+597 silly REMOVE node_modules/@typescript-eslint/eslint-plugin
+598 silly REMOVE node_modules/@types/json5
+599 silly REMOVE node_modules/@types/json-schema
+600 silly REMOVE node_modules/@types/estree
+601 silly REMOVE node_modules/@rushstack/eslint-patch
+602 silly REMOVE node_modules/@rtsao/scc
+603 silly REMOVE node_modules/@nolyfill/is-core-module
+604 silly REMOVE node_modules/@nodelib/fs.walk
+605 silly REMOVE node_modules/@nodelib/fs.stat
+606 silly REMOVE node_modules/@nodelib/fs.scandir
+607 silly REMOVE node_modules/@next/eslint-plugin-next
+608 silly REMOVE node_modules/@next/eslint-plugin-next/node_modules/glob-parent
+609 silly REMOVE node_modules/@next/eslint-plugin-next/node_modules/fast-glob
+610 silly REMOVE node_modules/@humanwhocodes/retry
+611 silly REMOVE node_modules/@humanwhocodes/module-importer
+612 silly REMOVE node_modules/@humanfs/node
+613 silly REMOVE node_modules/@humanfs/node/node_modules/@humanwhocodes/retry
+614 silly REMOVE node_modules/@humanfs/core
+615 silly REMOVE node_modules/@eslint/plugin-kit
+616 silly REMOVE node_modules/@eslint/object-schema
+617 silly REMOVE node_modules/@eslint/js
+618 silly REMOVE node_modules/@eslint/eslintrc
+619 silly REMOVE node_modules/@eslint/eslintrc/node_modules/minimatch
+620 silly REMOVE node_modules/@eslint/eslintrc/node_modules/globals
+621 silly REMOVE node_modules/@eslint/eslintrc/node_modules/brace-expansion
+622 silly REMOVE node_modules/@eslint/core
+623 silly REMOVE node_modules/@eslint/config-helpers
+624 silly REMOVE node_modules/@eslint/config-array
+625 silly REMOVE node_modules/@eslint/config-array/node_modules/minimatch
+626 silly REMOVE node_modules/@eslint/config-array/node_modules/brace-expansion
+627 silly REMOVE node_modules/@eslint-community/regexpp
+628 silly REMOVE node_modules/@eslint-community/eslint-utils
+629 verbose cwd C:\Users\richard.goltara\testeyau\radioman-1
+630 verbose os Windows_NT 10.0.19045
+631 verbose node v20.19.0
+632 verbose npm  v11.2.0
+633 verbose exit 0
+634 info ok

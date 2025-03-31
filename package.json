@@ -2,13 +2,12 @@
   "name": "papyo2",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.12.9",
@@ -23,16 +22,16 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^8.57.1",
+    "@eslint/js": "^8.57.0",
     "@types/node": "^20.17.28",
     "@types/react": "^18.3.20",
-    "@typescript-eslint/eslint-plugin": "^8.28.0",
-    "@typescript-eslint/parser": "^8.28.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
     "eslint-config-next": "^15.2.4",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "lightningcss": "^1.29.3",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
