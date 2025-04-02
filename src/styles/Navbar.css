@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bokor&display=swap');
 
 
@@ -55,6 +54,28 @@
     width: 35px; /* Larger icons */
     height: 35px;
     color: white;
+}
+
+/* New cart badge styles */
+.icon-link {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /* Menu hambúrguer escondido por padrão em telas grandes */
@@ -117,5 +138,3 @@
     background-color: rgb(255, 255, 255);
     color: rgb(113, 4, 14);
 }
-
-  

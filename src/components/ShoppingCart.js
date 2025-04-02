@@ -9,6 +9,12 @@ const ShoppingCart = ({ cartItems, onRemoveItem }) => {
         }, 0).toFixed(2);
     };
 
+    const handleRemoveItem = (index) => {
+        onRemoveItem(index);
+        // Dispatch custom event to update cart count
+        window.dispatchEvent(new Event('cartUpdated'));
+    };
+
     return (
         <div className="shopping-cart">
             <div className="cart-items-container">
@@ -23,7 +29,7 @@ const ShoppingCart = ({ cartItems, onRemoveItem }) => {
                             <span className="cart-item-title">{item.title}</span>
                             <span className="cart-item-price">{item.price}</span>
                             <button 
-                                onClick={() => onRemoveItem(index)}
+                                onClick={() => handleRemoveItem(index)}
                                 className="remove-item-btn"
                             >
                                 Remove

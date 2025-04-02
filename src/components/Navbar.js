@@ -18,6 +18,7 @@ import {
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [cartItemCount, setCartItemCount] = useState(0);
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -26,7 +27,27 @@ function Navbar() {
 
         checkScreenSize();
         window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
+        
+        // Update cart count from localStorage
+        const updateCartCount = () => {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            setCartItemCount(cartItems.length);
+        };
+        
+        // Initial count
+        updateCartCount();
+        
+        // Set up event listener for storage changes
+        window.addEventListener('storage', updateCartCount);
+        
+        // Custom event for cart updates within the same window
+        window.addEventListener('cartUpdated', updateCartCount);
+        
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+            window.removeEventListener('storage', updateCartCount);
+            window.removeEventListener('cartUpdated', updateCartCount);
+        };
     }, []);
 
     return (
@@ -50,8 +71,11 @@ function Navbar() {
             <ClerkProvider>
                 <header className="button-container">
                     <div className="icons flex items-center gap-4">
-                        <Link href="/shoppingcart" className="icon-link">
+                        <Link href="/shoppingcart" className="icon-link relative">
                             <ShoppingCartIcon className="iconcart text-blue-500" />
+                            {cartItemCount > 0 && (
+                                <span className="cart-badge">{cartItemCount}</span>
+                            )}
                         </Link>
                     </div>
         

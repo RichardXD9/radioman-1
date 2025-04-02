@@ -14,7 +14,7 @@ const CdsProductList = ({ filters = { genres: [], colors: [], availability: [] }
         {
             id: 1,
             image: '/images/adrenaline.jpg',
-            title: 'Deftones - Adrenaline CD',
+            title: 'Deftones - Adrenaline',
             availability: 'Disponível',
             description: 'Adrenaline CD',
             price: '25.00 €',
@@ -24,7 +24,7 @@ const CdsProductList = ({ filters = { genres: [], colors: [], availability: [] }
         {
             id: 2,
             image: '/images/Kornstl.jpg',
-            title: 'Korn - Self Titled CD',
+            title: 'Korn - Self Titled ',
             availability: 'Disponível',
             description: 'Korn CD',
             price: '25.00 €',
@@ -34,7 +34,7 @@ const CdsProductList = ({ filters = { genres: [], colors: [], availability: [] }
         {
             id: 3,
             image: '/images/LPhybrid.jpg',
-            title: 'Linkin Park - Hybrid Theory CD',
+            title: 'Linkin Park - Hybrid Theory ',
             availability: 'Disponível',
             description: 'Hybrid Theory CD',
             price: '25.00 €',
@@ -62,6 +62,8 @@ const CdsProductList = ({ filters = { genres: [], colors: [], availability: [] }
         const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
         const updatedCartItems = [...cartItems, product];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+
+        window.dispatchEvent(new Event('cartUpdated'));
         
         // Call the onAddToCart prop if provided
         if (onAddToCart) {

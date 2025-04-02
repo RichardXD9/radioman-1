@@ -62,6 +62,8 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
         const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
         const updatedCartItems = [...cartItems, product];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+
+        window.dispatchEvent(new Event('cartUpdated'));
         
         // Call the onAddToCart prop if provided
         if (onAddToCart) {

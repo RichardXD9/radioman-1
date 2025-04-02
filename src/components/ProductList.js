@@ -70,6 +70,9 @@ const ProductList = ({ onAddToCart }) => {
         const updatedCartItems = [...cartItems, product];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
         
+        // Dispatch custom event to update cart count
+        window.dispatchEvent(new Event('cartUpdated'));
+        
         // Call the onAddToCart prop if provided
         if (onAddToCart) {
             onAddToCart(product);
