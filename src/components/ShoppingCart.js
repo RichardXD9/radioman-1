@@ -1,6 +1,7 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 
-const ShoppingCart = ({ cartItems, onRemoveItem }) => {
+const ShoppingCart = ({ cartItems, onRemoveItem, onCheckout }) => {
     const calculateTotal = () => {
         return cartItems.reduce((total, item) => {
             // Remove the € symbol and parse the price
@@ -42,6 +43,17 @@ const ShoppingCart = ({ cartItems, onRemoveItem }) => {
                 <span className="total-label">Total:</span>
                 <span className="total-amount">{calculateTotal()}€</span>
             </div>
+            
+            {cartItems.length > 0 && (
+                <div className="checkout-container">
+                    <button 
+                        className="checkout-btn"
+                        onClick={onCheckout}
+                    >
+                        Finalizar Compra
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

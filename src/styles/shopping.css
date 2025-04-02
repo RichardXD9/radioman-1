@@ -1,5 +1,5 @@
 .shopping-cart-container {
-    margin-top: 5px; /* Adjust based on your navbar height */
+    margin-top: -65px; /* Adjust based on your navbar height */
     padding: 20px;
     margin-left:-450px;
     position: relative
@@ -109,6 +109,51 @@
     font-weight: bold;
 }
 
+/* New styles for checkout button */
+.checkout-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.checkout-btn {
+    background-color: #38c81c;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #2ea617;
+}
+
+/* Checkout success message */
+.checkout-success {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f0f9f0;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #38c81c;
+}
+
+.checkout-success h2 {
+    color: #38c81c;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.checkout-success p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
 @media (max-width: 1200px) {
     .cart-item {
         flex-direction: column;
@@ -120,6 +165,8 @@
     .cart-total {
         position: static; /* Reset positioning for smaller screens */
         text-align: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .cart-item-image {
@@ -129,5 +176,9 @@
 
     .remove-item-btn {
         align-self: center;
+    }
+    
+    .checkout-container {
+        margin-top: 20px;
     }
 }

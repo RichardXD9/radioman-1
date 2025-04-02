@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import ShoppingCart from '../components/ShoppingCart';
 import { Bokor } from 'next/font/google';
@@ -10,6 +11,8 @@ const bokorFont = Bokor({
 
 const ShoppingCartPage = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [checkoutComplete, setCheckoutComplete] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     // Retrieve cart items from local storage when component mounts
@@ -23,30 +26,52 @@ const ShoppingCartPage = () => {
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
   };
 
+  const handleCheckout = () => {
+    // Simulate checkout process
+    setCheckoutComplete(true);
+    
+    // Clear the cart
+    localStorage.setItem('cartItems', JSON.stringify([]));
+    
+    // Update cart count
+    window.dispatchEvent(new Event('cartUpdated'));
+    
+    // Wait 3 seconds before redirecting to home page
+    setTimeout(() => {
+      router.push('/');
+    }, 3000);
+  };
+
   return (
     <div>
-    <Navbar />
+      <Navbar />
 
-    {/* Container separado para o título */}
-    <div className="shopping-cart-header">
-      <h1 style={{ fontFamily: "'Bokor', cursive" }} className="shopping-cart-title">
-        Carrinho
-      </h1>   
-    </div>
+      {/* Container separado para o título */}
+      <div className="shopping-cart-header">
+        <h1 style={{ fontFamily: "'Bokor', cursive" }} className="shopping-cart-title">
+          Carrinho
+        </h1>   
+      </div>
 
-    {/* Container para os itens do carrinho */}
-    <div className="shopping-cart-container">
-      {cartItems.length > 0 ? (
-        <ShoppingCart 
-          cartItems={cartItems} 
-          onRemoveItem={removeFromCart} 
-        />
-      ) : (
-        <p className="empty-cart-message">O Teu carrinho está vazio.</p>
-      )}
+      {/* Container para os itens do carrinho ou mensagem de finalização */}
+      <div className="shopping-cart-container">
+        {checkoutComplete ? (
+          <div className="checkout-success">
+            <h2 className={bokorFont.className}>Serás redirecionado para uma nova página</h2>
+     
+          </div>
+        ) : cartItems.length > 0 ? (
+          <ShoppingCart 
+            cartItems={cartItems} 
+            onRemoveItem={removeFromCart}
+            onCheckout={handleCheckout}
+          />
+        ) : (
+          <p className="empty-cart-message">O Teu carrinho está vazio.</p>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default ShoppingCartPage;
