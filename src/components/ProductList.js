@@ -1,51 +1,55 @@
-// components/ProductList.js
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import Card from './Card';
 import Filter from './Filter';
-import { Bokor } from 'next/font/google';
-import { useRouter } from 'next/router';
-import { useAuth } from '@clerk/nextjs';
+import {Bokor} from 'next/font/google';
+
 
 const bokorFont = Bokor({
     subsets: ["latin"],
-    weight: "400",
+    weight:"400",
 });
-
-const ProductList = ({ onAddToCart, productType = 'Vinil' }) => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const router = useRouter();
-    const { isLoaded, userId } = useAuth();
+  
+const ProductList = ({ onAddToCart }) => {
+    // Restore the complete product list
+    const products = [
+        {
+            id: 1,
+            image: '/images/adrenaline.jpg',
+            title: 'Deftones - Adrenaline',
+            availability: 'Disponível',
+            description: 'Adrenaline Vinil',
+            price: '45.00 €',
+            genre: 'Hardcore',
+            color: 'Preto'
+        },
+        {
+            id: 2,
+            image: '/images/Kornstl.jpg',
+            title: 'Korn - Self Titled',
+            availability: 'Disponível',
+            description: 'Korn Vinil',
+            price: '45.00 €',
+            genre: 'Numetal',
+            color: 'Branco'
+        },
+        {
+            id: 3,
+            image: '/images/LPhybrid.jpg',
+            title: 'Linkin Park - Hybrid Theory',
+            availability: 'Disponível',
+            description: 'Hybrid Theory Vinil',
+            price: '45.00 €',
+            genre: 'Alternative',
+            color: 'Vermelho'
+        },
+        // Add more products here
+    ];
 
     const [filters, setFilters] = useState({
         genres: [],
         colors: [],
         availability: []
     });
-
-    // Fetch products when component mounts
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                setLoading(true);
-                const response = await fetch(`/api/products?type=${productType}`);
-                
-                if (!response.ok) {
-                    throw new Error('Failed to fetch products');
-                }
-                
-                const data = await response.json();
-                setProducts(data.data);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-        
-        fetchProducts();
-    }, [productType]);
 
     const filteredProducts = useMemo(() => {
         return products.filter(product => {
@@ -60,78 +64,44 @@ const ProductList = ({ onAddToCart, productType = 'Vinil' }) => {
         });
     }, [products, filters]);
 
-    const handleBuyClick = async (product) => {
-        if (!isLoaded || !userId) {
-            // User not logged in, redirect to sign in
-            alert('Por favor, faça login para adicionar produtos ao carrinho');
-            router.push('/sign-in');
-            return;
+    const handleBuyClick = (product) => {
+        // Add to cart and save to local storage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        const updatedCartItems = [...cartItems, product];
+        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        
+        // Dispatch custom event to update cart count
+        window.dispatchEvent(new Event('cartUpdated'));
+        
+        // Call the onAddToCart prop if provided
+        if (onAddToCart) {
+            onAddToCart(product);
         }
         
-        try {
-            // Add to cart using API
-            const response = await fetch('/api/cart', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    productId: product._id,
-                    quantity: 1
-                }),
-            });
-            
-            const data = await response.json();
-            
-            if (!response.ok) {
-                throw new Error(data.message || 'Error adding to cart');
-            }
-            
-            // Dispatch custom event to update cart count
-            window.dispatchEvent(new Event('cartUpdated'));
-            
-            // Call the onAddToCart prop if provided
-            if (onAddToCart) {
-                onAddToCart(product);
-            }
-            
-            alert(`Produto ${product.title} adicionado ao carrinho!`);
-        } catch (error) {
-            console.error('Error adding to cart:', error);
-            alert('Error adding product to cart');
-        }
+        // Optional: Show a confirmation
+        alert(`Produto ${product.title} adicionado ao carrinho!`);
     };
 
     const handleFilterChange = (newFilters) => {
         setFilters(newFilters);
     };
 
-    if (loading) {
-        return <div className="loading">A carregar produtos...</div>;
-    }
-
-    if (error) {
-        return <div className="error">Erro: {error}</div>;
-    }
-
     return (
         <div className="flex">
             <Filter onFilterChange={handleFilterChange} />
             <div className="product-list ml-64">
-                {filteredProducts.length > 0 ? filteredProducts.map((product) => (
+                {filteredProducts.map((product) => (
                     <Card
-                        key={product._id}
+                        key={product.id}
                         image={product.image}
                         title={product.title}
                         availability={product.availability}
                         description={product.description}
                         price={product.price}
-                        onBuyClick={() => handleBuyClick(product)}
+                        onBuyClick={() => handleBuyClick(product)} 
                         bokorFont={bokorFont}
                     />
-                )) : (
-                    <p>Nenhum produto encontrado com os filtros selecionados.</p>
-                )}
+                ))}
             </div>
         </div>
     );
