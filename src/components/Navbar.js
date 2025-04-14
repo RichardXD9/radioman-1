@@ -7,7 +7,6 @@ const bokorFont = Bokor({
     weight:"400",
 });
 import {
-    ClerkProvider,
     SignInButton,
     SignUpButton,
     SignedIn,
@@ -68,26 +67,24 @@ function Navbar() {
                 <Link href="/merch" className={bokorFont.className}>Merch</Link>
             </nav>
             
-            <ClerkProvider>
-                <header className="button-container">
-                    <div className="icons flex items-center gap-4">
-                        <Link href="/shoppingcart" className="icon-link relative">
-                            <ShoppingCartIcon className="iconcart text-blue-500" />
-                            {cartItemCount > 0 && (
-                                <span className="cart-badge">{cartItemCount}</span>
-                            )}
-                        </Link>
-                    </div>
-        
-                    <SignedOut>
-                        <SignInButton className="logincarai"/>
-                        <SignUpButton className="registecarai"/>
-                    </SignedOut>
-                    <SignedIn>
-                        <UserButton  />
-                    </SignedIn>
-                </header>
-            </ClerkProvider>
+            <header className="button-container">
+                <div className="icons flex items-center gap-4">
+                    <Link href="/shoppingcart" className="icon-link relative">
+                        <ShoppingCartIcon className="iconcart text-blue-500" />
+                        {cartItemCount > 0 && (
+                            <span className="cart-badge">{cartItemCount}</span>
+                        )}
+                    </Link>
+                </div>
+    
+                <SignedOut>
+                    <SignInButton className="logincarai"/>
+                    <SignUpButton className="registecarai"/>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton  />
+                </SignedIn>
+            </header>
         </header>
     );
 }
