@@ -10,7 +10,9 @@ html, body {
 }
 
 body {
-background-color: white;
+  background-color: #4e4949; /* Change to black */
+  color: #fff; /* White text for contrast on black background */
+
 }
 
 
