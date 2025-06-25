@@ -6,7 +6,7 @@ import { Bokor } from 'next/font/google';
 
 const bokorFont = Bokor({
   subsets: ["latin"],
-  weight:"400",
+  weight: "400",
 });
 
 const ShoppingCartPage = () => {
@@ -30,16 +30,17 @@ const ShoppingCartPage = () => {
     // Simulate checkout process
     setCheckoutComplete(true);
     
-    // Clear the cart
+    // Pass cart items to checkout page before clearing
+    router.push({
+      pathname: '/checkout',
+      query: { cartItems: JSON.stringify(cartItems) },
+    });
+
+    // Clear the cart after redirect is initiated
     localStorage.setItem('cartItems', JSON.stringify([]));
     
     // Update cart count
     window.dispatchEvent(new Event('cartUpdated'));
-    
-    // Wait 3 seconds before redirecting to home page
-    setTimeout(() => {
-      router.push('/');
-    }, 3000);
   };
 
   return (
@@ -58,7 +59,6 @@ const ShoppingCartPage = () => {
         {checkoutComplete ? (
           <div className="checkout-success">
             <h2 className={bokorFont.className}>Serás redirecionado para uma nova página</h2>
-     
           </div>
         ) : cartItems.length > 0 ? (
           <ShoppingCart 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 
 const ShoppingCart = ({ cartItems, onRemoveItem, onCheckout }) => {
     const calculateTotal = () => {

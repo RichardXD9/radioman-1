@@ -4,6 +4,7 @@ import "../styles/Navbar.css";
 import "../styles/destaques.css";
 import "../styles/shopping.css";
 import "../styles/filter.css";
+import "../styles/Checkout.css";
 import { ClerkProvider } from '@clerk/nextjs';
 
 export default function App({ Component, pageProps }) {
