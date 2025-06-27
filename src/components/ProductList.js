@@ -3,7 +3,6 @@ import Card from './Card';
 import Filter from './Filter';
 import {Bokor} from 'next/font/google';
 
-
 const bokorFont = Bokor({
     subsets: ["latin"],
     weight:"400",
@@ -93,6 +92,7 @@ const ProductList = ({ onAddToCart }) => {
                 {filteredProducts.map((product) => (
                     <Card
                         key={product.id}
+                        id={product.id}
                         image={product.image}
                         title={product.title}
                         availability={product.availability}
@@ -100,6 +100,7 @@ const ProductList = ({ onAddToCart }) => {
                         price={product.price}
                         onBuyClick={() => handleBuyClick(product)} 
                         bokorFont={bokorFont}
+                        productType="vinyl"
                     />
                 ))}
             </div>

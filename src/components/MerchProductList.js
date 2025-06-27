@@ -147,6 +147,7 @@ const MerchProductList = ({ filters = { genres: [], colors: [], availability: []
             {filteredProducts.map((product) => (
                 <Card
                     key={product.id}
+                    id={product.id}
                     image={product.image}
                     title={product.title}
                     availability={product.availability}
@@ -154,6 +155,7 @@ const MerchProductList = ({ filters = { genres: [], colors: [], availability: []
                     price={product.price}
                     onBuyClick={() => handleBuyClick(product)}
                     bokorFont={bokorFont}
+                    productType="merch"
                 />
             ))}
         </div>

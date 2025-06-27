@@ -2,7 +2,6 @@ import React, { useMemo } from 'react';
 import Card from './Card';
 import {Bokor} from 'next/font/google';
 
-
 const bokorFont = Bokor({
     subsets: ["latin"],
     weight:"400",
@@ -41,7 +40,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             genre: 'Hardcore',
             color: 'Black'
         },
-        // ... (rest of the products remain the same)
+        // Add more vinyl products here
     ];
 
     const filteredProducts = useMemo(() => {
@@ -79,6 +78,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
             {filteredProducts.map((product) => (
                 <Card
                     key={product.id}
+                    id={product.id}
                     image={product.image}
                     title={product.title}
                     availability={product.availability}
@@ -86,6 +86,7 @@ const VinilProductList = ({ filters = { genres: [], colors: [], availability: []
                     price={product.price}
                     onBuyClick={() => handleBuyClick(product)}
                     bokorFont={bokorFont}
+                    productType="vinyl"
                 />
             ))}
         </div>
