@@ -1,6 +1,6 @@
 // src/pages/api/products/index.js
 import clientPromise from '../../../lib/mongodb';
-import Product from '../../../models/Product';
+import Product from '@/models/Product';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
