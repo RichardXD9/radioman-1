@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Navbar from '../components/Navbar';
+import Navbar from '../../src/components/Navbar';
 import { Bokor } from 'next/font/google';
 
 const bokorFont = Bokor({
@@ -144,15 +144,12 @@ const ProductDetail = () => {
     const handleBuyClick = () => {
         if (!product) return;
 
-        // Add to cart and save to local storage
         const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
         const updatedCartItems = [...cartItems, product];
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
 
-        // Dispatch custom event to update cart count
         window.dispatchEvent(new Event('cartUpdated'));
         
-        // Show confirmation
         alert(`Produto ${product.title} adicionado ao carrinho!`);
     };
 
@@ -206,7 +203,6 @@ const ProductDetail = () => {
                 </button>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {/* Product Image */}
                     <div className="flex justify-center">
                         <img 
                             src={product.image} 
@@ -215,7 +211,6 @@ const ProductDetail = () => {
                         />
                     </div>
 
-                    {/* Product Details */}
                     <div className="space-y-6">
                         <div>
                             <h1 className={`text-3xl font-bold mb-2 ${bokorFont.className}`}>
@@ -235,7 +230,6 @@ const ProductDetail = () => {
                             </div>
                         </div>
 
-                        {/* Product Info */}
                         <div className="space-y-4">
                             <div>
                                 <h3 className="text-lg font-semibold mb-2">Description</h3>
@@ -265,7 +259,6 @@ const ProductDetail = () => {
                             )}
                         </div>
 
-                        {/* Buy Button */}
                         <div className="pt-4">
                             <button
                                 onClick={handleBuyClick}
