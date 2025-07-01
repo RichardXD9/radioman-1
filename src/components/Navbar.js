@@ -58,7 +58,7 @@ function Navbar() {
                     </div>
                 )}
                 <Link href="/">
-                    <img src="images/logo.png" className={`logo ${isMobile ? 'logo-mobile' : ''}`} alt="Logo" />
+                    <img src="/images/logo.png" className={`logo ${isMobile ? 'logo-mobile' : ''}`} alt="Logo" />
                 </Link>
             </div>
             <nav className={`navbar ${menuOpen ? 'active' : ''} ${isMobile ? 'mobile' : ''}`}>

@@ -1,74 +1,117 @@
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 20px;
-    margin-left: 256px; /* Width of the sidebar */
-    margin-right: 0;
-
+    justify-content: flex-start; /* Aligns cards to the start */
+    gap: 2rem; /* Increased gap for better spacing */
+    padding: 2rem;
+    margin-left: 17rem; /* Adjusted to match sidebar width + padding */
+    margin-right: 1rem;
 }
 
 .card {
-
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack items vertically */
     width: 100%;
-    max-width: 200px;
-    background: #ededed;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    padding: 15px;
+    max-width: 220px; /* Slightly wider cards */
+    background: #2a2a2a; /* Darker background to match theme */
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 12px; /* More rounded corners */
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-   height: 100%;
-   max-height: 420px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Hide overflowing content from image zoom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    color: #ededed; /* Light text color for dark background */
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03); /* Lift and scale effect */
+    box-shadow: 0 8px 25px rgba(255, 77, 77, 0.3); /* Glow effect on hover */
+    cursor: pointer;;
+}
+
+.card-image-container {
+    overflow: hidden; /* To contain the image zoom effect */
+    border-bottom: 1px solid #444;
 }
 
 .card img {
-    max-width: 100%;
-    border-radius: 4px;
+    width: 100%;
+    height: 220px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows this section to fill available space */
+    padding: 1rem;
+    gap: 0.5rem; /* Space between content elements */
+}
+
+h2.card-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem; /* Adjusted font size */
+    line-height: 1.4; /* Improved line height */
+    min-height: 45px; /* Reserve space for two lines of text */
+}
+
+p {
+    color: #b0b0b0; /* Lighter gray for less important text */
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
     .product-list {
-        flex-direction: column;
-        align-items: center;
         margin-left: 0;
         margin-right: 0;
+        justify-content: center; /* Center cards on mobile */
+        padding: 1rem;
     }
 }
 
-p{
-    color:rgb(0, 0, 0);
-    
-
+.card-availability {
+    font-style: italic;
+    font-size: 0.85rem;
 }
 
-h2{
-    color:black;
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Pushes the footer to the bottom of the card */
+    padding-top: 0.75rem;
+    border-top: 1px solid #444; /* Adds a separator line */
+}
+
+.card-price {
+    font-size: 1.4rem;
     font-weight: bold;
+    color: #ff4d4d; /* Highlight color for price */
 }
 
-.card-buy{
-    margin-top:-5px;
-    color:black;
-  background-color: rgb(56, 200, 28);; 
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size:1.2em;
-}
-.card-buy:hover{
-    cursor:pointer;
-}   
-
-.card-availability{
-    margin-top: -12px;
-    
+.buy-button {
+    background-color: #e11d48; /* A strong, vibrant red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px; /* Pill-shaped button */
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.card-description{
-    margin-top: -10px;
-}
-
-.card-price{
-    margin-top: -10px;
+.card-buy:hover {
+    background-color: #ff4d4d; /* Lighter red on hover */
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4); /* Glow effect */
+    transform: translateY(-2px); /* Slight lift effect */
 }

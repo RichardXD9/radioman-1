@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Navbar from '../../src/components/Navbar';
+import Navbar from '../../../components/Navbar';
 import { Bokor } from 'next/font/google';
+import { ArrowLeftIcon, ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const bokorFont = Bokor({
     subsets: ["latin"],
@@ -192,89 +193,70 @@ const ProductDetail = () => {
     }
 
     return (
-        <div>
+        <div className="product-detail-page">
             <Navbar />
-            <div className="container mx-auto px-4 py-8">
-                <button 
+            <div className="container mx-auto px-4 product-detail-container">
+                <button
                     onClick={handleBackClick}
-                    className="mb-6 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded transition-colors"
+                    className="back-button"
                 >
-                    ← Back to {type === 'vinyl' ? 'Vinyl' : type === 'cd' ? 'CDs' : 'Merchandise'}
+                    <ArrowLeftIcon className="h-5 w-5" />
+                    <span>Back to {type === 'vinyl' ? 'Vinyl' : type === 'cd' ? 'CDs' : 'Merchandise'}</span>
                 </button>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="flex justify-center">
+                <div className="product-grid">
+                    <div className="product-image-wrapper">
                         <img 
                             src={product.image} 
                             alt={product.title}
-                            className="w-full max-w-md rounded-lg shadow-lg"
+                            className="product-image"
                         />
                     </div>
 
-                    <div className="space-y-6">
-                        <div>
-                            <h1 className={`text-3xl font-bold mb-2 ${bokorFont.className}`}>
+                    <div className="product-info">
+                        <div className="product-info-header">
+                            <h1 className={`product-title ${bokorFont.className}`}>
                                 {product.title}
                             </h1>
-                            <div className="flex items-center space-x-4 mb-4">
-                                <span className={`px-3 py-1 rounded-full text-sm ${
-                                    product.availability === 'Disponível' 
-                                        ? 'bg-green-100 text-green-800' 
-                                        : 'bg-red-100 text-red-800'
-                                }`}>
+
+                            <div className="flex items-center">
+                                <span className={`availability-badge ${product.availability === 'Disponível' ? 'available' : 'unavailable'}`}>
                                     {product.availability}
                                 </span>
-                                <span className="text-2xl font-bold text-blue-600">
-                                    {product.price}
-                                </span>
                             </div>
+
+                            <p className="product-price">{product.price}</p>
                         </div>
 
-                        <div className="space-y-4">
+                        <div>
+                            <h3 className="product-section-title">Description</h3>
+                            <p className="product-description">{product.fullDescription}</p>
+                        </div>
+
+                        {product.specifications && (
                             <div>
-                                <h3 className="text-lg font-semibold mb-2">Description</h3>
-                                <p className="text-gray-700">{product.fullDescription}</p>
+                                <h3 className="product-section-title">Specifications</h3>
+                                <ul className="specifications-list">
+                                    {product.specifications.map((spec, index) => (
+                                        <li key={index}>{spec}</li>
+                                    ))}
+                                </ul>
                             </div>
+                        )}
 
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <span className="font-semibold">Genre:</span>
-                                    <span className="ml-2">{product.genre}</span>
-                                </div>
-                                <div>
-                                    <span className="font-semibold">Color:</span>
-                                    <span className="ml-2">{product.color}</span>
-                                </div>
-                            </div>
-
-                            {product.specifications && (
-                                <div>
-                                    <h3 className="text-lg font-semibold mb-2">Specifications</h3>
-                                    <ul className="list-disc list-inside space-y-1">
-                                        {product.specifications.map((spec, index) => (
-                                            <li key={index} className="text-gray-700">{spec}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-                        </div>
-
-                        <div className="pt-4">
-                            <button
-                                onClick={handleBuyClick}
-                                disabled={product.availability !== 'Disponível'}
-                                className={`w-full py-3 px-6 rounded-lg text-white font-semibold text-lg transition-colors ${
-                                    product.availability === 'Disponível'
-                                        ? 'bg-blue-600 hover:bg-blue-700 cursor-pointer'
-                                        : 'bg-gray-400 cursor-not-allowed'
-                                }`}
-                            >
+                        <button
+                            onClick={handleBuyClick}
+                            disabled={product.availability !== 'Disponível'}
+                            className="buy-button-detail"
+                        >
+                            <ShoppingCartIcon />
+                            <span>
                                 {product.availability === 'Disponível' 
                                     ? 'Add to Cart' 
                                     : 'Out of Stock'
                                 }
-                            </button>
-                        </div>
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>

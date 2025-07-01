@@ -36,9 +36,6 @@ const ShoppingCartPage = () => {
       query: { cartItems: JSON.stringify(cartItems) },
     });
 
-    // Clear the cart after redirect is initiated
-    localStorage.setItem('cartItems', JSON.stringify([]));
-    
     // Update cart count
     window.dispatchEvent(new Event('cartUpdated'));
   };

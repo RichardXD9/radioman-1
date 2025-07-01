@@ -1,9 +1,18 @@
 /* General Container Styling */
 .checkout-container {
   max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem; /* Adjust padding for navbar and spacing */
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 30%);
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+/* Main checkout grid */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
 }
 
 /* Progress Bar */
@@ -14,19 +23,24 @@
 }
 
 .progress-step {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 9999px;
-  background-color: #374151;
-  color: #ffffff;
+  background-color: #333;
+  color: #a0a0a0;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .progress-step.active {
-  background-color: #2563eb;
+  background-color: #e11d48;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(225, 29, 72, 0.5);
 }
 
 /* Checkout Section */
 .checkout-section {
-  background-color: #1f2937;
+  background-color: #2a2a2a;
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -37,7 +51,8 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e11d48;
 }
 
 /* Form Styling */
@@ -49,7 +64,7 @@
 
 .form-group label {
   display: block;
-  color: #ffffff;
+  color: #b0b0b0;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 0.25rem;
@@ -58,10 +73,17 @@
 .form-group input {
   width: 100%;
   padding: 0.5rem;
-  background-color: #374151;
+  background-color: #1f1f1f;
   color: #ffffff;
-  border: 1px solid #4b5563;
+  border: 1px solid #555;
   border-radius: 0.25rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #e11d48;
+  box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.5);
 }
 
 .form-row {
@@ -81,9 +103,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem;
-  background-color: #374151;
+  padding: 0.75rem;
+  background-color: #333;
   border-radius: 0.25rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .option-details .option-name {
@@ -100,43 +124,53 @@
   color: #ffffff;
   font-weight: 600;
 }
+.shipping-option:hover {
+  background-color: #3a3a3a;
+}
 
 .shipping-option input {
   margin-right: 0.5rem;
 }
 
+.shipping-option input:checked + div {
+  border-color: #e11d48;
+  background-color: #444;
+}
+
 /* Buttons */
 .btn-primary {
   width: 100%;
-  background-color: #2563eb;
+  background: linear-gradient(45deg, #e11d48, #ff4d4d);
   color: #ffffff;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.25rem;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
 }
 
 .btn-primary:hover {
-  background-color: #1d4ed8;
+  background: linear-gradient(45deg, #ff4d4d, #e11d48);
+  transform: scale(1.02);
 }
 
 .btn-secondary {
-  background-color: #4b5563;
+  background-color: #444;
   color: #ffffff;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.25rem;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: none;
 }
 
 .btn-secondary:hover {
-  background-color: #374151;
+  background-color: #555;
 }
 
 .btn-primary:disabled {
-  background-color: #60a5fa;
+  background: #555;
   cursor: not-allowed;
 }
 
@@ -151,7 +185,9 @@
 .order-summary {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+  position: sticky;
+  top: 8rem;
 }
 
 .summary-section h3 {
@@ -165,7 +201,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
   background-color: #374151;
   border-radius: 0.25rem;
   margin-bottom: 0.5rem;
@@ -190,13 +226,15 @@
 .order-totals {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
 }
 
 .total-line {
   display: flex;
   justify-content: space-between;
-  color: #ffffff;
+  color: #b0b0b0;
 }
 
 .total-line.total-final {
@@ -209,7 +247,111 @@
 }
 
 .success-icon {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #10b981;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+  .order-summary {
+    position: static;
+  }
+}
+
+/* Stripe Payment Element Styling */
+#payment-element {
+  margin-bottom: 1.5rem;
+}
+
+/* Spinner, processing state, and error messages */
+.spinner,
+.spinner:before,
+.spinner:after {
+  border-radius: 50%;
+}
+
+.spinner {
+  color: #ffffff;
+  font-size: 22px;
+  text-indent: -99999px;
+  margin: 0px auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-shadow: inset 0 0 0 2px;
+  transform: translateZ(0);
+}
+
+.spinner:before,
+.spinner:after {
+  position: absolute;
+  content: "";
+}
+
+.spinner:before {
+  width: 10.4px;
+  height: 20.4px;
+  background: #e11d48;
+  border-radius: 20.4px 0 0 20.4px;
+  top: -0.2px;
+  left: -0.2px;
+  transform-origin: 10.4px 10.2px;
+  animation: loading 2s infinite ease 1.5s;
+}
+
+.spinner:after {
+  width: 10.4px;
+  height: 10.2px;
+  background: #e11d48;
+  border-radius: 0 10.2px 10.2px 0;
+  top: -0.1px;
+  left: 10.2px;
+  transform-origin: 0px 10.2px;
+  animation: loading 2s infinite ease;
+}
+
+@keyframes loading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#payment-message {
+  color: #ff4d4d;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+/* Error messages for form validation */
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Review Section Styling */
+.review-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #444;
+}
+
+.review-section:last-of-type {
+  border-bottom: none;
+}
+
+.review-section h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ededed;
+  margin-bottom: 1rem;
+}
+
+.review-section p {
+  color: #b0b0b0;
+  line-height: 1.6;
 }
