@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from 'react';
+// src/components/ProductList.js
+import React, { useState, useEffect, useMemo } from 'react';
 import Card from './Card';
-import Filter from './Filter';
-import {Bokor} from 'next/font/google';
+import Filter from './Filter'; // Keep Filter if it's external or needed for other pages
+import { Bokor } from 'next/font/google';
 
 const bokorFont = Bokor({
     subsets: ["latin"],
@@ -9,40 +10,9 @@ const bokorFont = Bokor({
 });
   
 const ProductList = ({ onAddToCart }) => {
-    // Restore the complete product list
-    const products = [
-        {
-            id: 1,
-            image: '/images/adrenaline.jpg',
-            title: 'Deftones - Adrenaline',
-            availability: 'Disponível',
-            description: 'Adrenaline Vinil',
-            price: '45.00 €',
-            genre: 'Hardcore',
-            color: 'Preto'
-        },
-        {
-            id: 2,
-            image: '/images/Kornstl.jpg',
-            title: 'Korn - Self Titled',
-            availability: 'Disponível',
-            description: 'Korn Vinil',
-            price: '45.00 €',
-            genre: 'Numetal',
-            color: 'Branco'
-        },
-        {
-            id: 3,
-            image: '/images/LPhybrid.jpg',
-            title: 'Linkin Park - Hybrid Theory',
-            availability: 'Disponível',
-            description: 'Hybrid Theory Vinil',
-            price: '45.00 €',
-            genre: 'Alternative',
-            color: 'Vermelho'
-        },
-        // Add more products here
-    ];
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const [filters, setFilters] = useState({
         genres: [],
@@ -50,18 +20,43 @@ const ProductList = ({ onAddToCart }) => {
         availability: []
     });
 
-    const filteredProducts = useMemo(() => {
-        return products.filter(product => {
-            const genreMatch = filters.genres.length === 0 || 
-                filters.genres.includes(product.genre);
-            const colorMatch = filters.colors.length === 0 || 
-                filters.colors.includes(product.color);
-            const availabilityMatch = filters.availability.length === 0 || 
-                filters.availability.includes(product.availability);
-            
-            return genreMatch && colorMatch && availabilityMatch;
-        });
-    }, [products, filters]);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            setLoading(true);
+            setError(null);
+            try {
+                // Construct query parameters from filters
+                const queryParams = new URLSearchParams();
+                if (filters.genres.length > 0) {
+                    filters.genres.forEach(genre => queryParams.append('genres', genre));
+                }
+                if (filters.colors.length > 0) {
+                    filters.colors.forEach(color => queryParams.append('colors', color));
+                }
+                if (filters.availability.length > 0) {
+                    filters.availability.forEach(status => queryParams.append('availability', status));
+                }
+                queryParams.append('type', 'vinyl'); // Specify product type for this list
+
+                const response = await fetch(`/api/products?${queryParams.toString()}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                if (data.success) {
+                    setProducts(data.data);
+                } else {
+                    setError(data.error || 'Failed to fetch products');
+                }
+            } catch (err) {
+                setError(err.message || 'An unexpected error occurred while fetching products.');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProducts();
+    }, [filters]); // Re-fetch products when filters change
 
     const handleBuyClick = (product) => {
         // Add to cart and save to local storage
@@ -85,24 +80,36 @@ const ProductList = ({ onAddToCart }) => {
         setFilters(newFilters);
     };
 
+    if (loading) {
+        return <div className="product-list ml-64">Loading products...</div>;
+    }
+
+    if (error) {
+        return <div className="product-list ml-64 text-red-500">Error: {error}</div>;
+    }
+
     return (
         <div className="flex">
             <Filter onFilterChange={handleFilterChange} />
             <div className="product-list ml-64">
-                {filteredProducts.map((product) => (
-                    <Card
-                        key={product.id}
-                        id={product.id}
-                        image={product.image}
-                        title={product.title}
-                        availability={product.availability}
-                        description={product.description}
-                        price={product.price}
-                        onBuyClick={() => handleBuyClick(product)} 
-                        bokorFont={bokorFont}
-                        productType="vinyl"
-                    />
-                ))}
+                {products.length === 0 ? (
+                    <p>No products found matching your criteria.</p>
+                ) : (
+                    products.map((product) => (
+                        <Card
+                            key={product.id} // Use product.id directly from fetched data
+                            id={product.id}
+                            image={product.image}
+                            title={product.title}
+                            availability={product.quantity > 0 ? 'Disponível' : 'Esgotado'} // Use quantity from backend
+                            description={product.description}
+                            price={product.price}
+                            onBuyClick={() => handleBuyClick(product)} 
+                            bokorFont={bokorFont}
+                            productType="vinyl" // Ensure this matches what you expect in the backend query
+                        />
+                    ))
+                )}
             </div>
         </div>
     );

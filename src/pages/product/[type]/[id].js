@@ -1,3 +1,4 @@
+// src/pages/product/[type]/[id].js
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Navbar from '../../../components/Navbar';
@@ -14,133 +15,35 @@ const ProductDetail = () => {
     const { id, type } = router.query;
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
-
-    // All products data
-    const allProducts = {
-        vinyl: [
-            {
-                id: 1,
-                image: '/images/adrenaline.jpg',
-                title: 'Deftones - Adrenaline',
-                availability: 'Disponível',
-                description: 'Adrenaline Vinil',
-                fullDescription: 'This is the debut studio album by American alternative metal band Deftones, released on October 3, 1995. The album features aggressive guitar riffs and Chino Moreno\'s distinctive vocal style. A classic piece for any vinyl collection.',
-                price: '45.00 €',
-                genre: 'Hardcore',
-                color: 'Black',
-                specifications: ['180g Vinyl', 'Gatefold Sleeve', 'Limited Edition']
-            },
-            {
-                id: 2,
-                image: '/images/Kornstl.jpg',
-                title: 'Korn - Self Titled',
-                availability: 'Disponível',
-                description: 'Korn Vinil',
-                fullDescription: 'The debut album from nu-metal pioneers Korn, released in 1994. This groundbreaking album introduced a new sound that would influence countless bands. Essential listening for metal fans.',
-                price: '45.00 €',
-                genre: 'Hardcore',
-                color: 'Black',
-                specifications: ['180g Vinyl', 'Original Artwork', 'Remastered Audio']
-            },
-            {
-                id: 3,
-                image: '/images/LPhybrid.jpg',
-                title: 'Linkin Park - Hybrid Theory',
-                availability: 'Disponível',
-                description: 'Hybrid Theory Vinil',
-                fullDescription: 'The debut album by Linkin Park, released in 2000. One of the best-selling albums of the 21st century, featuring hits like "In the End" and "Crawling". A must-have for any rock collection.',
-                price: '45.00 €',
-                genre: 'Hardcore',
-                color: 'Black',
-                specifications: ['180g Vinyl', 'Double LP', 'Digital Download Included']
-            }
-        ],
-        cd: [
-            {
-                id: 1,
-                image: '/images/adrenaline.jpg',
-                title: 'Deftones - Adrenaline',
-                availability: 'Disponível',
-                description: 'Adrenaline CD',
-                fullDescription: 'The debut studio album by Deftones on CD format. Crystal clear audio quality with all the original tracks. Perfect for audiophiles who prefer the convenience of CD format.',
-                price: '25.00 €',
-                genre: 'Hardcore',
-                color: 'Preto',
-                specifications: ['Original CD', 'Booklet Included', 'Remastered']
-            },
-            {
-                id: 2,
-                image: '/images/Kornstl.jpg',
-                title: 'Korn - Self Titled',
-                availability: 'Disponível',
-                description: 'Korn CD',
-                fullDescription: 'Korn\'s self-titled debut album on CD. Experience the raw power and innovation that started the nu-metal revolution. High-quality audio reproduction.',
-                price: '25.00 €',
-                genre: 'Numetal',
-                color: 'Branco',
-                specifications: ['Original CD', 'Lyric Booklet', 'Enhanced Audio']
-            },
-            {
-                id: 3,
-                image: '/images/LPhybrid.jpg',
-                title: 'Linkin Park - Hybrid Theory',
-                availability: 'Disponível',
-                description: 'Hybrid Theory CD',
-                fullDescription: 'Linkin Park\'s breakthrough album on CD format. Features all the hits that made this one of the most successful debut albums ever. Superior sound quality.',
-                price: '25.00 €',
-                genre: 'Alternative',
-                color: 'Vermelho',
-                specifications: ['Original CD', 'Photo Booklet', 'Bonus Content']
-            }
-        ],
-        merch: [
-            {
-                id: 1,
-                image: '/images/deftones-tshirt.jpg',
-                title: 'Deftones - Band T-Shirt',
-                availability: 'Disponível',
-                description: 'Official Deftones Band T-Shirt',
-                fullDescription: 'Official Deftones merchandise featuring the iconic band logo. Made from high-quality cotton for comfort and durability. Perfect for concerts or casual wear.',
-                price: '25.00 €',
-                genre: 'Hardcore',
-                color: 'Preto',
-                specifications: ['100% Cotton', 'Pre-shrunk', 'Available in S-XXL']
-            },
-            {
-                id: 2,
-                image: '/images/korn-hoodie.jpg',
-                title: 'Korn - Hoodie',
-                availability: 'Disponível',
-                description: 'Official Korn Hoodie',
-                fullDescription: 'Stay warm in style with this official Korn hoodie. Features the band\'s logo and artwork. Made from a comfortable cotton-polyester blend.',
-                price: '45.00 €',
-                genre: 'Numetal',
-                color: 'Preto',
-                specifications: ['80% Cotton 20% Polyester', 'Drawstring Hood', 'Kangaroo Pocket']
-            },
-            {
-                id: 3,
-                image: '/images/linkinpark-cap.jpg',
-                title: 'Linkin Park - Baseball Cap',
-                availability: 'Disponível',
-                description: 'Official Linkin Park Cap',
-                fullDescription: 'Show your support for Linkin Park with this official baseball cap. Adjustable fit with embroidered logo. Perfect for any fan.',
-                price: '20.00 €',
-                genre: 'Alternative',
-                color: 'Preto',
-                specifications: ['Adjustable Strap', 'Embroidered Logo', 'One Size Fits All']
-            }
-        ]
-    };
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        if (id && type) {
-            const productList = allProducts[type] || [];
-            const foundProduct = productList.find(p => p.id === parseInt(id));
-            setProduct(foundProduct);
-            setLoading(false);
-        }
-    }, [id, type]);
+        const fetchProduct = async () => {
+            if (!id || !type) return; // Don't fetch if id or type are not available yet
+
+            setLoading(true);
+            setError(null);
+            try {
+                // Fetch product details from your new API endpoint
+                const response = await fetch(`/api/products/${type}/${id}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                if (data.success) {
+                    setProduct(data.data);
+                } else {
+                    setError(data.error || 'Failed to fetch product details');
+                }
+            } catch (err) {
+                setError(err.message || 'An unexpected error occurred while fetching product details.');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProduct();
+    }, [id, type]); // Re-fetch when id or type changes in the URL
 
     const handleBuyClick = () => {
         if (!product) return;
@@ -175,7 +78,18 @@ const ProductDetail = () => {
             <div>
                 <Navbar />
                 <div className="flex justify-center items-center h-screen">
-                    <div className="text-xl">Loading...</div>
+                    <div className="text-xl text-white">Loading product details...</div>
+                </div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div>
+                <Navbar />
+                <div className="flex justify-center items-center h-screen">
+                    <div className="text-xl text-red-500">Error: {error}</div>
                 </div>
             </div>
         );
@@ -186,7 +100,7 @@ const ProductDetail = () => {
             <div>
                 <Navbar />
                 <div className="flex justify-center items-center h-screen">
-                    <div className="text-xl">Product not found</div>
+                    <div className="text-xl text-white">Product not found</div>
                 </div>
             </div>
         );
@@ -208,7 +122,7 @@ const ProductDetail = () => {
                     <div className="product-image-wrapper">
                         <img 
                             src={product.image} 
-                            alt={product.title}
+                            alt={product.title} 
                             className="product-image"
                         />
                     </div>
@@ -219,6 +133,7 @@ const ProductDetail = () => {
                                 {product.title}
                             </h1>
 
+                            {/* Display availability based on quantity */}
                             <div className="flex items-center">
                                 <span className={`availability-badge ${product.availability === 'Disponível' ? 'available' : 'unavailable'}`}>
                                     {product.availability}
@@ -246,12 +161,12 @@ const ProductDetail = () => {
 
                         <button
                             onClick={handleBuyClick}
-                            disabled={product.availability !== 'Disponível'}
+                            disabled={product.availability !== 'Disponível'} // Disable if not available
                             className="buy-button-detail"
                         >
                             <ShoppingCartIcon />
                             <span>
-                                {product.availability === 'Disponível' 
+                                {product.availability === 'Disponível'
                                     ? 'Add to Cart' 
                                     : 'Out of Stock'
                                 }

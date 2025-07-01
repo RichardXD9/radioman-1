@@ -1,34 +1,58 @@
+// src/pages/api/create-payment-intent.js
 import Stripe from 'stripe';
+import clientPromise from '../../lib/mongodb';
+import Product from '../../models/Product';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-const calculateOrderAmount = (items) => {
-  // In a real application, you should fetch the prices from your database
-  // to prevent customers from manipulating them on the client-side.
+const calculateOrderAmount = async (items) => {
+  const productIds = items.map(item => item.id);
+  const productsFromDB = await Product.find({ 'id': { $in: productIds } });
+
   let total = 0;
-  items.forEach(item => {
-    // Example price string: "45.00 €"
-    const price = parseFloat(item.price.replace(/[^0-9.-]+/g,""));
-    if (!isNaN(price)) {
-      total += price;
+  const unavailableItems = [];
+
+  for (const item of items) {
+    const product = productsFromDB.find(p => p.id === item.id);
+
+    if (!product) {
+      throw new Error(`Product with ID ${item.id} not found.`);
     }
-  });
-  // Stripe expects the amount in the smallest currency unit (e.g., cents for EUR).
-  return Math.round(total * 100);
+
+    // Check stock. Assuming quantity is 1 for now.
+    if (product.stock < 1) {
+      unavailableItems.push(product.title);
+    }
+
+    total += product.price; // Price is already in cents
+  }
+
+  if (unavailableItems.length > 0) {
+    throw new Error(`Sorry, the following items are out of stock: ${unavailableItems.join(', ')}`);
+  }
+
+  return total;
 };
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { items } = req.body;
-
     try {
+      await clientPromise;
+      const amount = await calculateOrderAmount(items);
+
       // Create a PaymentIntent with the order amount and currency
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: calculateOrderAmount(items),
+        amount: amount,
         currency: 'eur',
+        // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
         automatic_payment_methods: {
           enabled: true,
         },
+        // Pass the cart items in metadata to use in the webhook
+        metadata: {
+          cartItems: JSON.stringify(items.map(item => ({ id: item.id, quantity: 1 })))
+        }
       });
 
       res.send({
@@ -42,4 +66,3 @@ export default async function handler(req, res) {
     res.status(405).end('Method Not Allowed');
   }
 }
-
