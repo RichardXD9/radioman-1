@@ -1,18 +1,14 @@
-import clientPromise from '../../lib/mongodb';
+import dbConnect from '../../lib/dbConnect';
+import Product from '../../models/Product';
 
 export default async function handler(req, res) {
   try {
-    const client = await clientPromise;
-    const db = client.db('radioman-1'); // Use your database name
+    await dbConnect(); // Establish connection using the project's standard helper
 
-    // Example: Insert a document into a collection
-    const collection = db.collection('testCollection');
-    await collection.insertOne({ message: 'Hello from MongoDB!' });
+    // Example: Fetch up to 5 products using the existing Product model
+    const data = await Product.find({}).limit(5);
 
-    // Example: Fetch documents
-    const data = await collection.find({}).toArray();
-
-    res.status(200).json({ success: true, data });
+    res.status(200).json({ success: true, message: 'Connection successful, found products.', data });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }
