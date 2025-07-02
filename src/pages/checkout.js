@@ -72,11 +72,15 @@ const CheckoutFlow = () => {
             },
         });
 
-        if (error.type === "card_error" || error.type === "validation_error") {
-            setMessage(error.message);
-        } else {
-            setMessage("An unexpected error occurred.");
+        // If `error` is defined, then something went wrong.
+        if (error) {
+            if (error.type === "card_error" || error.type === "validation_error") {
+                setMessage(error.message);
+            } else {
+                setMessage("An unexpected error occurred.");
+            }
         }
+        // If there is no error, Stripe will automatically redirect to the `return_url`.
 
         setIsProcessing(false);
     };

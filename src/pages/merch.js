@@ -1,44 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from "../components/Navbar";
-import Filter from '../components/Filter';
-import MerchProductList from '../components/MerchProductList';
+import React from 'react';
+import Layout from '../components/Layout';
+import ProductList from '../components/ProductList';
 
 const Merch = () => {
-    const [filters, setFilters] = useState({
-        genres: [],
-        colors: [],
-        availability: []
-    });
-
-    const [cartItems, setCartItems] = useState([]);
-
-    useEffect(() => {
-        // Retrieve cart items from local storage when component mounts
-        const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-        setCartItems(storedCartItems);
-    }, []);
-
-    const handleFilterChange = (newFilters) => {
-        setFilters(newFilters);
-    };
-
     const handleAddToCart = (product) => {
-        const updatedCartItems = [...cartItems, product];
-        setCartItems(updatedCartItems);
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        console.log(`Product added from Merch page: ${product.name}`);
     };
 
     return (
-        <div>
-            <Navbar />
-            <div className="flex">
-                <Filter onFilterChange={handleFilterChange} />
-                <MerchProductList 
-                    filters={filters} 
-                    onAddToCart={handleAddToCart} 
-                />
-            </div>
-        </div>
+        <Layout>
+            <ProductList productType="merch" onAddToCart={handleAddToCart} />
+        </Layout>
     );
 };
 

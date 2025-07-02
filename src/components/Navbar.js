@@ -50,7 +50,7 @@ function Navbar() {
     }, []);
 
     return (
-        <header className="header">
+        <header className="header relative z-30">
             <div className="left-section">
                 {isMobile && (
                     <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>

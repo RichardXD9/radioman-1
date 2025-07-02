@@ -89,14 +89,13 @@ const Filter = ({ onFilterChange }) => {
           {genres.map(genre => (
             <div 
               key={genre} 
-              className="filter-checkbox"
-              onClick={() => handleGenreChange(genre)}
+              className="filter-checkbox" // The onClick handler is moved to the input's onChange
             >
               <input
                 type="checkbox"
                 id={`genre-${genre}`}
                 checked={selectedGenres.includes(genre)}
-                onChange={() => {}} // Empty onChange to suppress React warning
+                onChange={() => handleGenreChange(genre)}
                 className="cursor-pointer"
               />
              <label 
@@ -121,15 +120,13 @@ const Filter = ({ onFilterChange }) => {
           {colors.map(color => (
             <div 
               key={color} 
-              className="filter-checkbox"
-              onClick={() => handleColorChange(color)}
-              
+              className="filter-checkbox" // The onClick handler is moved to the input's onChange
             >
               <input
                 type="checkbox"
                 id={`color-${color}`}
                 checked={selectedColors.includes(color)}
-                onChange={() => {}} // Empty onChange to suppress React warning
+                onChange={() => handleColorChange(color)}
                 className="cursor-pointer"
               />
               <label 
@@ -153,23 +150,20 @@ const Filter = ({ onFilterChange }) => {
           {availability.map(status => (
             <div 
               key={status} 
-              className="filter-checkbox"
-              onClick={() => handleAvailabilityChange(status)}
+              className="filter-checkbox" // The onClick handler is moved to the input's onChange
             >
               <input
                 type="checkbox"
                 id={`availability-${status}`}
                 checked={selectedAvailability.includes(status)}
-                onChange={() => {}} // Empty onChange to suppress React warning
+                onChange={() => handleAvailabilityChange(status)}
                 className="cursor-pointer"
               />
                <label 
-                htmlFor={`status-${status}`} 
+                htmlFor={`availability-${status}`} // Fix: Match the input's id
                 style={{
-
                   color: status === 'Disponível' ? 'black' : 
                   status === 'Esgotado' ? 'black' : 'inherit'
-  
                 }}
               >
                 {status}

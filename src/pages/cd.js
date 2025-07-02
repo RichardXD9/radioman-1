@@ -1,44 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from "../components/Navbar";
-import Filter from '../components/Filter';
-import CdsProductList from '../components/CdsProductList';
+import React from 'react';
+import Layout from '../components/Layout';
+import ProductList from '../components/ProductList';
 
 const Cd = () => {
-    const [filters, setFilters] = useState({
-        genres: [],
-        colors: [],
-        availability: []
-    });
-
-    const [cartItems, setCartItems] = useState([]);
-
-    useEffect(() => {
-        // Retrieve cart items from local storage when component mounts
-        const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-        setCartItems(storedCartItems);
-    }, []);
-
-    const handleFilterChange = (newFilters) => {
-        setFilters(newFilters);
-    };
-
     const handleAddToCart = (product) => {
-        const updatedCartItems = [...cartItems, product];
-        setCartItems(updatedCartItems);
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        // The cart logic is now handled inside ProductList.
+        // This handler is here for potential future use, like showing a notification.
+        console.log(`Product added from CD page: ${product.name}`);
     };
 
     return (
-        <div>
-            <Navbar />
-            <div className="flex">
-                <Filter onFilterChange={handleFilterChange} />
-                <CdsProductList 
-                    filters={filters} 
-                    onAddToCart={handleAddToCart} 
-                />
-            </div>
-        </div>
+        <Layout>
+            <ProductList productType="cd" onAddToCart={handleAddToCart} />
+        </Layout>
     );
 };
 

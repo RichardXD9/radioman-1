@@ -1,6 +1,7 @@
 import Stripe from 'stripe';
 import { buffer } from 'micro';
-import clientPromise from '../../../lib/mongodb';
+import dbConnect from '../../../lib/dbConnect';
+import mongoose from 'mongoose';
 import Product from '../../../models/Product';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
@@ -32,20 +33,26 @@ const handler = async (req, res) => {
       console.log('✅ PaymentIntent was successful!');
       
       try {
-        await clientPromise;
+        await dbConnect();
         const cartItems = JSON.parse(paymentIntent.metadata.cartItems);
 
         // Use a bulk write operation for efficiency
         const operations = cartItems.map(item => ({
           updateOne: {
-            filter: { id: item.id, stock: { $gte: item.quantity } },
+            // Cast the string ID from metadata back to a MongoDB ObjectId
+            filter: { _id: new mongoose.Types.ObjectId(item.id), stock: { $gte: item.quantity } },
             update: { $inc: { stock: -item.quantity } },
           },
         }));
 
         if (operations.length > 0) {
-          await Product.bulkWrite(operations);
-          console.log(`✅ Stock updated for ${operations.length} products.`);
+          const result = await Product.bulkWrite(operations);
+          if (result.modifiedCount > 0) {
+            console.log(`✅ Stock updated for ${result.modifiedCount} products.`);
+          } else {
+            // This can happen if stock was already 0, or if another process updated it first.
+            console.warn(`⚠️ Stock update operation ran, but no products were modified. This could be due to a stock race condition or incorrect product IDs.`);
+          }
         }
       } catch (dbError) {
         console.error('❌ Database update failed:', dbError);
@@ -62,4 +69,3 @@ const handler = async (req, res) => {
 };
 
 export default handler;
-

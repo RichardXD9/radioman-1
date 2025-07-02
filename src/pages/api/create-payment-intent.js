@@ -1,49 +1,55 @@
 // src/pages/api/create-payment-intent.js
 import Stripe from 'stripe';
-import clientPromise from '../../lib/mongodb';
+import dbConnect from '../../lib/dbConnect';
 import Product from '../../models/Product';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const calculateOrderAmount = async (items) => {
-  const productIds = items.map(item => item.id);
-  const productsFromDB = await Product.find({ 'id': { $in: productIds } });
+  // Create a map to count quantities of each product
+  const itemQuantities = new Map();
+  for (const item of items) {
+    itemQuantities.set(item._id, (itemQuantities.get(item._id) || 0) + 1);
+  }
+
+  const productIds = Array.from(itemQuantities.keys());
+  const productsFromDB = await Product.find({ '_id': { $in: productIds } });
 
   let total = 0;
   const unavailableItems = [];
+  const processedCart = [];
 
-  for (const item of items) {
-    const product = productsFromDB.find(p => p.id === item.id);
+  for (const product of productsFromDB) {
+    const productIdStr = product._id.toString();
+    const quantity = itemQuantities.get(productIdStr);
 
-    if (!product) {
-      throw new Error(`Product with ID ${item.id} not found.`);
+    if (product.stock < quantity) {
+      unavailableItems.push(`${product.name} (requested: ${quantity}, available: ${product.stock})`);
     }
 
-    // Check stock. Assuming quantity is 1 for now.
-    if (product.stock < 1) {
-      unavailableItems.push(product.title);
-    }
-
-    total += product.price; // Price is already in cents
+    total += product.price * quantity;
+    processedCart.push({ id: productIdStr, quantity });
   }
 
   if (unavailableItems.length > 0) {
-    throw new Error(`Sorry, the following items are out of stock: ${unavailableItems.join(', ')}`);
+    throw new Error(`Sorry, some items are unavailable: ${unavailableItems.join(', ')}`);
   }
 
-  return total;
+  // Return both the total and the processed cart for metadata
+  return { total, processedCart };
 };
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { items } = req.body;
     try {
-      await clientPromise;
-      const amount = await calculateOrderAmount(items);
+      await dbConnect();
+      // Now it returns an object with total and processed cart
+      const { total, processedCart } = await calculateOrderAmount(items);
 
       // Create a PaymentIntent with the order amount and currency
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: amount,
+        amount: total,
         currency: 'eur',
         // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
         automatic_payment_methods: {
@@ -51,7 +57,7 @@ export default async function handler(req, res) {
         },
         // Pass the cart items in metadata to use in the webhook
         metadata: {
-          cartItems: JSON.stringify(items.map(item => ({ id: item.id, quantity: 1 })))
+          cartItems: JSON.stringify(processedCart)
         }
       });
 

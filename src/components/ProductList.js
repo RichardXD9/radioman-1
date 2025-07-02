@@ -9,7 +9,7 @@ const bokorFont = Bokor({
     weight:"400",
 });
   
-const ProductList = ({ onAddToCart }) => {
+const ProductList = ({ onAddToCart, productType }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -36,9 +36,12 @@ const ProductList = ({ onAddToCart }) => {
                 if (filters.availability.length > 0) {
                     filters.availability.forEach(status => queryParams.append('availability', status));
                 }
-                queryParams.append('type', 'vinyl'); // Specify product type for this list
+                if (productType) {
+                    queryParams.append('type', productType);
+                }
 
-                const response = await fetch(`/api/products?${queryParams.toString()}`);
+                // FIX 1: Call the new, working API endpoint
+                const response = await fetch(`/api/products/list?${queryParams.toString()}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -56,7 +59,7 @@ const ProductList = ({ onAddToCart }) => {
         };
 
         fetchProducts();
-    }, [filters]); // Re-fetch products when filters change
+    }, [filters, productType]); // Re-fetch products when filters or productType change
 
     const handleBuyClick = (product) => {
         // Add to cart and save to local storage
@@ -73,7 +76,7 @@ const ProductList = ({ onAddToCart }) => {
         }
         
         // Optional: Show a confirmation
-        alert(`Produto ${product.title} adicionado ao carrinho!`);
+        alert(`Produto ${product.name} adicionado ao carrinho!`); // FIX 2: Use `name`
     };
 
     const handleFilterChange = (newFilters) => {
@@ -97,16 +100,15 @@ const ProductList = ({ onAddToCart }) => {
                 ) : (
                     products.map((product) => (
                         <Card
-                            key={product.id} // Use product.id directly from fetched data
-                            id={product.id}
+                            key={product._id} // FIX 3: Use `_id` from the database
+                            id={product._id}
                             image={product.image}
-                            title={product.title}
-                            availability={product.quantity > 0 ? 'Disponível' : 'Esgotado'} // Use quantity from backend
+                            title={product.name} // FIX 4: Use `name` from the database
+                            availability={product.stock > 0 ? 'Disponível' : 'Esgotado'} // FIX 5: Use `stock` from the database
                             description={product.description}
                             price={product.price}
                             onBuyClick={() => handleBuyClick(product)} 
                             bokorFont={bokorFont}
-                            productType="vinyl" // Ensure this matches what you expect in the backend query
                         />
                     ))
                 )}

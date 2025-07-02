@@ -4,43 +4,43 @@ import Product from '../../models/Product';
 
 const sampleProducts = [
   {
-    name: 'Classic Rock Vinyl',
-    description: 'A collection of classic rock hits on a 12" vinyl record.',
+    name: 'Deftones- Adrenaline',
+    description: 'First Deftones album with the raw nu metal vibes.',
     price: 2500, // 25.00 € in cents
-    image: '/images/placeholder.png', // You can replace with actual image paths
+    image: '/images/adrenaline.jpg', // You can replace with actual image paths
     type: 'vinyl',
-    genre: ['Rock', 'Classic Rock'],
-    color: ['Black'],
-    stock: 15,
+    genre: ['Numetal'],
+    color: ['Branco'],
+    stock: 5,
   },
   {
-    name: 'Indie Pop CD',
-    description: 'The latest album from your favorite indie pop band.',
+    name: 'Korn- Self Titled',
+    description: 'Korn self titled and first album with unique sounds that created a whole new sub genre.',
     price: 1500, // 15.00 € in cents
-    image: '/images/placeholder.png',
+    image: '/images/Kornstl.jpg',
     type: 'cd',
-    genre: ['Pop', 'Indie'],
-    color: ['Silver'],
+    genre: ['Numetal'],
+    color: ['Vermelho'],
     stock: 30,
   },
   {
-    name: 'Band Logo T-Shirt',
-    description: 'Official band merchandise. High-quality cotton t-shirt.',
+    name: 'White Pony T-Shirt',
+    description: 'T-shirt de banda ofical. Algodão de alta qualidade',
     price: 2000, // 20.00 € in cents
-    image: '/images/placeholder.png',
+    image: '/images/whiteponyshirt.jpg',
     type: 'merch',
-    genre: ['Apparel'],
-    color: ['Black', 'White'],
+    genre: ['Alternative'],
+    color: ['Branco'],
     stock: 50,
   },
   {
-    name: 'Out of Stock Vinyl',
-    description: 'A rare, out-of-stock record that is highly sought after.',
+    name: 'Linkin Park- Meteora',
+    description: 'Segundo album de Linkin Park com vocais inigualaveis',
     price: 5000, // 50.00 € in cents
-    image: '/images/placeholder.png',
+    image: '/images/LPmeteora.jpg',
     type: 'vinyl',
-    genre: ['Rock'],
-    color: ['Black'],
+    genre: ['Alternative'],
+    color: ['Branco'],
     stock: 0, // This will show as 'Esgotado'
   },
 ];
