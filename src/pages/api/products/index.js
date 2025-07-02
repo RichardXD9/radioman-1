@@ -1,11 +1,11 @@
 // src/pages/api/products/index.js
-import clientPromise from '../../../lib/mongodb';
-import Product from '@/models/Product';
+import dbConnect from '../../../lib/dbConnect';
+import Product from '../../../models/Product';
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      await clientPromise;
+      await dbConnect();
 
       const { type, genres, colors, availability } = req.query;
       let query = {};
@@ -34,20 +34,14 @@ export default async function handler(req, res) {
 
       const products = await Product.find(query).lean();
 
-      // Format price from cents to string for the frontend
-      const formattedProducts = products.map(p => ({
-        ...p,
-        price: `${(p.price / 100).toFixed(2)} €`,
-        _id: p._id.toString(),
-      }));
+      const formattedProducts = products.map(p => ({ ...p, price: `${(p.price / 100).toFixed(2)} €`, _id: p._id.toString() }));
 
       res.status(200).json({ success: true, data: formattedProducts });
     } catch (error) {
-      console.error('Error fetching products:', error);
       res.status(500).json({ success: false, error: error.message });
     }
   } else {
-    res.setHeader('Allow', 'GET');
-    res.status(405).end('Method Not Allowed');
+    res.setHeader('Allow', ['GET']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
