@@ -67,7 +67,7 @@ const Filter = ({ onFilterChange }) => {
           {genres.map(genre => (
             <div 
               key={genre} 
-              className="filter-checkbox" // The onClick handler is moved to the input's onChange
+              className="filter-checkbox" 
             >
               <input
                 type="checkbox"

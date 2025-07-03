@@ -17,25 +17,88 @@
 
 /* Progress Bar */
 .checkout-progress {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
+  display: flex; /* Use flexbox to align steps */
+  justify-content: center; /* Center the whole bar */
+  align-items: flex-start;
+  margin: 0 auto 3rem auto; /* Center horizontally and add margin below */
+  max-width: 90%; /* Prevent it from being too wide */
+  padding: 0;
+  list-style: none; /* In case you use <li> for steps */
 }
 
 .progress-step {
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  background-color: #333;
+  flex: 1; /* Each step takes equal space */
+  position: relative;
+  text-align: center;
+  background-color: transparent;
   color: #a0a0a0;
+  font-size: 1rem;
   font-weight: 600;
-  transition: all 0.3s ease;
+  padding-top: 2.5rem; /* Make space for the circle above */
+  transition: color 0.3s ease;
 }
 
+/* The circle indicator */
+.progress-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.75rem; /* Larger circle */
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: #444;
+  border: 4px solid #2a2a2a; /* Match section background for cutout effect */
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+/* The connecting line */
+.progress-step::after {
+  content: '';
+  position: absolute;
+  top: 0.875rem; /* Vertically center with the circle */
+  left: -50%;
+  width: 100%;
+  height: 3px;
+  background-color: #444;
+  transition: background-color 0.4s ease;
+  z-index: 1;
+}
+
+/* Hide the line for the first step */
+.progress-step:first-child::after {
+  content: none;
+}
+
+/* Active State */
 .progress-step.active {
+  color: #e11d48;
+}
+
+.progress-step.active::before {
   background-color: #e11d48;
-  color: #fff;
-  transform: scale(1.05);
   box-shadow: 0 0 15px rgba(225, 29, 72, 0.5);
+}
+
+/* Completed State */
+.progress-step.completed {
+  color: #38c81c;
+}
+
+.progress-step.completed::before {
+  background-color: #38c81c;
+  content: '✔';
+  color: #1a1a1a;
+  font-size: 1rem;
+  line-height: 1.75rem; /* Vertically center the checkmark */
+  font-weight: bold;
+}
+
+/* Color the line for completed steps */
+.progress-step.completed::after {
+  background-color: #38c81c;
 }
 
 /* Checkout Section */
@@ -243,13 +306,57 @@
 
 /* Order Complete */
 .order-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a;
+  border: 1px solid #38c81c; /* Green border to signify success */
+  border-radius: 1rem;
+  padding: 4rem 2rem;
   text-align: center;
+  box-shadow: 0 0 30px rgba(56, 200, 28, 0.3); /* Green glow */
+  animation: fadeInSuccess 0.5s ease-out;
 }
 
 .success-icon {
-  font-size: 3rem;
-  color: #10b981;
+  width: 80px;
+  height: 80px;
+  background-color: #38c81c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  animation: popIn 0.5s 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+}
+
+/* Assuming you use an SVG for the checkmark icon */
+.success-icon svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.order-complete h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 1rem;
+}
+
+.order-complete p {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  max-width: 450px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* You can add a "Continue Shopping" button inside your .order-complete JSX
+   and it will be styled automatically if you give it the .btn-primary class. */
+.order-complete .btn-primary {
+  max-width: 250px;
 }
 
 @media (max-width: 768px) {
@@ -311,6 +418,22 @@
   left: 10.2px;
   transform-origin: 0px 10.2px;
   animation: loading 2s infinite ease;
+}
+
+@keyframes fadeInSuccess {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
 }
 
 @keyframes loading {
