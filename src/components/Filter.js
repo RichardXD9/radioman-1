@@ -9,9 +9,11 @@ const bokorFont = Bokor({
 });
 
 const Filter = ({ onFilterChange }) => {
-  const [selectedGenres, setSelectedGenres] = useState([]);
-  const [selectedColors, setSelectedColors] = useState([]);
-  const [selectedAvailability, setSelectedAvailability] = useState([]);
+  const [filters, setFilters] = useState({
+    genres: [],
+    colors: [],
+    availability: [],
+  });
   const [isFilterVisible, setIsFilterVisible] = useState(false);
 
   // Predefined filter options
@@ -19,45 +21,21 @@ const Filter = ({ onFilterChange }) => {
   const colors = ['Preto', 'Branco', 'Vermelho'];
   const availability = ['Disponível', 'Esgotado'];
 
-  // Handle genre selection
-  const handleGenreChange = (genre) => {
-    const newGenres = selectedGenres.includes(genre)
-      ? selectedGenres.filter(g => g !== genre)
-      : [...selectedGenres, genre];
-    
-    setSelectedGenres(newGenres);
-    onFilterChange({ 
-      genres: newGenres, 
-      colors: selectedColors, 
-      availability: selectedAvailability 
-    });
-  };
+  // Unified handler for all filter changes
+  const handleFilterChange = (category, value) => {
+    setFilters(prevFilters => {
+      const currentValues = prevFilters[category];
+      const newValues = currentValues.includes(value)
+        ? currentValues.filter(v => v !== value)
+        : [...currentValues, value];
+      
+      const newFilters = {
+        ...prevFilters,
+        [category]: newValues,
+      };
 
-  // Handle color selection
-  const handleColorChange = (color) => {
-    const newColors = selectedColors.includes(color)
-      ? selectedColors.filter(c => c !== color)
-      : [...selectedColors, color];
-    
-    setSelectedColors(newColors);
-    onFilterChange({ 
-      genres: selectedGenres, 
-      colors: newColors, 
-      availability: selectedAvailability 
-    });
-  };
-
-  // Handle availability selection
-  const handleAvailabilityChange = (status) => {
-    const newAvailability = selectedAvailability.includes(status)
-      ? selectedAvailability.filter(a => a !== status)
-      : [...selectedAvailability, status];
-    
-    setSelectedAvailability(newAvailability);
-    onFilterChange({ 
-      genres: selectedGenres, 
-      colors: selectedColors, 
-      availability: newAvailability 
+      onFilterChange(newFilters);
+      return newFilters;
     });
   };
 
@@ -94,8 +72,8 @@ const Filter = ({ onFilterChange }) => {
               <input
                 type="checkbox"
                 id={`genre-${genre}`}
-                checked={selectedGenres.includes(genre)}
-                onChange={() => handleGenreChange(genre)}
+                checked={filters.genres.includes(genre)}
+                onChange={() => handleFilterChange('genres', genre)}
                 className="cursor-pointer"
               />
              <label 
@@ -125,8 +103,8 @@ const Filter = ({ onFilterChange }) => {
               <input
                 type="checkbox"
                 id={`color-${color}`}
-                checked={selectedColors.includes(color)}
-                onChange={() => handleColorChange(color)}
+                checked={filters.colors.includes(color)}
+                onChange={() => handleFilterChange('colors', color)}
                 className="cursor-pointer"
               />
               <label 
@@ -155,8 +133,8 @@ const Filter = ({ onFilterChange }) => {
               <input
                 type="checkbox"
                 id={`availability-${status}`}
-                checked={selectedAvailability.includes(status)}
-                onChange={() => handleAvailabilityChange(status)}
+                checked={filters.availability.includes(status)}
+                onChange={() => handleFilterChange('availability', status)}
                 className="cursor-pointer"
               />
                <label 

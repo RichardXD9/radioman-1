@@ -30,7 +30,8 @@ function Navbar() {
         // Update cart count from localStorage
         const updateCartCount = () => {
             const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-            setCartItemCount(cartItems.length);
+            const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            setCartItemCount(totalItems);
         };
         
         // Initial count

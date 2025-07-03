@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 const Card = ({ 
     id,
     image, 
-    title, 
+    name, 
     availability, 
     description, 
     price, 
@@ -13,6 +13,15 @@ const Card = ({
     productType = 'vinyl' // vinyl, cd, or merch
 }) => {
     const router = useRouter();
+
+    const formatPrice = (priceInCents) => {
+        // Defensively handle cases where price might not be a number.
+        const price = Number(priceInCents);
+        if (isNaN(price)) {
+            return '0.00 €';
+        }
+        return `${(price / 100).toFixed(2)} €`;
+    };
 
     const handleCardClick = (e) => {
         // Prevent navigation if the buy button was clicked
@@ -35,15 +44,15 @@ const Card = ({
             onClick={handleCardClick}
         >
             <div className="card">
-                <img src={image} alt={title} className="card-image" />
+                <img src={image} alt={name} className="card-image" />
                 <div className="card-content">
-                    <h3 className={`card-title ${bokorFont.className}`}>{title}</h3>
+                    <h3 className={`card-title ${bokorFont.className}`}>{name}</h3>
                     <div className={`availability ${availability === 'Disponível' ? 'available' : 'unavailable'}`}>
                         {availability}
                     </div>
                     <p className="card-description">{description}</p>
                     <div className="card-footer">
-                        <span className="price">{price}</span>
+                        <span className="price">{formatPrice(price)}</span>
                         <button 
                             className="buy-button"
                             onClick={handleBuyClick}

@@ -62,20 +62,31 @@ const ProductList = ({ onAddToCart, productType }) => {
     }, [filters, productType]); // Re-fetch products when filters or productType change
 
     const handleBuyClick = (product) => {
-        // Add to cart and save to local storage
         const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-        const updatedCartItems = [...cartItems, product];
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        const existingItemIndex = cartItems.findIndex(item => item._id === product._id);
+
+        if (existingItemIndex > -1) {
+            // Item already in cart, increment quantity if stock allows
+            const existingItem = cartItems[existingItemIndex];
+            if (existingItem.quantity < product.stock) {
+                cartItems[existingItemIndex].quantity++;
+            } else {
+                alert(`Não é possível adicionar mais. Apenas ${product.stock} em stock.`);
+                return; // Stop if max stock is reached
+            }
+        } else {
+            // New item, add to cart with quantity of 1
+            cartItems.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
         
-        // Dispatch custom event to update cart count
         window.dispatchEvent(new Event('cartUpdated'));
         
-        // Call the onAddToCart prop if provided
         if (onAddToCart) {
             onAddToCart(product);
         }
         
-        // Optional: Show a confirmation
         alert(`Produto ${product.name} adicionado ao carrinho!`); // FIX 2: Use `name`
     };
 
@@ -103,7 +114,7 @@ const ProductList = ({ onAddToCart, productType }) => {
                             key={product._id} // FIX 3: Use `_id` from the database
                             id={product._id}
                             image={product.image}
-                            title={product.name} // FIX 4: Use `name` from the database
+                            name={product.name} // Use `name` prop for consistency
                             availability={product.stock > 0 ? 'Disponível' : 'Esgotado'} // FIX 5: Use `stock` from the database
                             description={product.description}
                             price={product.price}

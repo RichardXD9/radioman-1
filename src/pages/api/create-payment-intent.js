@@ -6,10 +6,14 @@ import Product from '../../models/Product';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const calculateOrderAmount = async (items) => {
-  // Create a map to count quantities of each product
+  // This function now robustly handles two possible cart structures:
+  // 1. An array of product objects, where duplicates mean multiple quantities.
+  // 2. An array of product objects with a `quantity` property.
   const itemQuantities = new Map();
   for (const item of items) {
-    itemQuantities.set(item._id, (itemQuantities.get(item._id) || 0) + 1);
+    // Use item.quantity if it exists, otherwise assume a quantity of 1 for each entry.
+    const quantity = item.quantity || 1;
+    itemQuantities.set(item._id, (itemQuantities.get(item._id) || 0) + quantity);
   }
 
   const productIds = Array.from(itemQuantities.keys());
@@ -46,6 +50,16 @@ export default async function handler(req, res) {
       await dbConnect();
       // Now it returns an object with total and processed cart
       const { total, processedCart } = await calculateOrderAmount(items);
+
+      // Stripe requires a minimum charge amount (e.g., 50 cents for EUR).
+      // This also handles cases where the cart is empty or items are invalid.
+      if (total < 50) {
+        let message = "The total amount is too low to process the payment.";
+        if (total === 0) {
+            message = "Your cart appears to be empty or the items are invalid. Please try again.";
+        }
+        return res.status(400).json({ message });
+      }
 
       // Create a PaymentIntent with the order amount and currency
       const paymentIntent = await stripe.paymentIntents.create({

@@ -46,8 +46,15 @@ const sampleProducts = [
 ];
 
 export default async function handler(req, res) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ success: false, message: 'Method Not Allowed' });
+  // It's safer to use POST for actions that modify the database.
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', ['POST']);
+    return res.status(405).json({ success: false, message: 'Method Not Allowed. Please use POST.' });
+  }
+
+  // Add a check to prevent this from running in production.
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(403).json({ success: false, message: 'This endpoint is not available in production.' });
   }
 
   try {

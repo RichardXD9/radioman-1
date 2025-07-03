@@ -24,6 +24,19 @@ const ShoppingCartPage = () => {
     const updatedCartItems = cartItems.filter((_, index) => index !== indexToRemove);
     setCartItems(updatedCartItems);
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    window.dispatchEvent(new Event('cartUpdated'));
+  };
+
+  const updateCartItemQuantity = (indexToUpdate, newQuantity) => {
+    const updatedCartItems = [...cartItems];
+    const item = updatedCartItems[indexToUpdate];
+
+    if (newQuantity > 0 && newQuantity <= item.stock) {
+      item.quantity = newQuantity;
+      setCartItems(updatedCartItems);
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+      window.dispatchEvent(new Event('cartUpdated'));
+    }
   };
 
   const handleCheckout = () => {
@@ -61,6 +74,7 @@ const ShoppingCartPage = () => {
           <ShoppingCart 
             cartItems={cartItems} 
             onRemoveItem={removeFromCart}
+            onUpdateQuantity={updateCartItemQuantity}
             onCheckout={handleCheckout}
           />
         ) : (

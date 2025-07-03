@@ -30,12 +30,22 @@ const handler = async (req, res) => {
     // Handle the event
     if (event.type === 'payment_intent.succeeded') {
       const paymentIntent = event.data.object;
-      console.log('✅ PaymentIntent was successful!');
+console.log(`✅ PaymentIntent successful for ID: ${paymentIntent.id}`);
+            console.log('Received metadata:', paymentIntent.metadata);
+
       
       try {
         await dbConnect();
-        const cartItems = JSON.parse(paymentIntent.metadata.cartItems);
 
+        // First, check if the metadata we need actually exists before trying to use it.
+        if (!paymentIntent.metadata || !paymentIntent.metadata.cartItems) {
+            console.warn(`⚠️ Webhook for PaymentIntent ${paymentIntent.id} received without cartItems metadata. Cannot update stock.`);
+            // Return a 200 to Stripe. There's no error to retry, just missing data.
+            return res.status(200).json({ received: true, message: 'No cartItems metadata found.' });
+        }
+
+        const cartItems = JSON.parse(paymentIntent.metadata.cartItems);
+        console.log('Parsed cartItems for stock update:', cartItems);
         // Use a bulk write operation for efficiency
         const operations = cartItems.map(item => ({
           updateOne: {
@@ -50,7 +60,7 @@ const handler = async (req, res) => {
           if (result.modifiedCount > 0) {
             console.log(`✅ Stock updated for ${result.modifiedCount} products.`);
           } else {
-            // This can happen if stock was already 0, or if another process updated it first.
+            // This can happen if stock was already 0, if another process updated it first, or if product IDs were not found.
             console.warn(`⚠️ Stock update operation ran, but no products were modified. This could be due to a stock race condition or incorrect product IDs.`);
           }
         }
