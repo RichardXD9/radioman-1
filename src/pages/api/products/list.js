@@ -34,9 +34,10 @@ export default async function handler(req, res) {
 
       const products = await Product.find(query).lean();
 
-      const formattedProducts = products.map(p => ({ ...p, price: `${(p.price / 100).toFixed(2)} €`, _id: p._id.toString() }));
+      // The API should return raw data. The frontend is responsible for formatting.
+      const responseProducts = products.map(p => ({ ...p, _id: p._id.toString() }));
 
-      res.status(200).json({ success: true, data: formattedProducts });
+      res.status(200).json({ success: true, data: responseProducts });
     } catch (error) {
       res.status(500).json({ success: false, error: error.message });
     }

@@ -16,10 +16,10 @@ export default async function handler(req, res) {
         return res.status(404).json({ success: false, error: 'Product not found' });
       }
 
-      // Format price from cents to string for the frontend
-      const formattedProduct = { ...product, price: `${(product.price / 100).toFixed(2)} €`, _id: product._id.toString() };
+      // The API should return raw data. The frontend is responsible for formatting.
+      const responseProduct = { ...product, _id: product._id.toString() };
 
-      res.status(200).json({ success: true, data: formattedProduct });
+      res.status(200).json({ success: true, data: responseProduct });
     } catch (error) {
       // This catches errors like an invalid ID format, preventing a server crash
       res.status(400).json({ success: false, error: 'Invalid Product ID or server error' });
@@ -29,4 +29,3 @@ export default async function handler(req, res) {
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
-

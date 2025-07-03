@@ -30,7 +30,7 @@ const ShoppingCart = ({ cartItems, onRemoveItem, onCheckout, onUpdateQuantity })
         <div className="shopping-cart">
             <div className="cart-items-container">
                 {cartItems.map((item, index) => (
-                    <div key={index} className="cart-item">
+                    <div key={item._id || index} className="cart-item">
                         <img 
                             src={item.image}
                             alt={item.name} 

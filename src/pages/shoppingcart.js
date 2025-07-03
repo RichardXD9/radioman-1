@@ -16,8 +16,24 @@ const ShoppingCartPage = () => {
 
   useEffect(() => {
     // Retrieve cart items from local storage when component mounts
-    const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-    setCartItems(storedCartItems);
+    const storedCart = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    
+    // Sanitize cart items to prevent errors from old/invalid data in localStorage.
+    // This ensures every item has a valid, numeric price and removes invalid items.
+    const sanitizedCart = storedCart.map(item => ({
+      ...item,
+      price: Number(item.price) || 0, // Ensure price is a number, default to 0 if invalid.
+      quantity: Number(item.quantity) || 1, // Ensure quantity is valid.
+    })).filter(item => item.price > 0 && item._id); // Remove any items that are completely invalid.
+
+    // If sanitization changed the cart, update localStorage to fix it for the future.
+    if (sanitizedCart.length !== storedCart.length) {
+      console.warn('Sanitized cart, removed invalid items.', { original: storedCart, sanitized: sanitizedCart });
+      localStorage.setItem('cartItems', JSON.stringify(sanitizedCart));
+      window.dispatchEvent(new Event('cartUpdated')); // Update navbar count
+    }
+
+    setCartItems(sanitizedCart);
   }, []);
 
   const removeFromCart = (indexToRemove) => {

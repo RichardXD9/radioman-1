@@ -50,7 +50,7 @@ console.log(`✅ PaymentIntent successful for ID: ${paymentIntent.id}`);
         const operations = cartItems.map(item => ({
           updateOne: {
             // Cast the string ID from metadata back to a MongoDB ObjectId
-            filter: { _id: new mongoose.Types.ObjectId(item.id), stock: { $gte: item.quantity } },
+            filter: { _id: new mongoose.Types.ObjectId(item._id), stock: { $gte: item.quantity } },
             update: { $inc: { stock: -item.quantity } },
           },
         }));

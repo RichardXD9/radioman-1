@@ -32,7 +32,7 @@ const calculateOrderAmount = async (items) => {
     }
 
     total += product.price * quantity;
-    processedCart.push({ id: productIdStr, quantity });
+    processedCart.push({ _id: productIdStr, quantity });
   }
 
   if (unavailableItems.length > 0) {
