@@ -1,7 +1,7 @@
 // src/pages/product/[type]/[id].js
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Navbar from '../../../components/Navbar';
+import Layout from '../../../components/Layout';
 import { Bokor } from 'next/font/google';
 import { ArrowLeftIcon, ShoppingCartIcon } from '@heroicons/react/24/solid';
 
@@ -18,22 +18,23 @@ const ProductDetail = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchProduct = async () => {
-            if (!id || !type) return; // Don't fetch if id or type are not available yet
+        if (!id) return; // Don't fetch if id is not available yet
 
+        const fetchProduct = async () => {
             setLoading(true);
             setError(null);
             try {
-                // Fetch product details from your new API endpoint
-                const response = await fetch(`/api/products/${type}/${id}`);
+                // CORRECTED: Fetch product details from the correct API endpoint
+                const response = await fetch(`/api/products/${id}`);
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
                 if (data.success) {
                     setProduct(data.data);
                 } else {
-                    setError(data.error || 'Failed to fetch product details');
+                    setError(data.error || 'Failed to fetch product details.');
                 }
             } catch (err) {
                 setError(err.message || 'An unexpected error occurred while fetching product details.');
@@ -41,20 +42,33 @@ const ProductDetail = () => {
                 setLoading(false);
             }
         };
-
+ 
         fetchProduct();
-    }, [id, type]); // Re-fetch when id or type changes in the URL
-
+    }, [id]); // Re-fetch only when id changes
+ 
+    // CORRECTED: handleBuyClick with quantity and stock check
     const handleBuyClick = () => {
         if (!product) return;
 
         const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-        const updatedCartItems = [...cartItems, product];
-        localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+        const existingItemIndex = cartItems.findIndex(item => item._id === product._id);
+
+        if (existingItemIndex > -1) {
+            const existingItem = cartItems[existingItemIndex];
+            if (existingItem.quantity < product.stock) {
+                cartItems[existingItemIndex].quantity++;
+            } else {
+                alert(`Não é possível adicionar mais. Apenas ${product.stock} em stock.`);
+                return;
+            }
+        } else {
+            cartItems.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
         window.dispatchEvent(new Event('cartUpdated'));
-        
-        alert(`Produto ${product.title} adicionado ao carrinho!`);
+        alert(`Produto ${product.name} adicionado ao carrinho!`);
     };
 
     const handleBackClick = () => {
@@ -73,56 +87,61 @@ const ProductDetail = () => {
         }
     };
 
+    const formatPrice = (priceInCents) => {
+        const price = Number(priceInCents);
+        if (isNaN(price)) return 'N/A';
+        return `${(price / 100).toFixed(2)} €`;
+    };
+
     if (loading) {
         return (
-            <div>
-                <Navbar />
+            <Layout>
                 <div className="flex justify-center items-center h-screen">
                     <div className="text-xl text-white">Loading product details...</div>
                 </div>
-            </div>
+            </Layout>
         );
     }
 
     if (error) {
         return (
-            <div>
-                <Navbar />
+            <Layout>
                 <div className="flex justify-center items-center h-screen">
                     <div className="text-xl text-red-500">Error: {error}</div>
                 </div>
-            </div>
+            </Layout>
         );
     }
 
     if (!product) {
         return (
-            <div>
-                <Navbar />
+            <Layout>
                 <div className="flex justify-center items-center h-screen">
                     <div className="text-xl text-white">Product not found</div>
                 </div>
-            </div>
+            </Layout>
         );
     }
 
+    const isAvailable = product.stock > 0;
+
     return (
-        <div className="product-detail-page">
-            <Navbar />
+        <Layout>
+            <div className="product-detail-page">
             <div className="container mx-auto px-4 product-detail-container">
                 <button
                     onClick={handleBackClick}
                     className="back-button"
                 >
                     <ArrowLeftIcon className="h-5 w-5" />
-                    <span>Back to {type === 'vinyl' ? 'Vinyl' : type === 'cd' ? 'CDs' : 'Merchandise'}</span>
+                    <span>Voltar para {type === 'vinyl' ? 'Vinil' : type === 'cd' ? 'CDs' : 'Merchandise'}</span>
                 </button>
                 
                 <div className="product-grid">
                     <div className="product-image-wrapper">
                         <img 
                             src={product.image} 
-                            alt={product.title} 
+                            alt={product.name} 
                             className="product-image"
                         />
                     </div>
@@ -130,43 +149,32 @@ const ProductDetail = () => {
                     <div className="product-info">
                         <div className="product-info-header">
                             <h1 className={`product-title ${bokorFont.className}`}>
-                                {product.title}
+                                {product.name}
                             </h1>
 
                             {/* Display availability based on quantity */}
                             <div className="flex items-center">
-                                <span className={`availability-badge ${product.availability === 'Disponível' ? 'available' : 'unavailable'}`}>
-                                    {product.availability}
+                                <span className={`availability-badge ${isAvailable ? 'available' : 'unavailable'}`}>
+                                    {isAvailable ? 'Disponível' : 'Esgotado'}
                                 </span>
                             </div>
 
-                            <p className="product-price">{product.price}</p>
+                            <p className="product-price">{formatPrice(product.price)}</p>
                         </div>
 
                         <div>
                             <h3 className="product-section-title">Description</h3>
-                            <p className="product-description">{product.fullDescription}</p>
+                            <p className="product-description">{product.description}</p>
                         </div>
-
-                        {product.specifications && (
-                            <div>
-                                <h3 className="product-section-title">Specifications</h3>
-                                <ul className="specifications-list">
-                                    {product.specifications.map((spec, index) => (
-                                        <li key={index}>{spec}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
 
                         <button
                             onClick={handleBuyClick}
-                            disabled={product.availability !== 'Disponível'} // Disable if not available
+                            disabled={!isAvailable}
                             className="buy-button-detail"
                         >
                             <ShoppingCartIcon />
                             <span>
-                                {product.availability === 'Disponível'
+                                {isAvailable
                                     ? 'Add to Cart' 
                                     : 'Out of Stock'
                                 }
@@ -175,7 +183,8 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
+        </Layout>
     );
 };
 

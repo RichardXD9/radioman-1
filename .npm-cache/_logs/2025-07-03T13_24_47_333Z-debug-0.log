@@ -1,0 +1,85 @@
+0 verbose cli C:\Program Files\Nodejs\node.exe C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.2.0
+2 info using node@v20.19.0
+3 silly config load:file:C:\Users\richard.goltara\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\richard.goltara\AppData\Local\Microsoft\TypeScript\5.8\.npmrc
+5 silly config load:file:C:\Users\richard.goltara\.npmrc
+6 silly config load:file:C:\Users\richard.goltara\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install @types/crypto-js@ts5.8 @types/jsonwebtoken@ts5.8 @types/prop-types@ts5.8 @types/react@ts5.8 @types/react-dom@ts5.8
+8 verbose argv "install" "--ignore-scripts" "@types/crypto-js@ts5.8" "@types/jsonwebtoken@ts5.8" "@types/prop-types@ts5.8" "@types/react@ts5.8" "@types/react-dom@ts5.8" "--save-dev" "--user-agent" "typesInstaller/5.8.3"
+9 verbose logfile logs-max:10 dir:C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-07-03T13_24_47_333Z-
+10 verbose logfile C:\Users\richard.goltara\testeyau\radioman-1\.npm-cache\_logs\2025-07-03T13_24_47_333Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+13 silly logfile done cleaning log files
+14 silly packumentCache corgi:https://registry.npmjs.org/@types%2fcrypto-js cache-miss
+15 silly packumentCache corgi:https://registry.npmjs.org/@types%2fjsonwebtoken cache-miss
+16 silly packumentCache corgi:https://registry.npmjs.org/@types%2fprop-types cache-miss
+17 silly packumentCache corgi:https://registry.npmjs.org/@types%2freact cache-miss
+18 silly packumentCache corgi:https://registry.npmjs.org/@types%2freact-dom cache-miss
+19 http fetch GET 200 https://registry.npmjs.org/@types%2fcrypto-js 298ms (cache revalidated)
+20 silly packumentCache corgi:https://registry.npmjs.org/@types%2fcrypto-js set size:32509 disposed:false
+21 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 296ms (cache revalidated)
+22 silly packumentCache corgi:https://registry.npmjs.org/@types%2freact-dom set size:169888 disposed:false
+23 http fetch GET 200 https://registry.npmjs.org/@types%2freact 309ms (cache revalidated)
+24 silly packumentCache corgi:https://registry.npmjs.org/@types%2freact set size:635368 disposed:false
+25 http fetch GET 200 https://registry.npmjs.org/@types%2fjsonwebtoken 325ms (cache revalidated)
+26 silly packumentCache corgi:https://registry.npmjs.org/@types%2fjsonwebtoken set size:54420 disposed:false
+27 http fetch GET 200 https://registry.npmjs.org/@types%2fprop-types 330ms (cache revalidated)
+28 silly packumentCache corgi:https://registry.npmjs.org/@types%2fprop-types set size:26352 disposed:false
+29 silly idealTree buildDeps
+30 silly fetch manifest @types/crypto-js@4.2.2
+31 silly packumentCache full:https://registry.npmjs.org/@types%2fcrypto-js cache-miss
+32 http fetch GET 200 https://registry.npmjs.org/@types%2fcrypto-js 48ms (cache revalidated)
+33 silly packumentCache full:https://registry.npmjs.org/@types%2fcrypto-js set size:68813 disposed:false
+34 silly fetch manifest @types/jsonwebtoken@9.0.10
+35 silly packumentCache full:https://registry.npmjs.org/@types%2fjsonwebtoken cache-miss
+36 http fetch GET 200 https://registry.npmjs.org/@types%2fjsonwebtoken 43ms (cache revalidated)
+37 silly packumentCache full:https://registry.npmjs.org/@types%2fjsonwebtoken set size:129902 disposed:false
+38 silly fetch manifest @types/prop-types@15.7.15
+39 silly packumentCache full:https://registry.npmjs.org/@types%2fprop-types cache-miss
+40 http fetch GET 200 https://registry.npmjs.org/@types%2fprop-types 41ms (cache revalidated)
+41 silly packumentCache full:https://registry.npmjs.org/@types%2fprop-types set size:53924 disposed:false
+42 silly fetch manifest @types/react@19.1.8
+43 silly packumentCache full:https://registry.npmjs.org/@types%2freact cache-miss
+44 http fetch GET 200 https://registry.npmjs.org/@types%2freact 53ms (cache revalidated)
+45 silly packumentCache full:https://registry.npmjs.org/@types%2freact set size:2412792 disposed:false
+46 silly fetch manifest @types/react-dom@19.1.6
+47 silly packumentCache full:https://registry.npmjs.org/@types%2freact-dom cache-miss
+48 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 56ms (cache revalidated)
+49 silly packumentCache full:https://registry.npmjs.org/@types%2freact-dom set size:403694 disposed:false
+50 silly placeDep ROOT @types/crypto-js@4.2.2 REPLACE for:  want: 4.2.2
+51 silly placeDep ROOT @types/jsonwebtoken@9.0.10 REPLACE for:  want: 9.0.10
+52 silly placeDep ROOT @types/prop-types@15.7.15 REPLACE for:  want: 15.7.15
+53 silly placeDep ROOT @types/react@19.1.8 REPLACE for:  want: 19.1.8
+54 silly placeDep ROOT @types/react-dom@19.1.6 REPLACE for:  want: 19.1.6
+55 silly reify moves {}
+56 silly audit bulk request {
+56 silly audit   '@types/brace-expansion': [ '1.1.2' ],
+56 silly audit   '@types/debug': [ '4.1.12' ],
+56 silly audit   '@types/estree': [ '1.0.7' ],
+56 silly audit   '@types/json-schema': [ '7.0.15' ],
+56 silly audit   '@types/ms': [ '2.1.0' ],
+56 silly audit   '@types/node': [ '22.13.13' ],
+56 silly audit   '@types/object-assign': [ '4.0.33' ],
+56 silly audit   '@types/object.entries': [ '1.1.1' ],
+56 silly audit   '@types/object.fromentries': [ '2.0.4' ],
+56 silly audit   '@types/page': [ '1.11.9' ],
+56 silly audit   '@types/react-is': [ '19.0.0' ],
+56 silly audit   csstype: [ '3.1.3' ],
+56 silly audit   'types-registry': [ '0.1.727' ],
+56 silly audit   'undici-types': [ '6.20.0' ],
+56 silly audit   '@types/crypto-js': [ '4.2.2' ],
+56 silly audit   '@types/jsonwebtoken': [ '9.0.10' ],
+56 silly audit   '@types/prop-types': [ '15.7.15' ],
+56 silly audit   '@types/react': [ '19.1.8' ],
+56 silly audit   '@types/react-dom': [ '19.1.6' ]
+56 silly audit }
+57 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 243ms
+58 silly audit report {}
+59 verbose cwd C:\Users\richard.goltara\AppData\Local\Microsoft\TypeScript\5.8
+60 verbose os Windows_NT 10.0.19045
+61 verbose node v20.19.0
+62 verbose npm  v11.2.0
+63 verbose exit 0
+64 info ok
