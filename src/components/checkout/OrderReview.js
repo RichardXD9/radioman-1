@@ -1,39 +1,47 @@
 import React from 'react';
 
 const OrderReview = ({ formData, cartItems }) => {
-    const calculateSubtotal = () => {
-        return cartItems.reduce((total, item) => {
-            const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
-            return total + (isNaN(price) ? 0 : price);
-        }, 0).toFixed(2);
-    };
+  const calculateTotal = () => {
+    const totalInCents = cartItems.reduce((total, item) => {
+      // CORRECT WAY: Price is a number in cents.
+      const price = Number(item.price) || 0;
+      const quantity = Number(item.quantity) || 1;
+      return total + (price * quantity);
+    }, 0);
+    return (totalInCents / 100).toFixed(2);
+  };
+
+  const formatPrice = (priceInCents) => {
+    const price = Number(priceInCents);
+    if (isNaN(price)) {
+      return '0.00 €';
+    }
+    return `${(price / 100).toFixed(2)} €`;
+  };
 
     return (
         <div>
             <h3 className="section-title">Revisão da Encomenda</h3>
-            <div className="review-section">
-                <h4>Endereço de Entrega</h4>
-                <p>{formData.name}</p>
-                <p>{formData.email}</p>
-                <p>{formData.address}</p>
-                <p>{formData.city}, {formData.postalCode}</p>
-            </div>
-            <div className="review-section">
-                <h4>Itens</h4>
-                {cartItems.map(item => (
-                    <div key={item.id} className="order-item">
-                        <img src={item.image} alt={item.title} className="item-image" />
-                        <div className="item-details">
-                            <span className="item-title">{item.title}</span>
+            <div className="order-summary">
+                <div className="summary-section">
+                    <h4>Enviar para:</h4>
+                    <p>{formData.name}</p>
+                    <p>{formData.address}</p>
+                    <p>{formData.city}, {formData.postalCode}</p>
+                    <p>{formData.email}</p>
+                </div>
+                <div className="summary-section">
+                    <h4>Itens:</h4>
+                    {cartItems.map((item) => (
+                        <div key={item._id} className="summary-item">
+                            <span>{item.quantity} x {item.name}</span>
+                            <span>{formatPrice(item.price * item.quantity)}</span>
                         </div>
-                        <span className="item-price">{item.price}</span>
+                    ))}
+                    <div className="summary-total">
+                        <strong>Total:</strong>
+                        <strong>{calculateTotal()} €</strong>
                     </div>
-                ))}
-            </div>
-             <div className="order-totals">
-                <div className="total-line total-final">
-                    <span>Total</span>
-                    <span>{calculateSubtotal()} €</span>
                 </div>
             </div>
         </div>

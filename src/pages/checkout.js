@@ -137,28 +137,39 @@ const CheckoutFlow = () => {
 
 // Main Page Component
 const CheckoutPage = () => {
-    const [clientSecret, setClientSecret] = useState('');
+    const [clientSecret, setClientSecret] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const items = JSON.parse(localStorage.getItem('cartItems') || '[]');
         if (items.length > 0) {
-            fetch('/api/create-payment-intent', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ items }),
-            })
-            .then((res) => {
-                if (!res.ok) {
-                    // If the response is not OK, throw an error to be caught by .catch()
-                    return res.json().then(err => { throw new Error(err.message || 'Failed to create payment intent') });
+            const createIntent = async () => {
+                try {
+                    const res = await fetch('/api/create-payment-intent', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ items }),
+                    });
+
+                    if (!res.ok) {
+                        const errData = await res.json();
+                        throw new Error(errData.message || 'Failed to create payment intent');
+                    }
+
+                    const data = await res.json();
+                    setClientSecret(data.clientSecret);
+                } catch (err) {
+                    console.error("Error creating payment intent:", err);
+                    setError(err.message);
+                } finally {
+                    setLoading(false);
                 }
-                return res.json();
-            })
-            .then((data) => setClientSecret(data.clientSecret))
-            .catch((error) => {
-                console.error("Error creating payment intent:", error);
-                // You could set an error state here to show a message to the user
-            });
+            };
+            createIntent();
+        } else {
+            setError("O seu carrinho está vazio. Adicione itens para continuar.");
+            setLoading(false);
         }
     }, []);
 
@@ -182,14 +193,13 @@ const CheckoutPage = () => {
         <div className="checkout-container">
             <Navbar />
             <div className="checkout-grid">
-                {clientSecret ? (
+                {loading && <p>A carregar checkout...</p>}
+                {error && <p className="error-message">{error}</p>}
+                {clientSecret && !error && (
                     <Elements options={options} stripe={stripePromise}>
                         <CheckoutFlow />
                     </Elements>
-                ) : (
-                    <p>A carregar checkout...</p>
                 )}
-                {/* You can add your order summary component here if you want it separate */}
             </div>
         </div>
     );
