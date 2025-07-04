@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-/* General Body Styling */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center; /* Center the main content block horizontally */
-    align-items: flex-start; /* Align content to the top vertically */
-    padding-top: 50px; /* Add some space from the top of the viewport */
-    box-sizing: border-box;
-}
-
 /* Outer container for the entire shopping cart page content (header + main layout) */
 .shopping-cart-container {
     margin-top: 0 !important;

@@ -4,18 +4,6 @@
 
 
 /* General Body Styling for the Checkout Page */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Changed to center for the order complete page to be vertically centered initially */
-    padding: 0; /* KEY CHANGE: No padding on the body itself */
-    box-sizing: border-box;
-    color: #fff; /* Default text color for the page */
-}
 
 /* Main Checkout Container - This should now only serve as a general wrapper */
 /* It will be mostly overridden by .order-complete for the success page */

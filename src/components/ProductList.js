@@ -105,7 +105,7 @@ const ProductList = ({ onAddToCart, productType }) => {
     return (
         <div className="flex">
             <Filter onFilterChange={handleFilterChange} filters={filters} />
-            <div className="product-list ml-64">
+            <div className="product-list ml-64 pt-20">
                 {products.length === 0 ? (
                     <p>No products found matching your criteria.</p>
                 ) : (
