@@ -8,12 +8,7 @@ const bokorFont = Bokor({
     weight:"400",
 });
 
-const Filter = ({ onFilterChange }) => {
-  const [filters, setFilters] = useState({
-    genres: [],
-    colors: [],
-    availability: [],
-  });
+const Filter = ({ onFilterChange, filters }) => {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
 
   // Predefined filter options
@@ -23,20 +18,17 @@ const Filter = ({ onFilterChange }) => {
 
   // Unified handler for all filter changes
   const handleFilterChange = (category, value) => {
-    setFilters(prevFilters => {
-      const currentValues = prevFilters[category];
-      const newValues = currentValues.includes(value)
-        ? currentValues.filter(v => v !== value)
-        : [...currentValues, value];
-      
-      const newFilters = {
-        ...prevFilters,
-        [category]: newValues,
-      };
+    const currentValues = filters[category];
+    const newValues = currentValues.includes(value)
+      ? currentValues.filter(v => v !== value)
+      : [...currentValues, value];
 
-      onFilterChange(newFilters);
-      return newFilters;
-    });
+    const newFilters = {
+      ...filters,
+      [category]: newValues,
+    };
+
+    onFilterChange(newFilters);
   };
 
   // Toggle mobile filter visibility
@@ -156,7 +148,8 @@ const Filter = ({ onFilterChange }) => {
 
 // PropTypes for type checking
 Filter.propTypes = {
-  onFilterChange: PropTypes.func.isRequired
+  onFilterChange: PropTypes.func.isRequired,
+  filters: PropTypes.object.isRequired,
 };
 
 export default Filter;

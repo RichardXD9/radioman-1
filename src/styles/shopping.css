@@ -1,12 +1,30 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-.shopping-cart-container {
-    margin-top: -65px;
-    padding: 40px;
-    margin-left: -450px;
-    position: relative;
+
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
     min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Center the main content block horizontally */
+    align-items: flex-start; /* Align content to the top vertically */
+    padding-top: 50px; /* Add some space from the top of the viewport */
+    box-sizing: border-box;
+}
+
+/* Outer container for the entire shopping cart page content (header + main layout) */
+.shopping-cart-container {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    padding: 40px; /* Padding around the header and the main layout */
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    width: 100%; /* Take full width within body's padding */
+    max-width: 1000px; /* Increased max-width to accommodate side-by-side layout */
+    border-radius: 15px; /* Added consistent border-radius */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Added consistent shadow */
+    box-sizing: border-box;
 }
 
 /* Stylish header */
@@ -15,8 +33,9 @@
     color: #ff4d4d;
     text-align: center;
     font-weight: bold;
-    margin-left: 25px;
-    margin-top: 100px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 40px; /* Space below the header */
     text-transform: uppercase;
     text-shadow: 0 0 10px rgba(255, 77, 77, 0.7), 0 0 20px rgba(255, 77, 77, 0.5);
 }
@@ -35,15 +54,51 @@
     100% { opacity: 1; }
 }
 
-/* Shopping cart container */
+/* --- NEW: Main layout container for side-by-side sections --- */
+.cart-main-layout {
+    display: flex; /* Enables side-by-side layout */
+    gap: 30px; /* Space between the shopping cart and the summary sidebar */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    /* Ensure it fills the container width properly */
+    width: 100%;
+}
+
+/* Shopping cart container (left side - products list) */
 .shopping-cart {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     background: #2a2a2a;
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border: 1px solid #ff4d4d;
+    border: 1px solid #ff4d4d; /* Red border for product list */
+    flex: 2; /* Allows it to take up more space proportionally (e.g., 2/3) */
+    min-width: 350px; /* Ensure it doesn't get too narrow before wrapping */
+    box-sizing: border-box;
+    /* Added flex properties to make sure its content is structured correctly */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and potential total to top/bottom */
+}
+
+/* --- NEW: Cart Summary Sidebar (right side - total and button) --- */
+.cart-summary-sidebar {
+    background: #2a2a2a; /* Dark grey background for the summary box */
+    border-radius: 15px;
+    padding: 20px; /* Padding inside the summary box */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #38c81c; /* Green border to match checkout button */
+    flex: 1; /* Allows it to take up less space proportionally (e.g., 1/3) */
+    min-width: 250px; /* Ensure it doesn't get too narrow before wrapping */
+    display: flex;
+    flex-direction: column; /* Stack total and button vertically */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center content horizontally within the sidebar */
+    box-sizing: border-box;
+    /* Added height to ensure the box aligns with the product list, or adjust as needed */
+    /* This might be tricky to get perfect alignment without JavaScript or fixed height,
+       but flex-start on .cart-main-layout helps align the tops. */
 }
 
 /* Cart items container */
@@ -60,6 +115,11 @@
     border-bottom: 1px solid #444;
     padding-bottom: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
+    padding-bottom: 0;
 }
 
 .cart-item:hover {
@@ -81,10 +141,9 @@
 .cart-item-details {
     display: flex;
     flex-direction: column;
-    margin-right: -5px;
     width: 100%;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-end; /* Aligns price and quantity to the right */
 }
 
 /* Cart item title */
@@ -92,7 +151,7 @@
     font-size: 1.3rem;
     font-weight: bold;
     color: #fff;
-    align-self: flex-start;
+    align-self: flex-start; /* Aligns title to the left */
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -100,14 +159,34 @@
 .cart-item-price {
     color: #ff4d4d;
     margin-top: 5px;
-    align-self: flex-end;
+    align-self: flex-end; /* Ensures price stays to the right */
     font-size: 1.5em;
     text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
 }
 
+/* Quantity dropdown */
+.cart-item-qty {
+    margin-top: 10px;
+    align-self: flex-end; /* Align to the right */
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cart-item-qty:focus {
+    outline: none;
+    border-color: #ff4d4d;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+}
+
+
 /* Remove button */
 .remove-item-btn {
-    align-self: flex-start;
+    align-self: flex-start; /* Aligns remove button to the left */
     background: linear-gradient(45deg, #ff4d4d, #ff6b6b);
     color: white;
     border: none;
@@ -115,6 +194,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px; /* Added some space above the button */
 }
 
 .remove-item-btn:hover {
@@ -122,15 +202,15 @@
     transform: scale(1.05);
 }
 
-/* Updated cart total styling */
+/* Updated cart total styling (now inside .cart-summary-sidebar) */
 .cart-total {
-    margin-top: 20px; /* Add margin to place it below the cart items */
-    text-align: right; /* Align to the right */
+    margin-top: 0;
+    margin-bottom: 20px; /* Space between total and checkout button */
+    text-align: right; /* Align to the right within its container */
     font-size: 1.8rem;
-    background: #2a2a2a;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Take full width of its parent */
+    box-sizing: border-box;
+    color: #fff; /* Ensure text color is white */
 }
 
 /* Total label and amount */
@@ -146,10 +226,12 @@
     text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
 }
 
-/* Checkout button */
-.checkout-container {
-    margin-top: 40px;
-    text-align: center;
+/* Checkout button wrapper (renamed from .checkout-container for clarity) */
+.checkout-button-wrapper {
+    margin-top: 0;
+    height: auto;
+    text-align: center; /* Center the button within its available width */
+    width: 100%; /* Ensure it takes full width for centering */
 }
 
 .checkout-btn {
@@ -163,6 +245,10 @@
     cursor: pointer;
     transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     box-shadow: 0 0 10px rgba(56, 200, 28, 0.5);
+    width: 100%; /* Make button fill its container */
+    max-width: 250px; /* Limit max-width to keep it from stretching too wide */
+    box-sizing: border-box;
+    margin-left: 0; /* No explicit left margin needed for centering */
 }
 
 .checkout-btn:hover {
@@ -171,7 +257,7 @@
     transform: scale(1.05);
 }
 
-/* Checkout success message */
+/* Checkout success message (for the separate page, if applicable) */
 .checkout-success {
     max-width: 500px;
     margin: 0 auto;
@@ -196,19 +282,31 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) { /* Changed breakpoint to 1000px to stack earlier */
+    .cart-main-layout {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+        align-items: center; /* Center the stacked columns */
+        gap: 25px; /* Space between stacked boxes */
+    }
+
+    .shopping-cart,
+    .cart-summary-sidebar {
+        width: 100%; /* Take full width when stacked */
+        max-width: 500px; /* Limit overall width when stacked */
+    }
+}
+
+@media (max-width: 768px) {
+    .shopping-cart-container {
+        padding: 20px;
+    }
+    .shopping-cart-header {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
     .cart-item {
         flex-direction: column;
         text-align: center;
-    }
-    .shopping-cart-container {
-        margin-left: 0;
-        padding: 20px;
-    }
-    .cart-total {
-        text-align: center; /* Center the total on smaller screens */
-        margin-top: 20px;
-        margin-bottom: 20px;
     }
     .cart-item-image {
         margin-right: 0;
@@ -217,7 +315,40 @@
     .remove-item-btn {
         align-self: center;
     }
-    .checkout-container {
-        margin-top: 30px;
+    .cart-total {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .checkout-button-wrapper {
+        margin-top: 30px; /* Add some space when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .shopping-cart-container {
+        padding: 15px;
+    }
+    .shopping-cart-header {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .shopping-cart, .cart-summary-sidebar {
+        padding: 15px;
+        min-width: unset; /* Allow to shrink more */
+    }
+    .cart-item-title {
+        font-size: 1.1rem;
+    }
+    .cart-item-price {
+        font-size: 1.3em;
+    }
+    .remove-item-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    .checkout-btn {
+        font-size: 1.1rem;
+        padding: 10px 20px;
     }
 }
