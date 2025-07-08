@@ -70,13 +70,6 @@ const Filter = ({ onFilterChange, filters }) => {
               />
              <label 
                 htmlFor={`genre-${genre}`} 
-                style={{
-
-                  color: genre === 'Numetal' ? 'black' : 
-                         genre === 'Hardcore' ? 'black' : 
-                         genre === 'Alternative' ? 'black' : 
-                         genre === 'Punk' ? 'black' :'inherit'
-                }}
               >
                 {genre}
               </label>
@@ -101,12 +94,6 @@ const Filter = ({ onFilterChange, filters }) => {
               />
               <label 
                 htmlFor={`color-${color}`} 
-                style={{
-
-                  color: color === 'Preto' ? 'black' : 
-                         color === 'Branco' ? 'black' : 
-                         color === 'Vermelho' ? 'black' : 'inherit'
-                }}
               >
                 {color}
               </label>
@@ -131,10 +118,6 @@ const Filter = ({ onFilterChange, filters }) => {
               />
                <label 
                 htmlFor={`availability-${status}`} // Fix: Match the input's id
-                style={{
-                  color: status === 'Disponível' ? 'black' : 
-                  status === 'Esgotado' ? 'black' : 'inherit'
-                }}
               >
                 {status}
               </label>
@@ -142,6 +125,11 @@ const Filter = ({ onFilterChange, filters }) => {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        .filter-checkbox label {
+          color: white !important;
+        }
+      `}</style>
     </>
   );
 };

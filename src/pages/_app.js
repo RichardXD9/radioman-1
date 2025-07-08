@@ -7,10 +7,10 @@ import "../styles/filter.css";
 import "../styles/ProductDetail.css";
 import "../styles/Checkout.css";
 import { ClerkProvider } from '@clerk/nextjs';
-
+import { ptPT } from '@clerk/localizations';
 export default function App({ Component, pageProps }) {
   return (
-    <ClerkProvider {...pageProps}>
+    <ClerkProvider localization={ptPT} {...pageProps}>
       <Component {...pageProps} />
     </ClerkProvider>
   );

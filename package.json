@@ -10,6 +10,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@clerk/localizations": "^3.17.3",
     "@clerk/nextjs": "^6.12.9",
     "@heroicons/react": "^2.2.0",
     "@stripe/react-stripe-js": "^3.7.0",
