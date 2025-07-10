@@ -54,57 +54,58 @@
     padding-bottom: 0.5rem;
   }
   
-  .filter-checkbox  {
+  .filter-checkbox {
     display: flex;
     align-items: center;
     margin-bottom: 0.75rem;
-    cursor: pointer;
     transition: background-color 0.2s ease;
-    padding: 0.5rem; /* Increased padding */
+    padding: 0.5rem;
     border-radius: 0.375rem;
   }
   
-  
   .filter-checkbox:hover {
-    background-color: #374151; /* Darker hover effect */
+    background-color: #374151;
   }
   
-  
-
-  
   .filter-checkbox input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 1.25rem;
-    height: 1.25rem;
-    border: 2px solid #9ca3af; /* Lighter border for visibility */
-    background-color: transparent;
-    border-radius: 0.25rem;
-    outline: none;
-    margin-right: 0.75rem;
+    /* Hide the default checkbox but keep it accessible */
+    position: absolute;
+    opacity: 0;
     cursor: pointer;
-    position: relative;
+    height: 0;
+    width: 0;
   }
   
   .filter-checkbox label {
-    flex-grow: 1;
-    color: #d1d5db; /* Light gray for labels */
-    font-size: 1rem;
-  }
-  .filter-checkbox input[type="checkbox"]:checked {
-    background-color: #e11d48; /* Consistent red */
-    border-color: #e11d48;
-  }
-  
-  .filter-checkbox input[type="checkbox"]:checked::after {
-    content: '✔';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    padding-left: 30px; /* Space for the custom circle */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    height: 24px; /* Ensures vertical alignment */
     color: white;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    flex-grow: 1;
+  }
+
+  /* The outer circle */
+  .filter-checkbox label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.2s;
+  }
+
+  /* Fill the circle when the checkbox is checked */
+  .filter-checkbox input[type="checkbox"]:checked + label::before {
+    background-color: white;
   }
  
   @media (max-width: 768px) {

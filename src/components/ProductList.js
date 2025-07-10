@@ -95,11 +95,11 @@ const ProductList = ({ onAddToCart, productType }) => {
     };
 
     if (loading) {
-        return <div className="product-list ml-64">Loading products...</div>;
+        return <div className="product-list ml-64">Carregando produtos...</div>;
     }
 
     if (error) {
-        return <div className="product-list ml-64 text-red-500">Error: {error}</div>;
+        return <div className="product-list ml-64 text-red-500">Erro: {error}</div>;
     }
 
     return (
@@ -107,7 +107,7 @@ const ProductList = ({ onAddToCart, productType }) => {
             <Filter onFilterChange={handleFilterChange} filters={filters} />
             <div className="product-list ml-64 pt-20">
                 {products.length === 0 ? (
-                    <p>No products found matching your criteria.</p>
+                    <p>Nenhum produto encontrado com os seus critérios.</p>
                 ) : (
                     products.map((product) => (
                         <Card

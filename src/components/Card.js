@@ -58,7 +58,7 @@ const Card = ({
                             onClick={handleBuyClick}
                             disabled={availability !== 'Disponível'}
                         >
-                            {availability === 'Disponível' ? 'Buy' : 'Out of Stock'}
+                            {availability === 'Disponível' ? 'Comprar' : 'Esgotado'}
                         </button>
                     </div>
                 </div>

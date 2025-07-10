@@ -5,7 +5,7 @@ import Product from '../../models/Product';
 const sampleProducts = [
   {
     name: 'Deftones- Adrenaline',
-    description: 'First Deftones album with the raw nu metal vibes.',
+    description: 'Primeiro álbum da banda com uma energia nunca antes feita',
     price: 2500, // 25.00 € in cents
     image: '/images/adrenaline.jpg', // You can replace with actual image paths
     type: 'vinyl',
@@ -15,13 +15,13 @@ const sampleProducts = [
   },
   {
     name: 'Korn- Self Titled',
-    description: 'Korn self titled and first album with unique sounds that created a whole new sub genre.',
-    price: 1500, // 15.00 € in cents
+    description: 'Primeiro álbum da banda com sons tão únicos que criaram um novo sub-gênero',
+    price: 1000, // 10.00 € in cents
     image: '/images/Kornstl.jpg',
     type: 'cd',
     genre: ['Numetal'],
     color: ['Vermelho'],
-    stock: 30,
+    stock: 3,
   },
   {
     name: 'White Pony T-Shirt',
@@ -31,17 +31,47 @@ const sampleProducts = [
     type: 'merch',
     genre: ['Alternative'],
     color: ['Branco'],
-    stock: 50,
+    stock: 3,
   },
   {
     name: 'Linkin Park- Meteora',
     description: 'Segundo album de Linkin Park com vocais inigualaveis',
-    price: 5000, // 50.00 € in cents
+    price: 4500, // 45.00 € in cents
     image: '/images/LPmeteora.jpg',
     type: 'vinyl',
     genre: ['Alternative'],
-    color: ['Branco'],
+    color: ['Preto'],
     stock: 0, // This will show as 'Esgotado'
+  },
+  {
+    name: 'System Of A Down- Toxicity',
+    description: 'Segundo album da banda incorporando mais melodia, harmonias e canto',
+    price: 1000, // 10.00 € in cents
+    image: '/images/SOADtoxi.jpg',
+    type: 'cd',
+    genre: ['Alternative'],
+    color: ['Vermelho'],
+    stock: 2, 
+  },
+  {
+    name: 'Sunami- Self Titled',
+    description: 'Primeiro álbum lançado com músicas de EPs anteriores',
+    price: 2500, // 25.00 € in cents
+    image: '/images/sunami.jpg',
+    type: 'vinyl',
+    genre: ['Hardcore'],
+    color: ['Branco'],
+    stock: 1, 
+  },
+   {
+    name: 'GreenDay- Dookie',
+    description: 'Terceiro álbum da banda sendo a primeira colaboração da banda com o produtor Rob Cavallo',
+    price: 750.0, // 7,5.00 € in cents
+    image: '/images/Greenday.jpg',
+    type: 'cd',
+    genre: ['Punk'],
+    color: ['Branco'],
+    stock: 4, 
   },
 ];
 

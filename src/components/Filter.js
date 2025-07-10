@@ -66,7 +66,6 @@ const Filter = ({ onFilterChange, filters }) => {
                 id={`genre-${genre}`}
                 checked={filters.genres.includes(genre)}
                 onChange={() => handleFilterChange('genres', genre)}
-                className="cursor-pointer"
               />
              <label 
                 htmlFor={`genre-${genre}`} 
@@ -90,7 +89,6 @@ const Filter = ({ onFilterChange, filters }) => {
                 id={`color-${color}`}
                 checked={filters.colors.includes(color)}
                 onChange={() => handleFilterChange('colors', color)}
-                className="cursor-pointer"
               />
               <label 
                 htmlFor={`color-${color}`} 
@@ -114,7 +112,6 @@ const Filter = ({ onFilterChange, filters }) => {
                 id={`availability-${status}`}
                 checked={filters.availability.includes(status)}
                 onChange={() => handleFilterChange('availability', status)}
-                className="cursor-pointer"
               />
                <label 
                 htmlFor={`availability-${status}`} // Fix: Match the input's id
@@ -125,11 +122,7 @@ const Filter = ({ onFilterChange, filters }) => {
           ))}
         </div>
       </div>
-      <style jsx>{`
-        .filter-checkbox label {
-          color: white !important;
-        }
-      `}</style>
+      {/* Styles are now in src/styles/filter.css */}
     </>
   );
 };

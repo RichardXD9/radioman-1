@@ -72,19 +72,7 @@ const ProductDetail = () => {
     };
 
     const handleBackClick = () => {
-        switch(type) {
-            case 'vinyl':
-                router.push('/vinil');
-                break;
-            case 'cd':
-                router.push('/cd');
-                break;
-            case 'merch':
-                router.push('/merch');
-                break;
-            default:
-                router.push('/');
-        }
+        router.push('/');
     };
 
     const formatPrice = (priceInCents) => {
@@ -134,7 +122,7 @@ const ProductDetail = () => {
                     className="back-button"
                 >
                     <ArrowLeftIcon className="h-5 w-5" />
-                    <span>Voltar para {type === 'vinyl' ? 'Vinil' : type === 'cd' ? 'CDs' : 'Merchandise'}</span>
+                    <span>Voltar para a Loja</span>
                 </button>
                 
                 <div className="product-grid">
@@ -175,8 +163,8 @@ const ProductDetail = () => {
                             <ShoppingCartIcon />
                             <span>
                                 {isAvailable
-                                    ? 'Add to Cart' 
-                                    : 'Out of Stock'
+                                    ? 'Adicionar ao carrinho' 
+                                    : 'Fora de stock'
                                 }
                             </span>
                         </button>
